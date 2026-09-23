@@ -1,0 +1,45 @@
+# ---- STM32CubeMX / CubeCLT ----
+build/
+Debug/
+Release/
+mx.scratch
+
+# ---- 编译产物 ----
+*.o
+*.d
+*.su
+*.elf
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+*.lnp
+*.sct
+*.dep
+*.htm
+*.iex
+*.bak
+*.crf
+*.build_log.htm
+
+# ---- Keil MDK-ARM 生成/个人设置 ----
+MDK-ARM/Test/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/*.uvguix.*
+MDK-ARM/*.uvoptx
+MDK-ARM/*.scvd
+
+# ---- 未使用的 CMSIS 预编译包（约 176 MB，CubeMX 整包拷贝带入）----
+Drivers/CMSIS/DSP/
+Drivers/CMSIS/NN/
+Drivers/CMSIS/Core_A/
+Drivers/CMSIS/RTOS/
+Drivers/CMSIS/RTOS2/
+Drivers/CMSIS/docs/
+
+# ---- 系统杂项 ----
+.DS_Store
+Thumbs.db
+desktop.ini
