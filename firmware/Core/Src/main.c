@@ -53,14 +53,16 @@ DMA_HandleTypeDef hdma_usart1_tx;
 /* USER CODE BEGIN PV */
 #define VERIFY_MODE      2      /* 0 / 1 / 2，见文件头说明 */
 
-#define ADC_BUF_LEN      1000   /* 1 kHz 下缓冲 1 秒，半满/满各 500 点 */
+#define ADC_CHANNELS     2                          /* 传感器数量 */
+#define ADC_BUF_LEN      (1000 * ADC_CHANNELS)      /* 每通道缓冲 1 秒，半满/满各 500 对 */
+#define HALF_PAIRS       (ADC_BUF_LEN / 2 / ADC_CHANNELS)   /* 半缓冲里的采样对数 = 500 */
 #define ENV_WIN          200    /* 包络滑动平均窗口：1 kHz => 200 ms */
 #define PRINT_EVERY      10     /* 每 10 个采样点输出一行 => 100 行/秒 */
 
 static volatile uint8_t block_ready_half = 0;
 static volatile uint8_t block_ready_full = 0;
 
-#define ADC_BUFFER_SIZE 1000
+#define ADC_BUFFER_SIZE  ADC_BUF_LEN
 uint16_t adc_buffer[ADC_BUFFER_SIZE] __attribute__((section(".RAM_D2")));
 //volatile uint8_t dma_half_ready = 0;
 //volatile uint8_t dma_full_ready = 0;
@@ -75,9 +77,9 @@ static void MX_TIM3_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-static float envelope_update(float abs_x);
+static float envelope_update(uint8_t ch, float abs_x);
 #if (VERIFY_MODE >= 2)
-static float bandpass_20_400(float in);
+static float bandpass_20_400(uint8_t ch, float in);
 #endif
 /* USER CODE END PFP */
 
@@ -153,26 +155,37 @@ int main(void)
 		{
 			static uint32_t tick = 0;
 
-			for (int i = 0; i < ADC_BUF_LEN / 2; i++)
+			for (int i = 0; i < HALF_PAIRS; i++)
 			{
-				uint16_t raw = blk[i];
-				float    x   = (float)raw - 32768.0f;   /* 16 位中点 1.65 V 对应 32768 */
-				float    f   = x;
+				uint16_t raw[ADC_CHANNELS];
+				float    f[ADC_CHANNELS];
+				float    e[ADC_CHANNELS];
+
+				for (int ch = 0; ch < ADC_CHANNELS; ch++)
+				{
+					raw[ch] = blk[i * ADC_CHANNELS + ch];
+					float x = (float)raw[ch] - 32768.0f;   /* 16 位中点 1.65 V 对应 32768 */
+					float y = x;
 
 	#if (VERIFY_MODE >= 2)
-      f = bandpass_20_400(x);
+					y = bandpass_20_400(ch, x);
 	#endif
-      float e = envelope_update(fabsf(f));
+					f[ch] = y;
+					e[ch] = envelope_update(ch, fabsf(y));
+				}
 
-      if (++tick >= PRINT_EVERY)
+				if (++tick >= PRINT_EVERY)
 				{
-        tick = 0;
+					tick = 0;
 	#if (VERIFY_MODE == 0)
-        printf("%u\r\n", (unsigned)raw);
+					printf("%u,%u\r\n", (unsigned)raw[0], (unsigned)raw[1]);
 	#elif (VERIFY_MODE == 1)
-        printf("%u,%d\r\n", (unsigned)raw, (int)e);
+					printf("%u,%u,%d,%d\r\n",
+					       (unsigned)raw[0], (unsigned)raw[1], (int)e[0], (int)e[1]);
 	#else
-        printf("%u,%d,%d\r\n", (unsigned)raw, (int)f, (int)e);
+					printf("%u,%u,%d,%d,%d,%d\r\n",
+					       (unsigned)raw[0], (unsigned)raw[1],
+					       (int)f[0], (int)f[1], (int)e[0], (int)e[1]);
 	#endif
 				}
 			}
@@ -266,11 +279,11 @@ static void MX_ADC1_Init(void)
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
   hadc1.Init.Resolution = ADC_RESOLUTION_16B;
-  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 2;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_EXTERNALTRIG_T3_TRGO;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
@@ -304,6 +317,15 @@ static void MX_ADC1_Init(void)
   sConfig.OffsetNumber = ADC_OFFSET_NONE;
   sConfig.Offset = 0;
   sConfig.OffsetSignedSaturation = DISABLE;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_8;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -470,21 +492,21 @@ static void MX_GPIO_Init(void)
  * 与厂家 demo 的 getEnvelop() 同一思路，窗口改成 200 点（1 kHz => 200 ms）。
  * 注意：开机前 200 个采样点内 sum 没填满，包络读数会偏低，属正常现象。
  *------------------------------------------------------------------*/
-static float envelope_update(float abs_x)
+static float envelope_update(uint8_t ch, float abs_x)
 {
-  static float    ring[ENV_WIN];
-  static uint16_t idx = 0;
-  static float    sum = 0.0f;
+  static float    ring[ADC_CHANNELS][ENV_WIN];
+  static uint16_t idx[ADC_CHANNELS];
+  static float    sum[ADC_CHANNELS];
 
-  sum       -= ring[idx];
-  ring[idx]  = abs_x;
-  sum       += abs_x;
+  sum[ch]           -= ring[ch][idx[ch]];
+  ring[ch][idx[ch]]  = abs_x;
+  sum[ch]           += abs_x;
 
-  if (++idx >= ENV_WIN)
+  if (++idx[ch] >= ENV_WIN)
   {
-    idx = 0;
+    idx[ch] = 0;
   }
-  return sum / (float)ENV_WIN;
+  return sum[ch] / (float)ENV_WIN;
 }
 
 #if (VERIFY_MODE >= 2)
@@ -495,24 +517,24 @@ static float envelope_update(float abs_x)
  *     0 / 500 Hz -> 完全抑制      最大极点半径 0.9545（稳定）
  * 结构：Direct Form II 级联，状态为 w[n-1] / w[n-2]。
  *------------------------------------------------------------------*/
-static float bandpass_20_400(float in)
+static float bandpass_20_400(uint8_t ch, float in)
 {
   static const float b0[4] = { 0.36276887f,  1.00000000f,  1.00000000f,  1.00000000f };
   static const float b1[4] = {-0.72553775f,  2.00000000f, -2.00000000f,  2.00000000f };
   static const float b2[4] = { 0.36276887f,  1.00000000f,  1.00000000f,  1.00000000f };
   static const float a1[4] = {-1.89580569f,  1.32515519f, -1.77191351f,  1.02413961f };
   static const float a2[4] = { 0.91104422f,  0.64193395f,  0.78704319f,  0.28608416f };
-  static float w1[4], w2[4];
+  static float w1[ADC_CHANNELS][4], w2[ADC_CHANNELS][4];
 
   float x = in;
 
   for (int s = 0; s < 4; s++)
   {
-    float w = x - a1[s] * w1[s] - a2[s] * w2[s];
-    float y = b0[s] * w + b1[s] * w1[s] + b2[s] * w2[s];
+    float w = x - a1[s] * w1[ch][s] - a2[s] * w2[ch][s];
+    float y = b0[s] * w + b1[s] * w1[ch][s] + b2[s] * w2[ch][s];
 
-    w2[s] = w1[s];
-    w1[s] = w;
+    w2[ch][s] = w1[ch][s];
+    w1[ch][s] = w;
     x     = y;
   }
   return x;
