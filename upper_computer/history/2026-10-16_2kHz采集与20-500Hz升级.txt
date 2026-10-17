@@ -1,0 +1,32 @@
+2026-10-16（Asia/Singapore）交接：v0.6.0 / 2 kHz / 20–500 Hz
+
+用户确认已修正启思传感器模块供电，授权修改程序，将带通由20–400改成20–500 Hz，准备重新采集数据。
+原固件只发原始ADC，数字带通在上位机。原每路1 kHz的奈奎斯特频率为500 Hz，不能直接把数字带通上限改成500；本次连同采样率、时间换算和串口链路一起升级。
+
+已完成
+1. firmware/Test：TIM3名义240 MHz、PSC239、ARR499，每路2000 Hz；UART230400/8N1；INFO2000；协议仍为v2双路，20对/帧，原始数据。main.c、两份stream_v2.inc及Test.ioc均更新。没有改ADC参考电压或物理接线。
+2. 上位机v0.6.0：新增波特率选择，默认230400，旧固件选115200。INFO支持1000/2000，连接中参数变化报错。采样率、显示滤波元数据由worker按INFO写入，防止GUI误填。两路5秒显示窗和200 ms包络按实际采样率换算。
+3. 新采集显示20–500 Hz + 50 Hz陷波Q30；旧1000 Hz显示仍20–400。新增模块供电人工填写字段，默认5 V但明确非实测。
+4. LDA新增notch50_bp500绑定2000 Hz，准备至少2000点、首尾各300点裁边，分段最低时长和频率特征按Fs计算；新旧采样率不能混用。UI选新2 kHz数据自动切换；旧模型仍按原定义加载。
+5. train_small_cnn.py支持新LDA报告，2 kHz输入2×4096、裁边300点、时间平移80点，物理时长不变。旧1 kHz仍2×2048；未用新供电真人数据训练模型。
+6. 旧活动切段/在线模型与静息节律暂限1 kHz；对2 kHz显式拒绝或停用，避免错误时间尺度。
+
+验证
+Keil ARMClang6.23全量编译0错误0警告，日志firmware/build_v0.6.0.log。
+.runtime/Scripts/python.exe -m pytest tests --ignore=tests/output -q：92 passed。
+直接递归tests曾碰到历史output子目录权限，改为排除生成目录后完整源码测试通过；未更改历史目录权限。
+Qt最终冒烟tests/output/dual_gui_e1ba859a3ea54920be463be3f0c85c15：2 kHz双通道模拟、保存、原始transport与CSV逐点核对、导出、新旧LDA选择/训练/重载通过，截图已检查。2 kHz CNN用合成数据短轮次完成训练/保存/重载/测试，非真人性能评估。
+git diff --check通过。工作区原有未提交修改均保留，未提交或推送。
+
+交付
+升级说明：20-500Hz升级说明.txt。
+HEX：releases/v0.6.0-2khz/semg_dual_2khz_v0.6.0.hex。
+SHA256：3120757f7864d9282ba847ffbe22ea1f1d46f3c989a078555c04f98575847290。
+完整清单：releases/v0.6.0-2khz/manifest.json；另存firmware/rate_2khz_manifest.json。
+README、CHANGELOG、固件协议已更新。
+
+后续实机烧录验证（同日12:03完成）
+用户进一步明确要求助手烧录。通过已连接CMSIS-DAP执行Keil下载，Programming Done / Verify OK；第一次未启用自动复位无串口输出，将Test.uvoptx的CMSIS_AGDI下载选项从FO7改为FO15后再次下载，日志确认Application running。原选项备份在发布目录Test.before_autorun.uvoptx。
+COM5/230400验证约12秒：1207帧、24140对样本，INFO每路2000 Hz、双通道16位、丢帧0；CRC/缺样/序号跳变/fault均0；两个标记ACK样本差20060、板端tick差10030 ms，得到2000 Hz/路。初始对齐丢弃4字节，不是后续缺样。CH0原始范围32451–32521；CH1为0–65167，5点触底0，需要在正式采集前检查该通道信号。尚未验证模拟带宽、独立时钟精度、供电实测或新条件识别准确率。
+证据：releases/v0.6.0-2khz/flash_run_20261016.log、hardware_check_20261016.json。串口已释放，重启start.cmd后选择COM5/230400连接；无须用户再次烧录。
+原始历史录制及历史模型均未改写。新版供电与采样配置请新建session并记录，不覆盖或混充旧条件数据。旧专用goodone实验入口仍绑定旧1 kHz数据；新CNN应从新2 kHz LDA报告进入。

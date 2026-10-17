@@ -1,0 +1,42 @@
+{
+  "version": "0.6.0",
+  "date": "2026-10-16",
+  "timezone": "Asia/Singapore",
+  "sampling_rate_hz_per_channel": 2000,
+  "channels": 2,
+  "serial_baudrate": 230400,
+  "host_bandpass_hz": [
+    20,
+    500
+  ],
+  "notch_hz": 50,
+  "notch_q": 30,
+  "flashed": true,
+  "hardware_validated": false,
+  "compiler": "ARMClang 6.23",
+  "compiler_errors": 0,
+  "compiler_warnings": 0,
+  "pytest_passed": 92,
+  "gui_smoke": "tests/output/dual_gui_e1ba859a3ea54920be463be3f0c85c15",
+  "sha256": {
+    "releases/v0.6.0-2khz/semg_dual_2khz_v0.6.0.hex": "3120757f7864d9282ba847ffbe22ea1f1d46f3c989a078555c04f98575847290",
+    "firmware/Test/Core/Src/main.c": "bd846fc5e801412776e10b2fd5585d5bf148d4389964cd852d31ca15b3a8b9ec",
+    "firmware/Test/Core/Src/stream_v2.inc": "24de5db0f19d6d62e4238ae9e46d40fec2f3d4018ef595fd20f7d4796f242904",
+    "firmware/stream_v2.inc": "24de5db0f19d6d62e4238ae9e46d40fec2f3d4018ef595fd20f7d4796f242904",
+    "firmware/Test/Test.ioc": "b6bdcc2b04b546281243b1fe3b31c3816c41948bf3c1deff675e96e405b04321",
+    "semg/acquisition.py": "1178320afeab446dad9cfcf131bed3251f1f6718bdcf727ceb5f0abda1102663",
+    "semg/app.py": "24f577e4fbb1d936ae229f1a5729513ba76f0d4c80dbee69728a4f25d9969805",
+    "semg/filtering.py": "cc37fd77c9956afd0fbd1a49c49e4831bf7279f9c027da06744bebe951911a70",
+    "semg/lda.py": "156a91bccccd3855bc158bf72c2cf987d28b28ca67c34cfb32b1b41b89952464",
+    "experiments/train_small_cnn.py": "82969aeaddc4b4059e202f732d3780a9370656a47e712fcdc5097d683516eadd",
+    "firmware/Test/MDK-ARM/Test.uvoptx": "949248501e387f1ef20708a8d7e8db49b3e375dc5aedcec90df67106bc7e46ca"
+  },
+  "flash_verified": true,
+  "application_running": true,
+  "serial_transport_validated": true,
+  "hardware_validation_scope": "Flash readback and serial transport passed; analogue bandwidth, input signal quality, sensor supply and recognition accuracy not validated.",
+  "flashed_date": "2026-10-16",
+  "flash_log": "releases/v0.6.0-2khz/flash_run_20261016.log",
+  "serial_validation_report": "releases/v0.6.0-2khz/hardware_check_20261016.json",
+  "signal_observation": "CH1 had 5 ADC samples equal to 0 in 24140 sample pairs; inspect channel before formal collection."
+}

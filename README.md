@@ -1,8 +1,37 @@
 # 6008 Silent Speech
 
-<!-- TODO: 一句话说明项目目标，例如：采集 XXX 信号，识别无声语音 / subvocal speech -->
+本分支 `upper_computer_v0.6.0` 提供双通道 sEMG 无声口型采集上位机：每路 2 kHz、20–500 Hz 显示滤波、完整原始数据保存、离线 LDA 及独立 CNN/LSTM 实验脚本。
 
-> **当前状态**：固件侧的采集链路已可运行——1 kHz 采样、20–400 Hz 带通、包络提取，并通过串口以 100 行/秒输出 CSV。识别与上位机部分待补充。
+## 安装与启动
+
+Windows 10/11，64位 Python 3.12。克隆后进入应用目录：
+
+```powershell
+git clone --branch upper_computer_v0.6.0 https://github.com/l-lorne-n/6008_silent_speech.git
+cd 6008_silent_speech\upper_computer
+.\setup.cmd
+.\start.cmd
+```
+
+首次安装需网络。可先用模拟演练检查界面；真实设备使用本机实际串口，波特率 **230400**。详细说明见 [上位机 README](upper_computer/README.md)。运行采集与LDA无需PyTorch；神经网络实验另装可选依赖。
+
+## 三人原始数据与固件
+
+[下载 v0.6.0 发布附件](https://github.com/l-lorne-n/6008_silent_speech/releases/tag/v0.6.0-2khz)：
+
+- S011：10份录制，500次完整动作。
+- S012：9份录制，500次完整动作；中止录制不包含。
+- S015：10份录制，500次完整动作。
+
+三个ZIP均保留原始采集通道顺序、完整六类录制文件；实验交换已撤回。通道的解剖位置未独立确认。解压到 `upper_computer/` 得到 `recordings/S011` 等路径，再在LDA扫描；不要覆盖本机已有同名录制。`recordings_manifest.json` 和 `SHA256SUMS.txt` 用于核验。数据作为Release附件提供，不放入Git历史。
+
+配套固件为 [upper_computer/firmware/Test](upper_computer/firmware/Test)，每路2 kHz、双通道原始二进制v2、230400/8N1；发布附件含已烧录校验的HEX。数字滤波在上位机，传感器模拟带宽未由软件改变。旧1 kHz连接选择115200，按原20–400Hz处理。新2 kHz自动活动切段/在线识别尚不支持。
+
+2026-10-17软件验证：92项pytest通过。实机采集链路2026-10-16检查约12秒、24140对样本，CRC/缺样/设备fault均0；这不代表识别准确率或模拟带宽已达标。
+
+## 历史根目录固件参考
+
+下面保留的是main原有根目录 `firmware/` 工程说明，属于旧文本联调链路。新版上位机应使用 `upper_computer/firmware/Test/`，不要用下方旧配置替代。
 
 ## 仓库结构
 

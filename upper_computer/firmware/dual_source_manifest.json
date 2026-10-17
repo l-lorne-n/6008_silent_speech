@@ -1,0 +1,18 @@
+{
+  "reference_url": "https://github.com/l-lorne-n/6008_silent_speech",
+  "reference_commit": "3ca6a226fba117b0b176590d11226f7ee22e40f0",
+  "baseline_commit": "8ce5988",
+  "protocol_version": 2,
+  "channels": [
+    "PA7/ADC1_INP7",
+    "PC5/ADC1_INP8"
+  ],
+  "digital_filter_on_mcu": false,
+  "auto_flash": false,
+  "reference_sha256": {
+    "firmware/Core/Src/main.c": "b9700f0b4cc823407aa677b88ac7f6a33b8b228075346023d5b3fc0727957b25",
+    "firmware/Core/Src/stm32h7xx_hal_msp.c": "3566820355e617425933400d7412df5cfea49943402bd6f8f2c99f2101290554",
+    "firmware/Test.ioc": "74980d6e98c086371b4146e4bb38bfd68c39ea77b7d46c50d46d2eadd3ba136f"
+  },
+  "note": "Dual ADC scan/pin settings ported into existing lossless binary stream; teammate decimated CSV/filter loop is not used. Test.ioc remains reference; blind CubeMX regeneration would replace streaming customizations."
+}

@@ -1,0 +1,21 @@
+用户要求：恢复 20–400 Hz，特征改为 RMS、MAV、ZCR、波形长度，并重新训练。
+运行目录：models/lda_loso_goodone_20261014_132041_cb012f
+对照目录：models/lda_loso_goodone_20261014_130607_0c55eb
+复现：.runtime/Scripts/python.exe experiments/train_lda_loso.py --bandpass-high 400 --feature-set rms_mav_zcr_wl
+
+协议：S01/S02/S04/S05 四折 LOSO，每折三训一测，排除 s3。双通道、6 段，48 维；50 Hz 陷波 Q=30、因果滤波、准备期预热、动作两端各裁去 150 ms。StandardScaler 仅拟合训练人员，LDA solver=lsqr、shrinkage=auto。
+新特征均不取对数：RMS=sqrt(mean(x²))；MAV=mean(abs(x))；ZCR=严格异号相邻点对数/(N−1)，零阈值，恰为零不计；WL=sum(abs(diff(x)))。
+原特征为 log_mean_abs_diff、log_mav、zc_count_zero、ssc_count_zero。
+
+测试人    原特征准确率    新特征准确率      新正确数/测试数
+S01       27.20%          27.60%            138/500
+S02       14.00%          15.20%             76/500
+S04       15.00%          10.40%             52/500
+S05       26.51%          25.10%            125/498
+四人平均  20.68%          19.58%            下降 1.10 个百分点
+合并      413/1998        391/1998=19.57%   少正确 22 次
+
+检查：39 份来源及哈希、排除记录、1998 次动作身份、各折划分与基线完全一致；滤波系数和预处理配置一致；模型重载预测一致，原始录制未修改。comparison_features.json 保存独立核对结果，compare_features.py 可复现核对和图表。
+验证：35 项 LDA 相关 pytest 通过；lda_features_gui_smoke.py 通过，确认新增特征可选择、训练、保存、加载且测试使用冻结配置；git diff --check 通过。
+代码新增四种特征键和界面说明，历史默认特征保持兼容；LOSO 脚本新增 --feature-set，默认 legacy。
+结论：该特征组合未改善本批四人跨人表现。数据已被查看且来自已整理 goodone 子集，是探索性对照，不是独立最终测试，也不是完整五人 LOSO。

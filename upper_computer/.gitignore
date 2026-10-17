@@ -1,0 +1,27 @@
+.venv/
+.runtime/
+.cnn-deps/
+.runtime-old/
+.python/
+.uv-cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+recordings/
+simulated/
+tests/output/
+firmware/Test/MDK-ARM/Test/
+firmware/Test/MDK-ARM/*.uvguix.*
+releases/
+models/
+vocabulary.json
+vocabulary.tmp
+analysis/**
+!analysis/20260924_S05_123453/
+!analysis/20260924_S05_123453/rhythm_explore.py
+!analysis/20260924_S05_123453/rhythm_report.py
+!analysis/20260924_S05_123453/rhythm/
+!analysis/20260924_S05_123453/rhythm/*.md
+
+# Local correction backups can contain complete private recording archives.
+history/data_corrections/
