@@ -1,0 +1,45 @@
+五遍校准、只微调分类层（与基模在同一剩余测试上对照）
+
+PowerShell：
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments\run_personal_head_five_shot.py
+
+默认参考：models/personal_head_20261022_122442_600468（已完成的两遍分类层实验）。
+初始化仍用原始基模sliding_rest_20261022_103406/model.pt，不从两遍个人模型继续训练。
+
+每人的原两轮校准和22个源片段原样保留，再按录制名/轮次顺序补三轮完整可用原测试数据。
+每词共5条动作，rest共5段来自不同试次的静息，总计50条动作+5段静息。
+选样不用模型预测，不复制同一片段凑次数；同一次动作的滑窗不计为不同重复。
+这50条动作的整个上下文移出测试，未用窗口、静息和过渡也不再测试。
+剩余S011/S012/S013/S014/S015分别50/50/50/49/50条，总249条。
+
+静息规则说明：上次使用动作结束后等待600ms的较严格条件，部分人只有2段符合。
+保留这2段及其原窗口；新增3段沿用基模原训练标签规则：动作结束后等待300ms，
+且窗口结束离试次末端至少100ms。仍只取动作后的静息，不混入准备阶段或含糊过渡。
+因此这次并非仅重复次数变化；静息取段等待规则也有上述明确调整。
+
+五人独立从同一原基模开始，只有最后Linear层363个参数更新。
+卷积、BN参数及运行统计逐项验证冻结。归一化、窗口、解码阈值不变。
+沿用参考实验30轮、Adam学习率0.0001、种子和Dropout。
+每轮每个源片段抽1个窗口，55窗口组成一批、每轮1个优化步骤。
+用最后一轮，不按剩余测试挑模型。FP32微调后导出FP32及INT8。
+量化只用原基模训练侧校准数据，量化参数不在剩余测试上选择。
+
+基模与五遍个人模型都在新249条测试区间从头连续回放，保证相同窗口/预热/解码状态边界。
+不能复用之前399条回放后简单删除预测，也不能直接拿旧71.68%与这次百分比比较。
+本次主要回答“五遍个人模型是否优于基模”。证明五遍优于两遍还需共同测试集上的另一个对照。
+
+新输出：models/personal_head5_时间戳
+results.txt：逐人及整体、FP32和INT8的基模/五遍个人模型比较。
+comparison.csv/json：正确率、严格成功、错词输出/试次、漏检、静息误输出等。
+head_deltas.csv：相对基模变化，准确率单位为百分点。
+personal_calibration.json、calibration_windows.csv、evaluation_records.json：校准/测试明细。
+S011至S015目录：model.pt、FP32/INT8 ONNX、输入契约、训练记录、freeze_audit.json。
+paired_base_vs_head5_*.csv：逐条前后对照；*_trials.csv、*_confusion.csv、*_events.json、*_trace.npz可复核。
+completed.json只在全部成功后生成。
+
+只做真实来源和划分预检、不训练：
+.\.runtime\Scripts\python.exe -u experiments\run_personal_head_five_shot.py --phase prepare
+
+可选--output '全新目录'，不覆盖或续跑；失败查run.log后重新运行新目录。
+不修改旧数据或模型，不部署设备。仍属已看过测试成绩后的探索性实验，不是新的盲测/跨日验证。

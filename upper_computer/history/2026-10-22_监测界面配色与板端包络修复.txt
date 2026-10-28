@@ -1,0 +1,39 @@
+监测界面配色与板端包络修复（2026-10-22，接上一份实时监测部署交接）
+
+用户反馈一轮提词测得9/10，但Windows深色主题使表格与日志成为深底深字，无法阅读。
+要求在监测页增加采集页的绿色CH0/橙色CH1包络，固定500量程检查贴片位置。
+用户已明确告知结束测试并关闭旧上位机；随后完成固件更新与真实串口验证。
+
+修改
+semg/board_ui.py：本窗口明确设置QPalette及表格/日志/表头/选中项/输入框配色。
+新增最近5秒两路叠加包络图，纵轴0–500 ADC counts，禁止鼠标缩放/自动量程。
+超500不截断数据，顶部文字显示越界峰值；断流超过1秒或断开时清除曲线。
+界面高度不足时整体可滚动；兼容旧固件，缺env_hz能力时提示更新。
+board/realtime.inc：滤波后、归一化前取abs，以400样本(200ms)移动平均计算包络。
+float环形数组、double累加，启动阶段分母用已有样本数；不影响模型输入或解码。
+在ADC中断每20样本发kind8(两float)，即100Hz；新增约3.2KiB RAM。
+semg/board_protocol.py：支持kind8，校验长度/计数/非负有限值。
+kind5身份增加env_hz:100/env_ms:200；原推理kind4格式不变。
+日志新增envelope记录；所有信号处理仍由板端完成。
+
+实机结果
+board/logs/20261022_175540_mid64_temporal3/flash.json：105064字节逐字节校验通过。
+当前HEX SHA256 da76a195102cae01228e49486e6e1b9ab9dc3502b5b58bea8f93184f67cb52c7。
+模型SHA256未变：672ca5b369cc8509dc11a2151ae8796de1df51985fcff2131b1ff60e8fa693e5。
+Keil0错误0警告；ROM105036B(102.57KiB)，静态RW/ZI162624B(158.81KiB)。
+board/logs/20261022_175742_check/report.json：239次连续推理，2533个包络包。
+包络gap0，CRC0，flags0，推理跳窗0，TX丢包0。
+纯推理中位68.186ms、最大68.328ms；整步中位68.404ms、最大68.546ms。
+18个参考输入的板端logit仍与ONNX Runtime完全一致，包络未改变网络输出。
+board/gui_hardware_smoke.py：真实COM7，51个推理结果、501个图形点、固定Y范围0–500、
+模型身份与marker ACK全部通过，串口已释放。
+board/ui_live_verified.png为真实板端数据截图。
+
+UI测试
+board/gui_envelope_check.py：显式注入暗色系统palette，表格行、选中行、日志仍浅底深字；
+两条测试曲线/固定量程/小窗口滚动/断流清空通过。
+board/ui_envelope_dark_theme.png包含标明为示例的合成界面内容，不作为人体识别证据。
+tests/test_board_monitor.py共12项通过，含包络与推理交错帧、NaN/Inf/负值拒绝。
+
+用户只需重新打开start_monitor.cmd，选COM7连接。当前板已是支持包络的mid64_temporal3，
+不必再次烧录。其他模型生成时会使用新的共享固件模板；本次未逐个更新其旧预编译产物。

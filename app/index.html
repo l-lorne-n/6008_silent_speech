@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Quietly — Silent Media Space</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232b4a3d'/%3E%3Ctext x='14' y='47' font-size='46' fill='%23d5ef9b' font-family='serif'%3Eq%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="media-manifest.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="monitor.js" defer></script>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 5 5 3-3 4 4"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17V5l12-2v12M9 9l12-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="16" rx="3" ry="3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m5 5 10 7-10 7ZM19 5v14"/></symbol>
+    <symbol id="i-previous" viewBox="0 0 24 24"><path d="m19 5-10 7 10 7ZM5 5v14"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4 5 9H2v6h3l6 5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h5m5 0h6M4 17h10m5 0h1"/><circle cx="11.5" cy="7" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3ZM9 21v-8h6v8"/></symbol>
+  </defs></svg>
+  <div class="shell">
+    <header class="topbar">
+      <button class="brand" id="home-button" aria-label="Go home"><span class="brand-mark">q</span><span>quietly<span class="brand-dot">.</span></span></button>
+      <div class="project-tag">EE6008 <span>/</span> SILENT SPEECH INTERFACE</div>
+      <div class="top-actions"><span class="connection" id="connection"><i></i><span>Connecting to command bridge</span></span><button class="icon-button" id="settings-button" aria-label="Open command console" title="Command console"><svg><use href="#i-sliders"/></svg></button><button class="icon-button" id="fullscreen-button" aria-label="Fullscreen" title="Fullscreen"><svg><use href="#i-expand"/></svg></button></div>
+    </header>
+
+    <main id="main">
+      <section id="home-view" class="view">
+        <div class="intro"><div><p class="eyebrow"><span class="tiny-line"></span> A LITTLE LESS SOUND. A LITTLE MORE POSSIBILITY.</p><h1>Less sound.<span> More connection.</span></h1><p class="intro-copy">Your photos. Your music. One silent command away.</p></div><div class="intro-note"><span>YOUR SPACE,</span><span>AT YOUR COMMAND.</span><span class="note-index">01 — 02</span></div></div>
+        <div class="portal-grid">
+          <button class="portal photo-portal" data-command="photo" aria-label="photo — Enter photo library"><div class="portal-image" id="home-photo"></div><div class="photo-shade"></div><div class="portal-top"><span class="portal-index">01 / VISUAL STORIES</span><span class="pill" id="home-photo-count">Photo library</span></div><div class="portal-bottom"><div><span class="command-cue">Mouth <b>photo</b></span><h2>Photo library</h2><p>A little more time for every frame.</p></div><span class="portal-arrow"><svg><use href="#i-arrow"/></svg></span></div></button>
+          <button class="portal music-portal" data-command="music" aria-label="music — Enter music library"><div class="music-lines"></div><div class="vinyl home-vinyl"><div class="vinyl-label"><span>QUIETLY</span><strong>SOUND<br>& STILL</strong><small>SIDE A · 33⅓ RPM</small></div></div><div class="portal-top"><span class="portal-index">02 / SOUND & STILLNESS</span><span class="pill" id="home-music-count">Music library</span></div><div class="portal-bottom"><div><span class="command-cue">Mouth <b>music</b></span><h2>Music library</h2><p>Find your rhythm. Control it silently.</p></div><span class="portal-arrow"><svg><use href="#i-arrow"/></svg></span></div></button>
+        </div>
+        <div class="home-footnote"><span><span class="small-star">✳</span> One word. Your space.</span><span>2 spaces <i></i> 10 commands <i></i> Silent control</span></div>
+      </section>
+
+      <section id="photo-view" class="view" hidden>
+        <div class="library-heading"><div><p class="eyebrow">01 / VISUAL STORIES</p><h1>Stay in<span> the moment.</span></h1></div><div class="library-nav"><button class="subtle-button home-nav" data-home><svg><use href="#i-home"/></svg>Home</button><span id="photo-count" class="count-label"></span><button class="subtle-button" data-command="music"><svg><use href="#i-music"/></svg>Music library <kbd>music</kbd></button></div></div>
+        <div class="photo-stage"><div class="photo-preview-wrap"><button id="photo-preview-button" aria-label="open — Expand selected photo"><img id="photo-preview" alt=""/><span class="preview-expand"><svg><use href="#i-expand"/></svg><span>View full size <kbd>open</kbd></span></span></button><div class="empty-state" id="photo-empty" hidden>No photos yet<br><small>Add images to the photo folder, then refresh.</small></div></div><aside class="photo-caption"><span class="eyebrow">SELECTED FRAME</span><div class="frame-number" id="photo-number">01<span>/ 04</span></div><div><h2 id="photo-title"></h2><p>Your lens. Your stories.<br>Use <b>open</b> for a closer look.</p></div><div class="step-controls"><button class="icon-button" data-command="previous" aria-label="previous — Previous photo or home"><svg><use href="#i-previous"/></svg></button><span>Browse photos</span><button class="icon-button" data-command="next" aria-label="next — Next photo"><svg><use href="#i-next"/></svg></button></div></aside></div>
+        <p class="navigation-hint">On photo 01, <kbd>previous</kbd> takes you home. Switch to music anytime with <kbd>music</kbd>.</p><div class="photo-strip" id="photo-strip" aria-label="Photo selection"></div>
+      </section>
+
+      <section id="music-view" class="view" hidden>
+        <div class="library-heading"><div><p class="eyebrow">02 / SOUND & STILLNESS</p><h1>Let the music<span> speak.</span></h1></div><div class="library-nav"><button class="subtle-button home-nav" data-home><svg><use href="#i-home"/></svg>Home</button><span id="music-count" class="count-label"></span><button class="subtle-button" data-command="photo"><svg><use href="#i-photo"/></svg>Photo library <kbd>photo</kbd></button></div></div>
+        <div class="music-layout"><div class="record-panel"><span class="record-label">THE QUIET SESSIONS <span>VOL. 01</span></span><div class="record-art"><div class="vinyl player-vinyl" id="player-vinyl"><div class="vinyl-label"><span id="record-artist">YOUR COLLECTION</span><strong>HERE<br>& NOW</strong><small>QUIETLY · SIDE A</small></div></div></div><div class="record-caption"><span id="record-status"><i></i> READY TO PLAY</span><span>LOCAL COLLECTION</span></div></div><div class="player-panel"><div class="now-playing-heading"><p class="eyebrow">NOW SELECTED</p><span id="track-counter">01 / 03</span></div><h2 id="track-title"></h2><p id="track-artist" class="artist"></p><div class="transport"><div class="seek-wrap"><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Playback progress"/><div class="time-labels"><span id="elapsed">0:00</span><span id="duration">--:--</span></div></div><div class="play-controls"><button class="icon-button" data-command="previous" aria-label="previous — Previous track or home"><svg><use href="#i-previous"/></svg></button><button class="play-button" id="play-button" aria-label="start — Play"><svg><use href="#i-play"/></svg></button><button class="icon-button" data-command="next" aria-label="next — Next track"><svg><use href="#i-next"/></svg></button></div><div class="volume-control"><button class="icon-button" data-command="quieter" aria-label="quieter — Lower volume">−</button><svg><use href="#i-volume"/></svg><input id="volume" type="range" min="0" max="100" step="1" value="50" aria-label="Volume"/><span id="volume-value">50%</span><button class="icon-button" data-command="louder" aria-label="louder — Raise volume">+</button></div></div><p class="navigation-hint">On track 01, <kbd>previous</kbd> takes you home. Switch to photos with <kbd>photo</kbd>.</p><div class="queue-heading"><span>Your playlist</span><span id="queue-count"></span></div><div id="track-list" class="track-list" aria-label="Track selection"></div><div class="empty-state" id="music-empty" hidden>No music yet<br><small>Add audio to the music folder, then refresh.</small></div></div></div>
+      </section>
+    </main>
+
+
+    <section class="live-monitor" aria-labelledby="monitor-title">
+      <div class="monitor-heading"><div><p class="eyebrow">LIVE SILENT CONTROL</p><h2 id="monitor-title">板端实时监测</h2></div><span id="board-status" role="status">未连接设备</span></div>
+      <div class="monitor-controls"><label for="board-transport">连接方式</label><select id="board-transport"><option value="serial">USB / COM 串口</option><option value="ble">BT24 / BLE 蓝牙</option></select><label for="board-port">设备</label><select id="board-port"><option value="">正在读取串口…</option></select><label for="board-baud">板端 UART</label><select id="board-baud"><option value="115200">115200</option><option value="230400" selected>230400</option></select><button id="refresh-ports" class="subtle-button">刷新</button><button id="connect-board" class="solid-button">连接并启用</button><button id="pause-board" class="subtle-button" disabled>暂停控制</button><button id="disconnect-board" class="subtle-button" disabled>断开</button></div>
+      <p class="monitor-note">BT24：选择 BLE、扫描后连接，无需 Windows 配对。板端 UART 须与模块一致；这里的选项不会修改模块或已烧录固件。采样保持 2 kHz，CNN 仍在板端运行。</p>
+      <p id="board-error" class="board-error" role="alert" hidden></p>
+      <div class="monitor-metrics"><div><span>当前滑窗候选</span><strong id="board-candidate">—</strong></div><div><span>最近板端确认</span><strong id="board-confirmed">—</strong></div><div><span>纯推理 / 每步总耗时</span><strong id="board-timing">—</strong></div><div><span>命令检测状态</span><strong id="board-gate">等待设备</strong></div></div>
+      <details id="monitor-details" open><summary>贴片信号与运行详情 <span>CH0 绿色 · CH1 橙色</span></summary><div class="envelope-heading"><span>双通道包络 · 固定 0–500 counts · 最近 5 秒</span><span id="board-envelope-values">等待板端数据</span></div><canvas id="board-envelope" width="1000" height="200" aria-label="板端双通道包络，纵轴固定0到500，最近5秒"></canvas><p id="board-model" class="help-text">连接已烧录实时监测固件的板子；请先断开采集上位机对同一串口的占用。</p><p id="board-health" class="help-text">板端完成滤波、推理和命令确认。仅确认命令驱动照片与音乐。</p><p class="help-text">计算耗时不包含 1400 ms 滑窗及命令确认等待。暂停控制时仍显示信号，暂停期间的命令不会补发。</p></details>
+    </section>
+
+    <footer class="command-dock"><div class="input-feedback"><div class="input-symbol"><span></span><span></span><span></span><span></span><span></span></div><div><span class="feedback-label" id="feedback-label">WAITING FOR INPUT</span><strong id="last-command">Your next word?</strong></div></div><div id="context-commands" class="context-commands"></div><div class="feedback-result"><span id="command-result" role="status" aria-live="polite">Mouth music or photo to enter</span><span id="confidence">sEMG · Silent interaction</span></div></footer>
+    <div class="page-footer"><span>QUIETLY / Silent Media Space</span><span>SURFACE ELECTROMYOGRAPHY <span class="footer-dot">·</span> EE6008</span></div>
+  </div>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Full-size photo"><div class="lightbox-top"><span id="lightbox-title"></span><button class="lightbox-close" id="close-lightbox" aria-label="close — Exit full-size photo"><kbd>close</kbd><svg><use href="#i-close"/></svg></button></div><div class="lightbox-main"><button class="lightbox-step" data-command="previous" aria-label="previous — Previous photo or home"><svg><use href="#i-previous"/></svg></button><img id="lightbox-image" alt=""/><button class="lightbox-step" data-command="next" aria-label="next — Next photo"><svg><use href="#i-next"/></svg></button></div><div class="lightbox-bottom"><span>Use <b>previous</b> / <b>next</b> to browse · <b>previous</b> on photo 01 returns home</span><span id="lightbox-counter"></span></div></dialog>
+
+  <dialog id="settings" class="settings" aria-labelledby="settings-title"><div class="settings-heading"><div><p class="eyebrow">INPUT & CONNECTION</p><h2 id="settings-title">Command console</h2></div><button class="icon-button" id="close-settings" aria-label="Close command console"><svg><use href="#i-close"/></svg></button></div><p class="settings-intro">Buttons and keyboard shortcuts test the interface. Connect your STM32 in the live monitor to control this space silently.</p><div class="settings-section"><h3>Manual test</h3><div id="test-commands" class="test-commands"></div><form id="command-form"><input id="command-input" placeholder="Type a command, e.g. music" autocomplete="off" aria-label="Test command"/><button type="submit" class="solid-button">Send</button></form><p class="help-text">Shortcuts: M music · P photos · ← / → browse · Space play/pause · Enter expand · Esc close · ↑ / ↓ volume · H home</p></div><div class="settings-section"><h3>sEMG input</h3><p class="help-text" id="bridge-info">Local endpoint: POST /api/command</p><label class="threshold-label">Minimum confidence <input id="threshold" type="number" min="0" max="100" step="1" value="0"/><span>%</span></label><p class="help-text">At 0%, all valid commands are accepted. Above 0%, model commands without confidence are also blocked. Manual tests bypass this threshold.</p><div class="signal-heading"><span>Live signal · CH0 / CH1</span><span id="signal-status">Waiting for samples</span></div><canvas id="signal-canvas" width="900" height="160" aria-label="Incoming two-channel sEMG waveform"></canvas><p class="help-text">Only received samples are plotted. No simulated waveform.</p></div><div class="settings-section"><h3>Recent commands</h3><ol id="event-log" class="event-log"><li>No commands yet</li></ol></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <audio id="audio" preload="metadata"></audio>
+</body>
+</html>
+

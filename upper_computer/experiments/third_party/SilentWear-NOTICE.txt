@@ -1,0 +1,15 @@
+SpeechNet architecture attribution
+
+Upstream: https://github.com/pulp-bio/SilentWear
+Original architecture: models/cnn_architectures/SpeechNet.py
+Paper configuration: config/models_configs/speechnet_config.yaml
+Copyright ETH Zurich 2026. Licensed under Apache License 2.0.
+The upstream license is reproduced in SilentWear-LICENSE.txt.
+
+Local adaptation: experiments/speechnet_two_channel.py
+Changes: two sensor channels instead of fourteen; spatial kernels 2x1 and 1x1
+instead of 7x1 and 7x1; ten output classes; fixed-shape global average pool;
+two temporal-kernel candidates at 2 kHz; export wrapper, BN fusion and resource
+accounting. The rest of this experiment uses the existing project's data,
+causal preprocessing, automatic segmentation, grouped split and replay scoring.
+This is not a reproduction of the paper's scores or its complete pipeline.

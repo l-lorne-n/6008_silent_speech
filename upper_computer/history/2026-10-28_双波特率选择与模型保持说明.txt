@@ -1,0 +1,53 @@
+2026-10-28：app / 上位机监测支持 115200、230400
+
+用户要求：两个界面可选择波特率，继续使用目前的模型，避免降低准确率。
+本次只修改软件和构建固件；未烧录，未打开真实串口，未执行训练。
+
+实现
+1. semg/serial_settings.py 统一两个合法速率，默认 230400。
+2. semg/board_ui.py 新增监测波特率下拉框；串口连接和构建/烧录使用同一选项。
+   连接或构建期间禁用选项，采集模式固定 230400；连接日志和提词报告记录 baudrate。
+3. semg/app.py 保留原采集页两个选项，明确当前 2 kHz 原始采集固件使用 230400。
+4. app/index.html、monitor.js、server.py、board_bridge.py 完整传递 baudrate。
+   API 未提供 baudrate 时默认 230400；拒绝其他数字、字符串、浮点、布尔和 null。
+   模型身份/SHA核验、故障拦截、确认命令执行逻辑不变。
+5. board/manage.py、check_device.py 新增 --baud。
+   新构建输出到 board/build/<模型>/baud_<速率>，不覆盖历史固件。
+   flash 命令按模型、速率及 HEX 哈希选择；230400 兼容旧目录，115200 不回退到旧固件。
+   --capture --baud 115200 明确拒绝，避免误把 230400 原始采集固件当成 115200。
+
+模型与准确率
+当前推理在 STM32 上完成，电脑只接收推理结果、包络和确认命令。
+每路 2000 Hz、20–500 Hz + 50 Hz 陷波、归一化、2800 点窗、200 点步进、权重、确认策略不变。
+两档 main.c 唯一差异为 huart1.Init.BaudRate；230400 版本与历史 main.c 字节相同。
+两档 model_data.h 均与各自历史版本字节相同，因此本次没有改变模型算法或参数。
+不能由离线检查推断蓝牙实机端到端准确率：延迟、丢包、模块缓存和连接方式仍需验证。
+监测常规数据约 3920 字节/秒（100 Hz 包络 + 10 Hz 推理），低于 115200 8N1 理论 11520 字节/秒。
+原始双路 2 kHz 采集约 10000 字节/秒，余量明显更小，继续保留已验证的 230400 采集方案。
+本次不包含原生 BLE GATT；app 仍连接 COM 串口或提供 COM 的蓝牙串口桥。
+
+已构建（全部零错误、零警告；均未烧录）
+board/build/mid64_temporal3/baud_115200/Objects/realtime.hex
+board/build/mid64_temporal3/baud_230400/Objects/realtime.hex
+board/build/mid64_temporal3_20261027/baud_115200/Objects/realtime.hex
+board/build/mid64_temporal3_20261027/baud_230400/Objects/realtime.hex
+
+验证
+上位机：test_board_baud.py + test_board_model_versions.py + test_board_monitor.py，26 passed。
+app：test_board_bridge.py + test_server.py，21 tests OK。
+覆盖两速率连接传参、采集模式限制、模型版本/SHA、串口碎片包解码、命令一致性和 HTTP 校验。
+node --check app/monitor.js 通过。
+上位机离屏截图检查完成；app 浏览器已验证两档切换，控制台无 error。
+history/baud_options_20261028/preserved_before.json 中 922 个既有文件全部哈希不变。
+包含既有构建产物、模型文件、board/realtime.inc、board/nn_runtime.h、固件源 main.c。
+历史 manifest 记录旧工具版本，不强求其工具源哈希等于本次修改后的工具；仍严格核验历史产物。
+新构建 manifest 的所有源文件和产物哈希均已核验。
+沙箱内 Keil 子进程/HTTP 回环测试最初被阻止；审批通过后在沙箱外重跑成功。
+
+使用
+旧板子未改固件：上位机或 app 保持 230400。
+改用 115200：上位机监测页选择同一个模型和 115200，按需编译并烧录；配置模块 UART；
+之后选择同样的 115200 连接。切换下拉框本身不会改已烧录板端或蓝牙模块。
+重启上位机；关闭旧 app 服务后重新运行 app/start.cmd，再刷新网页。
+接入硬件后查看身份“已验证”、连续推理、CRC/序号异常/板端丢包/故障/跳窗，并做提词实测。
+旧模型保持历史实机验证状态；新版 20261027 模型仍然是待烧录、待实机验证状态。

@@ -1,0 +1,2450 @@
+{
+  "baseline": {
+    "parameters": 19235,
+    "macs_per_window": 7955040,
+    "macs_per_second_at_10hz": 79550400,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 19372,
+    "int8_tensor_inventory_bytes": 136683,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 398827,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 16832
+      },
+      {
+        "type": "Identity",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "ReLU",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 2784,
+        "shape": [
+          1,
+          16,
+          2,
+          87
+        ],
+        "adjacent_bytes": 14016
+      },
+      {
+        "type": "Conv2d",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5600
+      },
+      {
+        "type": "Identity",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "ReLU",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          16,
+          2,
+          22
+        ],
+        "adjacent_bytes": 3520
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 32,
+        "shape": [
+          1,
+          32,
+          1,
+          1
+        ],
+        "adjacent_bytes": 736
+      },
+      {
+        "type": "Flatten",
+        "elements": 32,
+        "shape": [
+          1,
+          32
+        ],
+        "adjacent_bytes": 64
+      },
+      {
+        "type": "Dropout",
+        "elements": 32,
+        "shape": [
+          1,
+          32
+        ],
+        "adjacent_bytes": 64
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 43
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "tail64": {
+    "parameters": 23875,
+    "macs_per_window": 8045504,
+    "macs_per_second_at_10hz": 80455040,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 24076,
+    "int8_tensor_inventory_bytes": 140939,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 403083,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 16832
+      },
+      {
+        "type": "Identity",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "ReLU",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 2784,
+        "shape": [
+          1,
+          16,
+          2,
+          87
+        ],
+        "adjacent_bytes": 14016
+      },
+      {
+        "type": "Conv2d",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5600
+      },
+      {
+        "type": "Identity",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "ReLU",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          16,
+          2,
+          22
+        ],
+        "adjacent_bytes": 3520
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2112
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 64,
+        "shape": [
+          1,
+          64,
+          1,
+          1
+        ],
+        "adjacent_bytes": 1472
+      },
+      {
+        "type": "Flatten",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Dropout",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 75
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "mid64": {
+    "parameters": 46475,
+    "macs_per_window": 13849536,
+    "macs_per_second_at_10hz": 138495360,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 46700,
+    "int8_tensor_inventory_bytes": 159899,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 422043,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22448
+      },
+      {
+        "type": "Identity",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "ReLU",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 4176,
+        "shape": [
+          1,
+          24,
+          2,
+          87
+        ],
+        "adjacent_bytes": 21024
+      },
+      {
+        "type": "Conv2d",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 9808
+      },
+      {
+        "type": "Identity",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "ReLU",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          32,
+          2,
+          22
+        ],
+        "adjacent_bytes": 7040
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 64,
+        "shape": [
+          1,
+          64,
+          1,
+          1
+        ],
+        "adjacent_bytes": 1472
+      },
+      {
+        "type": "Flatten",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Dropout",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 75
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "wide2x": {
+    "parameters": 75323,
+    "macs_per_window": 30385344,
+    "macs_per_second_at_10hz": 303853440,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 75564,
+    "int8_tensor_inventory_bytes": 267755,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 529899,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 89632,
+        "shape": [
+          1,
+          16,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 95232
+      },
+      {
+        "type": "Identity",
+        "elements": 89632,
+        "shape": [
+          1,
+          16,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 179264
+      },
+      {
+        "type": "ReLU",
+        "elements": 89632,
+        "shape": [
+          1,
+          16,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 179264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 11200,
+        "shape": [
+          1,
+          16,
+          2,
+          350
+        ],
+        "adjacent_bytes": 100832
+      },
+      {
+        "type": "Conv2d",
+        "elements": 22464,
+        "shape": [
+          1,
+          32,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33664
+      },
+      {
+        "type": "Identity",
+        "elements": 22464,
+        "shape": [
+          1,
+          32,
+          2,
+          351
+        ],
+        "adjacent_bytes": 44928
+      },
+      {
+        "type": "ReLU",
+        "elements": 22464,
+        "shape": [
+          1,
+          32,
+          2,
+          351
+        ],
+        "adjacent_bytes": 44928
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5568,
+        "shape": [
+          1,
+          32,
+          2,
+          87
+        ],
+        "adjacent_bytes": 28032
+      },
+      {
+        "type": "Conv2d",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11200
+      },
+      {
+        "type": "Identity",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "ReLU",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          32,
+          2,
+          22
+        ],
+        "adjacent_bytes": 7040
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 64,
+        "shape": [
+          1,
+          64,
+          1,
+          1
+        ],
+        "adjacent_bytes": 1472
+      },
+      {
+        "type": "Flatten",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Dropout",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 75
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "temporal3": {
+    "parameters": 21283,
+    "macs_per_window": 8000096,
+    "macs_per_second_at_10hz": 80000960,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 21420,
+    "int8_tensor_inventory_bytes": 136683,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 398827,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 16832
+      },
+      {
+        "type": "Identity",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "ReLU",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 2784,
+        "shape": [
+          1,
+          16,
+          2,
+          87
+        ],
+        "adjacent_bytes": 14016
+      },
+      {
+        "type": "Conv2d",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5600
+      },
+      {
+        "type": "Identity",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "ReLU",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          16,
+          2,
+          22
+        ],
+        "adjacent_bytes": 3520
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 32,
+        "shape": [
+          1,
+          32,
+          1,
+          1
+        ],
+        "adjacent_bytes": 736
+      },
+      {
+        "type": "Flatten",
+        "elements": 32,
+        "shape": [
+          1,
+          32
+        ],
+        "adjacent_bytes": 64
+      },
+      {
+        "type": "Dropout",
+        "elements": 32,
+        "shape": [
+          1,
+          32
+        ],
+        "adjacent_bytes": 64
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 43
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "pool2": {
+    "parameters": 19587,
+    "macs_per_window": 7955392,
+    "macs_per_second_at_10hz": 79553920,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 19724,
+    "int8_tensor_inventory_bytes": 136715,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 398859,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 16832
+      },
+      {
+        "type": "Identity",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "ReLU",
+        "elements": 11232,
+        "shape": [
+          1,
+          16,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22464
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 2784,
+        "shape": [
+          1,
+          16,
+          2,
+          87
+        ],
+        "adjacent_bytes": 14016
+      },
+      {
+        "type": "Conv2d",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5600
+      },
+      {
+        "type": "Identity",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "ReLU",
+        "elements": 2816,
+        "shape": [
+          1,
+          16,
+          2,
+          88
+        ],
+        "adjacent_bytes": 5632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          16,
+          2,
+          22
+        ],
+        "adjacent_bytes": 3520
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Conv2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "Identity",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "ReLU",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 704,
+        "shape": [
+          1,
+          32,
+          1,
+          22
+        ],
+        "adjacent_bytes": 1408
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 64,
+        "shape": [
+          1,
+          32,
+          1,
+          2
+        ],
+        "adjacent_bytes": 768
+      },
+      {
+        "type": "Flatten",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Dropout",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 75
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "mid64_temporal3": {
+    "parameters": 54667,
+    "macs_per_window": 14029760,
+    "macs_per_second_at_10hz": 140297600,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 54892,
+    "int8_tensor_inventory_bytes": 159899,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 422043,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22448
+      },
+      {
+        "type": "Identity",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "ReLU",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 4176,
+        "shape": [
+          1,
+          24,
+          2,
+          87
+        ],
+        "adjacent_bytes": 21024
+      },
+      {
+        "type": "Conv2d",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 9808
+      },
+      {
+        "type": "Identity",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "ReLU",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          32,
+          2,
+          22
+        ],
+        "adjacent_bytes": 7040
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 64,
+        "shape": [
+          1,
+          64,
+          1,
+          1
+        ],
+        "adjacent_bytes": 1472
+      },
+      {
+        "type": "Flatten",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Dropout",
+        "elements": 64,
+        "shape": [
+          1,
+          64
+        ],
+        "adjacent_bytes": 128
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 75
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "mid64_pool2": {
+    "parameters": 47179,
+    "macs_per_window": 13850240,
+    "macs_per_second_at_10hz": 138502400,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 47404,
+    "int8_tensor_inventory_bytes": 159963,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 422107,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22448
+      },
+      {
+        "type": "Identity",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "ReLU",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 4176,
+        "shape": [
+          1,
+          24,
+          2,
+          87
+        ],
+        "adjacent_bytes": 21024
+      },
+      {
+        "type": "Conv2d",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 9808
+      },
+      {
+        "type": "Identity",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "ReLU",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          32,
+          2,
+          22
+        ],
+        "adjacent_bytes": 7040
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 128,
+        "shape": [
+          1,
+          64,
+          1,
+          2
+        ],
+        "adjacent_bytes": 1536
+      },
+      {
+        "type": "Flatten",
+        "elements": 128,
+        "shape": [
+          1,
+          128
+        ],
+        "adjacent_bytes": 256
+      },
+      {
+        "type": "Dropout",
+        "elements": 128,
+        "shape": [
+          1,
+          128
+        ],
+        "adjacent_bytes": 256
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 139
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  },
+  "mid64_temporal3_pool2": {
+    "parameters": 55371,
+    "macs_per_window": 14030464,
+    "macs_per_second_at_10hz": 140304640,
+    "window_ms": 1400,
+    "int8_weights_int32_bias_bytes": 55596,
+    "int8_tensor_inventory_bytes": 159963,
+    "planning_reserve_bytes": 262144,
+    "int8_inventory_plus_reserve_bytes": 422107,
+    "layers": [
+      {
+        "type": "Conv2d",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Identity",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "ReLU",
+        "elements": 44816,
+        "shape": [
+          1,
+          8,
+          2,
+          2801
+        ],
+        "adjacent_bytes": 89632
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 5600,
+        "shape": [
+          1,
+          8,
+          2,
+          350
+        ],
+        "adjacent_bytes": 50416
+      },
+      {
+        "type": "Conv2d",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 22448
+      },
+      {
+        "type": "Identity",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "ReLU",
+        "elements": 16848,
+        "shape": [
+          1,
+          24,
+          2,
+          351
+        ],
+        "adjacent_bytes": 33696
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 4176,
+        "shape": [
+          1,
+          24,
+          2,
+          87
+        ],
+        "adjacent_bytes": 21024
+      },
+      {
+        "type": "Conv2d",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 9808
+      },
+      {
+        "type": "Identity",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "ReLU",
+        "elements": 5632,
+        "shape": [
+          1,
+          32,
+          2,
+          88
+        ],
+        "adjacent_bytes": 11264
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          32,
+          2,
+          22
+        ],
+        "adjacent_bytes": 7040
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Conv2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "Identity",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "ReLU",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "MaxPool2d",
+        "elements": 1408,
+        "shape": [
+          1,
+          64,
+          1,
+          22
+        ],
+        "adjacent_bytes": 2816
+      },
+      {
+        "type": "AvgPool2d",
+        "elements": 128,
+        "shape": [
+          1,
+          64,
+          1,
+          2
+        ],
+        "adjacent_bytes": 1536
+      },
+      {
+        "type": "Flatten",
+        "elements": 128,
+        "shape": [
+          1,
+          128
+        ],
+        "adjacent_bytes": 256
+      },
+      {
+        "type": "Dropout",
+        "elements": 128,
+        "shape": [
+          1,
+          128
+        ],
+        "adjacent_bytes": 256
+      },
+      {
+        "type": "Linear",
+        "elements": 11,
+        "shape": [
+          1,
+          11
+        ],
+        "adjacent_bytes": 139
+      }
+    ],
+    "st_compiler_verified": false,
+    "board_latency_verified": false
+  }
+}

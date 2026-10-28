@@ -1,0 +1,87 @@
+2026-10-22 板端实时监测部署与实测交接
+
+用户明确要求：将mid64_temporal3部署到已连接板子；滤波和推理均在板端；
+上位机可选择采集/监测及模型并烧录；电脑提词，显示板端结果，分析推理速度。
+本次已实际实现、烧录、复核，不是只生成待用户执行脚本。
+
+最终硬件状态
+STM32H743VGTx，实读Flash容量1024KiB，ID低12bit=0x450。
+探针CMSIS-DAP HID v1，100kHz SWD，连接采用attach再halt，避免builtin halt连接复位不兼容。
+串口COM7，230400，原CH340。最终运行mid64_temporal3监测固件，串口已由验证脚本释放。
+最终Flash校验：board/logs/20261022_173519_mid64_temporal3/flash.json
+HEX SHA256：3de1f4d98af4a3340b0a48b991da4fc702108857f75b409998cb9d1d61f6ecf4
+逐字节回读104488bytes，mismatches=0，CPU RUNNING。
+原采集固件/首bank均有备份，不修改第二bank及选项字节，不执行全片擦除。
+
+模型
+models/sliding_arch_sweep_20261022_125638_517426/mid64_temporal3/export/model_int8_qdq.onnx
+SHA256：672ca5b369cc8509dc11a2151ae8796de1df51985fcff2131b1ff60e8fa693e5
+五层Conv通道8,24,32,64,64；第五层kernel1x3，没有增加第六层。
+11类包含rest；2800点输入，200点步进，连续因果滤波及既有归一化。
+没有重新训练、重新校准量化或调解码阈值。
+
+实现文件
+board/export_model.py：读取冻结QDQ权重/量化器/SOS/归一化，生成C常量。
+board/nn_runtime.h：专用QDQ执行器，INT8激活/权重，INT32累加，保留每个量化边界。
+为M7 __SMLAD将权重启动时展开INT16到AXI SRAM；缩放/softmax为FP32。
+不依赖STM32CubeAI/CMSIS-NN转换，不应描述为ST工具实测arena。
+board/realtime.inc：DMA采样；ISR滤波/归一化/INT8环形缓冲；前台推理；冻结命令解码。
+采样中断保持开启；DMA发送在完成中断继续，推理不能阻塞串口队列发送。
+仅在200样本栅格复制对应窗口，迟到则等下一栅格并累计skipped。
+board/manage.py：独立生成Keil工程，原firmware/Test源码不改；编译/备份/烧录/回读校验。
+board/PROTOCOL.txt：数据格式和维护验证命令。
+semg/board_protocol.py、semg/board_ui.py：监测/烧录/提词/评分/日志。
+semg/app.py：增加入口及串口/烧录互斥检查；原有未提交修改保留。
+start_monitor.cmd：直接打开监测功能。
+板端实时监测使用说明.txt：用户操作步骤。
+.gitignore新增board生成模型/Flash备份/验证窗口/界面图/recordings_live排除。
+
+内存与时间
+Keil map最终：ROM104472B约102.02KiB；HEX有效104488B含布局填充。
+静态RW+ZI159400B约155.66KiB（已包含8KiB栈预留）。
+DTCM执行区44296B，AXI106752B，D2 8352B。未分配动态堆给推理。
+I/D Cache开启，DMA D2区域MPU normal non-cacheable，TEX=1/C=0/B=0/shareable。
+最初DWT因硬件锁返回0，该轮时间无效，不能作为低延迟证据。
+已改为TIM2 1MHz独立自由运行计时；上位机拒绝0推理时间。
+纯推理含network+softmax且包括期间采样中断；流水线另计本步200点预处理、复制和解码。
+
+最终一分钟验证：board/logs/20261022_173931_check/report.json
+排除N命令前已在途旧帧，预热后585个窗口，non_100ms_steps=0。
+纯推理ms：min68.005 / median68.125 / P95 68.1818 / max68.234。
+流水线ms：min68.168 / median68.287 / P95 68.344 / max68.396。
+本步滤波归一化149–150us；跳窗、TX丢包、CRC、设备flags均0。
+满足当前配置下单次计算<200ms，也持续跟上100ms步进；不是任意条件WCET证明。
+1400ms历史窗口和连续2窗确认仍影响发音到输出时间，不可宣称总响应<200ms。
+
+数值验证：board/logs/20261022_172841_check/report.json
+18个归一化窗口，含全部11类别、五人和常量输入；板端logit与ORT全部相同。
+五人各28000个真实原始ADC样本，按连续10个2800点块在板上滤波与推理，共50窗口。
+最终类别50/50一致；最大logit差0.10086298，约1输出量化刻度。
+MCU FP32滤波与离线float64不是位级完全相同；不能把这50/50称为人体识别正确率。
+该报告前面的live包含1个N之前的在途帧，故最终连续性以173931报告为准。
+两报告对应相同最终HEX哈希3de1f4...；后续重编译只是导出前断言/烧录工具修改，固件字节相同。
+
+采集模式往返已实际验证
+board/logs/20261022_173207_capture/flash.json：烧录32148bytes旧采集固件，回读0差异。
+board/logs/capture_check_20261022_173411.json：24540对样本，CRC0，缺样0，flags0，ACK正常。
+随后烧录回最终mid64_temporal3，当前不在采集模式。
+
+GUI和软件验证
+board/gui_hardware_smoke.py：真实COM7连接，50个实际板端窗口、模型身份及marker ACK通过，
+无接收序号异常；截图board/ui_live_verified.png。不是模拟的识别输出。
+新8项协议/CRC/无效计时/NaN/评分测试通过；同次相关2kHz、core、双路回归也通过，
+累计36个不同相关检查。初次pytest默认临时目录权限错误已改用workspace basetemp跑通。
+十个模型（旧基模+本次9候选）全部编译0错误0警告，均在H743VG内存分区内。
+除了mid64_temporal3，其他候选未做同等实机数值/速度验证，界面已标明。
+
+真人提词流程尚未由用户实际做完一轮，尚无本次在线人体正确率。
+默认5s静息，十词随机，每词准备1.5s/动作2s/休息2s。
+提示词从不发给板端分类器，仅M编号获得近似阶段时间。
+分开显示候选与确认命令；自动统计正确/严格成功/错词输出/漏检。
+采样缺失/设备故障/CRC或断流会使本次测试失效；缺marker ACK的试次标为无效。
+recordings_live保存结果和评分，不保存监测模式原始ADC；补采须切原采集模式。
+
+注意
+原训练脚本、模型、实验划分和封存输入没有被改动。
+本机存在大量既有未提交工作，未做reset/clean/commit/push。
+其他候选build_manifest记录当时工具哈希；工具之后增加仅检查/安全设置，用户点击烧录会重新编译。

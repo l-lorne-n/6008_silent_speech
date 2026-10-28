@@ -1,0 +1,51 @@
+goodone_plus 五人 LDA 留一人测试（四人训练、一人测试）
+日期：2026-10-26，Asia/Singapore。
+
+按用户本次要求，先阅读历史交接，再实际运行五折 LOSO。参考：
+- 2026-10-22_训练实验总交接_配置脚本产物与滑动窗口进度.md
+- 2026-10-14_goodone四人LDA跨人评估.md
+- 2026-10-21_goodone_plus五人混合CNN与H7量化.md
+
+数据：recordings/goodone_plus/s011 至 s015，共49份录制。
+S011/S012/S013/S014/S015各10/9/10/10/10份；原始2500条completed动作，
+按已有质量规则排除S014的4条准备/动作期ADC削顶，剩2496条有效动作。
+另有S015一条rejected记录被排除，不属于上述2500条completed；因此提取日志EXCLUDED为5。
+有效数量依次500/500/500/496/500。没有根据本次成绩追加筛选或整组排除。
+
+设置：双通道2 kHz，20–500 Hz因果带通和50 Hz陷波Q=30；各试次准备期预热，
+动作首尾各裁150 ms。六时间段×四特征×双通道，共48维。
+特征：log_mean_abs_diff、log_mav、zc_count_zero、ssc_count_zero。
+每折仅用另外四人的全部有效动作拟合StandardScaler和LDA（lsqr、shrinkage=auto）。
+留出人员的全部有效动作用于测试；不使用测试人员的标准化统计，不调参。
+
+测试人员   训练动作数   正确/测试数   准确率   宏F1
+S011       1996         107/500       21.40%   0.1558
+S012       1996          46/500        9.20%   0.0311
+S013       1996          83/500       16.60%   0.1623
+S014       2000          78/496       15.73%   0.1177
+S015       1996         109/500       21.80%   0.1776
+
+受试者等权平均准确率：16.945161%，约16.95%。
+合并全部留出预测：423/2496 = 16.947115%，约16.95%；整体宏F1为0.164500。
+当前配置的跨人能力较弱。此前43.29%的LDA是五人混合80/20划分，任务不同；
+旧goodone四人20.68%又涉及不同数据/采样率/人数，均不能当作单因素对照。
+
+输出目录：models/lda_loso_5p_20261026_184410_e28810
+包含protocol.json、data_audit.json、report.json、predictions.csv、结果汇总.md、
+五折各自model.json/报告/预测/混淆矩阵，以及训练和特征提取源码快照。
+另存verify_saved_results.py及saved_results_audit.json，独立核验已通过。
+
+核验：每折人员及动作/通道信号指纹隔离；每条有效动作恰好测试一次；保存模型的
+训练成员匹配；标准化均值和尺度均仅来自训练四人；直接用保存模型矩阵计算的预测
+与CSV一致；使用sklearn独立重算准确率、宏F1及混淆矩阵与报告一致。
+训练入口已验证各折模型重载预测一致及196个来源文件前后SHA256不变。
+
+复现命令（工作目录upper_computer）：
+.runtime/Scripts/python.exe -u experiments/train_lda_loso.py --root recordings/goodone_plus --people s011 s012 s013 s014 s015 --bandpass-high 500
+
+独立复核命令（不重新训练）：
+.runtime/Scripts/python.exe models/lda_loso_5p_20261026_184410_e28810/verify_saved_results.py
+
+边界：这是已知提示动作边界的十词分类，不是连续自动检测或实时端到端成绩。
+goodone_plus已经过历史整理，尤其S015参考过逐组LDA成绩筛选，因此属于探索性
+选定数据集的五折跨人评估，不能描述为全新盲测。原始录制和既有模型未覆盖。

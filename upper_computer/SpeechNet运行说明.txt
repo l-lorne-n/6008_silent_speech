@@ -1,0 +1,96 @@
+SpeechNet 双通道适配实验：由用户启动完整训练
+
+一、直接运行（PowerShell）
+
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments/run_speechnet_comparison.py
+
+也可使用封装入口：
+.\run_speechnet_comparison.ps1
+
+两种入口完全等价。不需要安装额外软件，不需要联网，不需要连接开发板。
+默认使用CPU的4个计算线程；机器较忙可加 --threads 2，PowerShell入口对应 -Threads 2。
+请保持终端窗口打开。耗时取决于CPU和验证集早停，不预报固定分钟数。
+训练过程每轮显示 SELECT 或 REFIT；后续显示 QUANT VALIDATION、TEST。
+最终出现 PHASE COMPLETE all 表示整个流程完成。
+
+二、结果在哪里
+
+自动创建新的目录：
+L:\ntu_class\6008\upper_computer\models\speechnet2_年月日_时分秒
+
+启动后第一行OUTPUT会打印完整目录。主要文件：
+- run.log：完整训练、导出和回放日志，出错时含异常信息。
+- 结果汇总.txt：中文总体/逐人对照、是否达到85%、限制说明。
+- comparison.csv / comparison.json：原模型、自动分段32/64/128模型、新SpeechNet的FP32/INT8结果。
+- fp32_trials.csv / int8_trials.csv：逐条命令结果；events文件保存背景输出和检测事件。
+- selected_training.json / selection_history.json：验证选择和训练历史。
+- model.pt / export/model_fp32.onnx / export/model_int8_qdq.onnx：选中并重训的模型。
+- export/resource_estimate.json：参数/MAC/INT8张量资源估算。
+- completed.json：完整流程成功标志。
+
+执行完后把OUTPUT目录路径发给助手即可，不必复制所有日志，也不必手动上传本地文件。
+请保留整个目录；不要只挑准确率最好的一人的结果。
+
+三、实际比较了什么
+
+参考作者公开的SpeechNet代码和论文配置：
+https://github.com/pulp-bio/SilentWear/blob/main/models/cnn_architectures/SpeechNet.py
+https://github.com/pulp-bio/SilentWear/blob/main/config/models_configs/speechnet_config.yaml
+https://arxiv.org/abs/2603.02847
+
+结构为5个Conv2D+BN+ReLU+MaxPool块，输出通道8/16/16/32/32，之后全局平均池化、Dropout0.5、线性分类器。
+前三层分别在两个电极上提取时间特征，共享权重，不先混合电极；第四层用2x1融合双通道，第五层1x1融合特征。
+原文的两个7x1空间核针对14通道，不能直接用于我们的两个通道。
+
+预先固定两个候选（不按测试成绩选）：
+paper_kernels：时间核1x4、1x16、1x8；共6,818参数。
+time_scaled：时间核1x16、1x64、1x32；共19,202参数。
+第二种针对原论文500Hz、我们2000Hz的差异，把时间核长度乘4，以比较较长时间范围；这不是完整等效的采样率变换。
+两者均使用时间池化8/4/4，输入双通道6144点，输出10词。预检的保守INT8张量清单加256KiB规划预留均约548.70KiB；不是实际ST内存占用。
+
+默认依次对2个候选×3个种子（20261010/11/12）做训练，按验证交叉熵选择网络、种子和轮数。
+Adam，初始lr0.001，weight decay0.0001，batch32，最多100轮，早停10轮。
+ReduceLROnPlateau：factor0.1、patience2。最终合并开发训练和验证，从头重训，复用选中那条验证训练轨迹的学习率计划。
+保留上一轮自动片段的边界±100ms增强、±40ms时间平移和0.9–1.1通道增益，标准化只由训练侧有效点估计。
+
+复用1340训练/440验证/437可标注测试自动片段，最终训练1780片段。
+原始整轮划分不变，测试命令始终全部499条。自动候选之外的漏检与背景输出继续计入连续回放。
+INT8采用PTQ，训练侧平衡抽样校准；验证集选择MinMax/99.99/99.9/99.5，然后最终训练侧重新校准。不是QAT。
+代码检查训练/校准指纹、数据/缓存/代码哈希、浮点ONNX数值一致性、5个Conv和1个Gemm量化、检测事件一致性。
+
+四、85%目标的解释
+
+报告中的85%指所有499条命令至少一次正确识别的连续回放比例，并额外报告严格一次正确且无额外输出。
+没有采用“只在成功检测到的437条中计算准确率”来替代这个目标，也不会加入大量静息样本让总体准确率虚高。
+本实验保留检测器，因此检测覆盖仍是437/499=87.58%，若要达到85%，至少需425条命令正确，即约97.25%的已检出命令正确；按连续比例估算约97.1%。
+某些人的检测覆盖本身低于85%，仅替换CNN无法使每个人都达到85%。
+本轮用于验证SpeechNet结构是否适合信号，不能保证达到85%；下一步可能仍需改善检测/重定位、拒识与量化。
+
+SilentWear论文是14通道、500Hz、每人分别训练、8词加静息、提示窗口和不同的评估设置；论文平均无声识别77.5%，不能当作本项目的成绩承诺。
+这里是双通道、2kHz、五人混合、10词、因果20–500Hz+50Hz陷波、自动片段和连续回放，未照搬其零相位离线滤波或按人模型。
+未增加静息类，不改变当前检测器。比较同时改了结构和优化设置，不是每项改动单独的消融。
+已有测试数据此前已被查看，因此是探索性已见人员对照；最终部署前仍需要新录制连续评估和板上资源/时延验证。
+
+五、分阶段执行/失败后的处理
+
+只训练：
+.\.runtime\Scripts\python.exe -u experiments/run_speechnet_comparison.py --phase train --output 'models\speechnet2_my_run'
+
+训练已完成、导出尚未成功时：
+.\.runtime\Scripts\python.exe -u experiments/run_speechnet_comparison.py --phase export --output 'models\speechnet2_my_run'
+
+导出已完成、回放尚未完成时：
+.\.runtime\Scripts\python.exe -u experiments/run_speechnet_comparison.py --phase replay --output 'models\speechnet2_my_run'
+
+--output必须换成你的实际目录。训练阶段完成会有training_sha256.json；导出阶段完成会有export_sha256.json。
+已有完整结果不覆盖；train/all只接受新目录。脚本不支持训练中途按epoch续跑，训练被中断时保留旧日志并用新目录重新开始。
+若源数据或依赖代码发生变化，哈希校验会停止继续阶段；不要绕过检查，让助手看日志。
+完整训练默认自动接续导出和回放，不必手动执行以上三个阶段。
+
+六、已完成的小规模检查
+
+2026-10-21：6项相关测试通过；两种结构用随机合成数据检查了反向梯度、ONNX与PyTorch一致性、INT8图及运行。
+核对了适配网络与作者类在相同双通道配置下的数值一致性。
+真实数据仅做输入哈希和划分读取核验；没有执行这轮完整训练，也没有连接/部署板子。
+预检目录：analysis/speechnet2_script_preflight_20261021（里面是随机模型，不是训练成果，不能用于准确率比较）。

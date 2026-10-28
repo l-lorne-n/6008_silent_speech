@@ -1,0 +1,73 @@
+新版 goodone_plus 训练 mid64_temporal3（用户自行运行）
+
+工作目录：L:\ntu_class\6008\upper_computer
+数据：recordings/goodone_plus 当前内容，包含2026-10-27替换后的S013四组。
+固定上次最终选用的mid64_temporal3，不运行九种结构搜索。
+
+最简单：在PowerShell执行下面两行，创建全新的实验目录并完整运行：
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments\run_cnn_goodone_plus_current.py
+
+也可使用PowerShell封装：
+.\run_cnn_goodone_plus_current.ps1
+
+已完成真实数据预检的目录，可以直接从此开始正式训练（省去重新提取）：
+.\.runtime\Scripts\python.exe -u experiments\run_cnn_goodone_plus_current.py --resume --output 'L:\ntu_class\6008\upper_computer\models\cnn_goodone_current_20261027_214651_552433'
+
+该续跑命令需上述目录有prepared_sha256.json；如数据或代码变化，哈希检查会拒绝，
+请普通启动创建新实验，不要修改冻结哈希或旧模型文件。
+
+模型和训练设置：
+- 双通道2kHz；连续因果20–500Hz带通+50Hz陷波；输入滤波波形，不用显示包络。
+- 1400ms窗口、100ms步进；10个词+rest，共11类。
+- 五层CNN输出通道8/24/32/64/64，时间核16/64/32，跨通道2x1，末层1x3；不使用pool2。
+- 54,667参数；Dropout0.5。
+- 每份录制整轮80/20，外层种子20260924；训练池内每份留一整轮验证，种子20261010。
+- 从当前原始文件重新提取有效动作、重新划分、重新生成滤波缓存和窗口清单。
+- 开发标准化仅用开发训练；最终标准化用训练+验证；均重新拟合。
+- 三个随机种子20261010/11/12，Adam lr0.001、weight_decay0.0001。
+- 每轮11类各400窗口，共4400；batch44；独立通道增益0.9–1.1。
+- ReduceLROnPlateau factor0.1、patience2；最多100轮；验证损失10轮未改善早停。
+- 按固定验证窗口的宏平均交叉熵选择种子和轮数，随后从头用全部训练池重训，
+  复用所选轮数和学习率轨迹。不会直接照搬旧数据选中的25轮或旧权重。
+- INT8比较MinMax、99.99、99.9、99.5，只由开发验证损失选择。
+  量化校准仅从对应训练侧每类抽最多50个不同窗口，最多550窗。
+- 固定解码：概率0.5、连续2帧确认、连续2帧rest解锁、margin0。
+- 最后才对当前留出测试做FP32/INT8连续回放，报告全部测试命令，包括错词和无响应。
+
+默认CPU4线程，可加--threads 6。三次开发训练+一次最终重训+量化/回放，实际时间取决于早停和CPU。
+完整真实训练由用户启动；助手交付前仅做真实数据准备和小规模合成检查。
+该入口不访问串口、不烧录、不覆盖原模型，也不自动把新模型接入现有app。
+
+输出：models/cnn_goodone_current_时间戳，启动时会打印OUTPUT。
+- protocol.json：结构、种子、训练规则、当前来源清单、各人划分数量。
+- data_audit.json：输入哈希及质量排除。
+- split_manifest.csv、trial_manifest.json：新数据的完整动作划分。
+- cache/、windows_1400.json、indices.json：本次独立缓存、窗口、验证及量化校准成员。
+- mid64_temporal3/seeds/：三种子开发模型和逐轮history.json。
+- mid64_temporal3/seed_selection.json：选择的种子与轮数。
+- mid64_temporal3/model.pt：最终重训权重。
+- mid64_temporal3/export/model_fp32.onnx、model_int8_qdq.onnx：最终导出模型。
+- mid64_temporal3/export/input_contract.json：新归一化、滤波、类别和输入契约。
+- results.txt、comparison.json/csv：总体与五个人的FP32/INT8连续成绩。
+- mid64_temporal3/test/：逐条结果、混淆、连续概率与事件。
+- run.log：总日志。completed.json：全部训练、量化、回放与汇总成功才生成。
+
+中断后续跑（替换成实际OUTPUT目录）：
+.\.runtime\Scripts\python.exe -u experiments\run_cnn_goodone_plus_current.py --resume --output 'L:\ntu_class\6008\upper_computer\models\cnn_goodone_current_实际时间戳'
+已完成的种子和阶段通过哈希核验后跳过；未完成的种子/阶段从头重做，不从中断epoch接着训练。
+同一目录有操作系统锁，防止两个进程同时写入；进程退出后自动释放锁。
+准备阶段若中断，普通启动创建新目录；未完成准备的目录不能续跑。
+
+仅准备当前真实数据，不训练：
+.\.runtime\Scripts\python.exe -u experiments\run_cnn_goodone_plus_current.py --phase prepare
+
+仅合成数据梯度、浮点导出数值对齐和INT8检查：
+.\.runtime\Scripts\python.exe -u experiments\run_cnn_goodone_plus_current.py --phase check
+
+解释成绩时注意：
+这是五个人均参与训练的共享模型，不是四训一测。
+沿用原划分算法，但新录制会改变排序和随机数对应关系，部分旧录制的轮次分配也可能变化。
+因此不能把新准确率与旧81.16%当成相同测试样本上的直接提升；以新split_manifest为准。
+S013/S015曾按LDA成绩筛选，这仍是探索性开发数据，不是全新盲测。
+新模型部署前还需独立确认板端数值和实时效果，本脚本不会自动部署。

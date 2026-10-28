@@ -1,0 +1,102 @@
+2026-10-28 BT24 BLE 接入与最新 CNN 烧录交接（Asia/Singapore）
+
+用户要求
+查看交接、确认 BT24 连接问题，随后明确要求接入原来的模型服务，连接成功后烧录最新模型。
+已执行用户授权的烧录；没有重新训练或更改模型权重、滤波、归一化、确认策略。
+
+结论与当前板子
+BT24 是 BLE GATT 透传；当前实机地址 48:87:2D:D0:B5:43。
+实测 FFE0 服务，FFE1 支持 notify/read/write/write-without-response，FFE2 可写。
+原来 Windows 能看到设备，但原上位机/App 只有 COM 串口，无法直接接收 BLE。
+队友仓库 tools/bt24_receiver/receiver.py 使用 Bleak，作为六列 CSV 链路检查工具是正确的。
+对照仓库提交：79f1ccc104761d5e5f6b6b3aea137a5e1344d93e。
+https://github.com/l-lorne-n/6008_silent_speech/tree/79f1ccc104761d5e5f6b6b3aea137a5e1344d93e/tools/bt24_receiver
+初始板端确实运行六列 CSV 测试固件，5 秒收 14703 字节，没有原监测协议帧。
+目前已烧录：mid64_temporal3_20261027，UART 115200，双通道每路 2000 Hz。
+模型 SHA 前缀：884a42fb3d103dbc；窗口 2800 点，步进 200 点，包络 100 Hz。
+
+软件实现
+1. semg/ble_transport.py：独立线程/单 asyncio loop；扫描、FFE0/FFE1 校验、必要时 FFE2 写入；
+   有界缓存及发送队列、通知分片重组交给原 BoardDecoder、写入分片、连接取消、错误传递与清理。
+   地址发现有一次有界重试；保留原 GATT 错误，避免被退出时的断开回调覆盖。
+2. semg/board_ui.py：串口/BLE 选择、异步扫描、连接/断开、UART 配置说明、CSV 错误提示。
+   默认模型改为新版；BLE 用单次 N\nI\n 握手，与 App 一致。原串口路径保留。
+   原模型 SHA、包络、候选与确认命令、提词标记及统计继续使用；测试报告记录 transport。
+3. app/board_bridge.py：共用 BLE 传输，原模型校验和确认命令分发不变。
+   CSV 不进入模型服务；新增 connecting/transport/rx_bytes 状态，断开等待后台释放。
+4. app/server.py、index.html、monitor.js：扫描/连接/断开 BLE，连接中锁定控件，显示 UART 和模型身份。
+   POST /api/board/scan-ble 返回候选；connect 可带 transport=ble，缺省保留 serial；API 版本 3。
+   start.ps1 检查服务版本，避免复用旧服务。App 的照片/音乐仍只接受板端确认命令。
+5. requirements.txt / requirements-lock.txt：新增 Bleak 3.0.2 和本机 Windows WinRT 锁定依赖。
+6. board/check_ble.py：扫描、只读监听、可选 INFO 查询及指定模型的连续性诊断。
+   tests/ble_gui_smoke.py：显式指定地址的实机桌面 GUI 验证；不会烧录。
+
+烧录证据
+固件：board/build/mid64_temporal3_20261027/baud_115200/Objects/realtime.hex。
+HEX SHA256：e74be63fc65e8e4ac0275a0183b64bff9401c4f36d6dfadbefda2914a9bd99bb。
+执行：.runtime\Scripts\python.exe board/manage.py flash --model mid64_temporal3_20261027 --baud 115200。
+日志目录：board/logs/20261028_113136_mid64_temporal3_20261027_baud_115200/。
+先保存 bank1_before.bin（512 KiB），然后扇区写入；105064 字节逐字节核对，mismatches=0，复位后 RUNNING。
+备份 SHA256：f27a81aab23a56bdbcd69652911a16009bbb583dad4926ed3701a912b526701d。
+pyOCD 枚举期间有历史 CoreSight ROM 表探测警告，之后备份、烧录和校验均实际完成。
+
+实测证据（history/ble_bt24_20261028/）
+probe_sample.json：初始 CSV 数据样本。
+new_model_live.json：烧录后 20 秒实测，78643 字节、200 推理、2002 包络、模型 SHA 正确；
+  CRC=0、discarded=0、序号缺口=0、包络缺口=0、非100ms推理步进=0、flags=[0]、跳窗=0、板端丢包=0。
+  纯推理 67.585–67.882 ms；整步 67.799–68.097 ms。该轮历史削顶计数非零，未做人体正确率判断。
+app_live_verified.json：App 实际 BLE verified=true、stale=false、enabled=true，模型为新版。
+  保留快照时累计接收 292498 字节，CRC/序号异常/跳窗/板端丢包/故障/削顶均0。
+monitor_smoke.json / monitor_ble.png：2026-10-28 11:46 桌面上位机实际连接，15998 字节，30 次推理，
+  模型身份匹配、提词按钮启用、静息已解锁；CRC/序号异常/跳窗/丢包/故障/削顶均0，关闭连接干净完成。
+  原始 trace：recordings_live/20261028_114645_156987/board_trace.jsonl。
+软件回归：上位机 36 passed；App 26 tests OK；node --check monitor.js 和 pip check 通过。
+覆盖 BLE 分片、FFE2 回退、写入分片、溢出、意外断开、取消、扫描重试、GATT 异常保真、
+CSV 拦截、版本/SHA、波特率保持、确认命令分发及 HTTP 参数验证。
+
+重连与供电注意
+本次切换接收程序时出现过 BT24 暂时不广播；独立 Bleak 扫描也看不到。
+随后用慢速模拟 disconnect 复现了本次传输适配器的清理竞态：_session 已进入 finally 断开时，
+_main 的 stop 逻辑又 cancel 了它，导致 Windows 原生 GATT 释放被中断。
+已修复：将原生 disconnect 放入受 shield 保护的独立 task，即便 session 取消也等待清理完成，
+再设置 closed、退出事件循环。新增测试在修复前确实失败、修复后通过；不再把该问题全归因于模块。
+用户重启 BT24 时一度收到板端 flags=4；源码定义为 UART 错误，原固件保持该标志，须复位 STM32。
+最后将 STM32 和 BT24 一起重新上电、关闭手机蓝牙后，桌面监测验证通过。
+若再现：先关闭占用软件/手机连接；将 STM32 与 BT24 一起重新上电，再扫描。无需重烧模型。
+不要让 App、桌面上位机、队友接收器同时连接同一个 BT24。
+
+最终交付状态补充
+恢复 App 的第一轮连接曾提前断开，随后重新连接成功，无需再次断电。
+故障 4 是板端锁存状态，不能因为 BLE 重新连接或模型 SHA 正确就当作可执行命令。
+已补充桌面提词按钮及 App 启用控制的故障拦截，App 页面明确显示 UART 故障，避免误显示正常控制。
+最终保持 BLE 连接，用 SWD 仅复位 STM32；App 检测板端时间回退后暂停控制、重新请求模型身份。
+确认新版模型 SHA 匹配、最新帧 flags=0、数据未过期后才重新启用控制。
+app_final_verified.json 为长测期间已验证的快照：BLE 连接保持、verified=true、enabled=true、stale=false，
+静息已解锁，当前设备故障/CRC/板端丢包/跳窗/削顶均0，每步约68ms。
+该会话跨越板子复位，累计 sequence_gaps 一度为25；更长时间最终快照增至51，不能把全部缺口归因于复位。
+此时 rx_bytes=618697、CRC=0、板端 tx_dropped=0、skipped_windows=0、flags=0，BLE 仍连接、模型已验证且已启用控制。
+额外序号缺口的原因尚未定位；可能涉及 UART→模块缓存/无线传输等环节，需要进一步持续测试，不能宣称 BLE 无丢帧。
+sequence_gaps 是序号不连续事件数，不等于确定丢失的数据帧数量；未为了截图清零或隐藏计数。
+这与前述独立20秒测试 sequence_gaps=0 属于不同观测时段。
+App 刷新页面也会恢复当前真实 BLE 设备地址及 UART 选项。
+
+结束时状态（覆盖此前“保持连接”的时点描述）
+继续观察期间 BT24 再次意外断开，App 正确清除 connected/verified/enabled 并停止控制。
+最后实际状态保存在 app_last_status.json；app_final.png 是这次断连后的实际界面。
+因此本次完成了软件接入、最新模型烧录与短时实机核验，但蓝牙长时间稳定性没有通过。
+不能以36+26项软件测试、20秒零异常或此前正常的桌面截图替代长时间无线验收。
+后续重点：记录每次连接的实际 ATT MTU/连接参数、通知分包、UART模块缓存与供电/射频状态，
+定位序号缺口及远端断连，再决定是否调整传输策略。不要改模型权重来掩盖通信问题。
+
+使用
+桌面：upper_computer/start_monitor.cmd → 新版模型 → UART 115200 → BT24 / BLE → 扫描 → 连接。
+媒体 App：app/start.cmd → http://127.0.0.1:8765 → BT24 / BLE → UART 115200 → 扫描 → 连接并启用。
+BLE 本身无波特率设置；UART 选项不会改变模块参数，MCU 与模块仍须一致。
+最新模型实机运行与通信已验证；没有做真人十词准确率测试，也未重做新版板端/ONNX 数值 parity。
+不能把静息概率、零丢包或历史旧版 parity 当成新版真人正确率。
+原始 2 kHz ADC 采集界面此次仍使用原串口方案；本次 BLE 接的是板端模型监测/媒体控制服务。
+
+参考资料
+BT24 厂商串口应用指导：https://www.szdx-smart.com/static/upload/2025/10/23/202510232613.pdf
+Bleak 客户端文档：https://bleak.readthedocs.io/en/stable/api/client.html
+Bleak Windows/asyncio 注意：https://bleak.readthedocs.io/en/stable/troubleshooting.html

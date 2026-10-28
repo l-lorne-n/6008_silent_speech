@@ -1,0 +1,76 @@
+CNN结构批量对照：9结构×3随机种子，原始划分，用户自运行
+
+启动（PowerShell）：
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments\run_sliding_architecture_sweep.py
+
+默认4个CPU线程。可加--threads 6等正整数；实际耗时取决于CPU和各候选早停。
+共27次开发训练（每次最多100轮）+9次最终重训+量化/连续验证/测试，适合留出较长运行时间。
+此脚本不调用GPU、不访问设备、不自动部署，不修改旧模型或原始数据。
+
+候选（全部固定1400ms窗口、100ms步进、10词+rest）：
+baseline                  8/16/16/32/32，原结构重训，19235参数
+tail64                    8/16/16/64/64，仅后层加宽，23875参数
+mid64                     8/24/32/64/64，中后层加宽，46475参数
+wide2x                    16/32/32/64/64，整体翻倍，75323参数
+temporal3                 原宽度，最后1x1改1x3时间卷积，21283参数
+pool2                     原宽度，前后两段时间池化，19587参数
+mid64_temporal3           中后层加宽+末层时间卷积，54667参数
+mid64_pool2               中后层加宽+两段池化，47179参数
+mid64_temporal3_pool2     三项组合，55371参数
+另有current_base，直接加载当前sliding_rest_20261022_103406基模，重新回放作为参照。
+
+实验条件：
+回到原始1507训练/490验证/499测试的整轮划分，不使用个人两遍/五遍校准划分。
+499条全部保留计分，静息窗口不加入准确率分母，重叠窗口不当作独立动作样本。
+固定原窗口清单、标签、连续因果滤波缓存、验证窗口清单、归一化拟合范围及量化校准来源。
+3种子20261010/11/12；Adam lr0.001、weight_decay0.0001；Dropout0.5。
+每轮11类各400窗口、batch44、增益增强0.9–1.1；同seed/epoch抽样规则相同。
+ReduceLROnPlateau factor0.1 patience2；最多100轮，验证损失10轮未改善早停。
+“同训练条件”指相同优化/选择规则；不同结构选中的轮数和学习率轨迹可能不同。
+每结构按固定验证窗口宏平均交叉熵选种子与轮次，然后在1997条训练+验证上从头重训。
+最终重训复用该结构选定轮数和学习率轨迹，不按测试成绩继续训练。
+
+量化/解码：
+每结构均比较MinMax、99.99、99.9、99.5四个PTQ候选，只看开发验证损失选择。
+最终量化使用原基模最终训练侧的550窗口清单；不使用测试信号校准。
+所有模型固定原解码设置：probability0.5、confirm2、rest_frames2、margin0。
+不分别给候选调阈值，避免把结构改善与解码调参混在一起。
+
+选择和测试：
+先完成全部结构的开发训练和INT8连续验证。
+验证推荐按严格成功率、正确率、较少错词、较少漏检、较少静息输出、较低MAC依次比较。
+推荐写入validation_selection.json，发生在任何本轮测试之前。
+全部最终模型及量化模型完成后，再在同一原499条测试上重放；不自动把测试最高者当最终模型。
+报告是每结构由验证选出的一个最终模型成绩，不是3个种子的测试平均；种子窗口验证波动另报。
+当前基模新回放成绩必须复现其原记录，否则脚本停止，避免混用评分口径。
+
+输出目录：models/sliding_arch_sweep_时间戳（启动时打印OUTPUT）
+results.txt：先列INT8总体正确率、严格成功、错词、漏检、静息输出，再列逐人和FP32成绩。
+comparison.csv/json：全部模型、FP32/INT8及逐人指标。
+deltas_vs_current.csv：相对当前基模变化，准确率单位是百分点。
+validation_comparison.csv / validation_selection.json：开发验证结果和测试前推荐。
+architecture_plan.csv / planned_resources.json：各结构参数/MAC/资源估算。
+每个候选目录：seeds/<种子>/训练历史与最佳检查点、selection_checkpoint.pt、model.pt、refit_history.json。
+每个候选export目录：最终FP32/INT8 ONNX、输入契约、量化校准成员、资源估算。
+每个候选test目录：逐条、逐词混淆、连续预测、与当前基模的配对表。
+completed.json：全部训练、量化、验证、测试与汇总成功后才出现。
+run.log：总日志；各seeds目录history.json每轮更新，方便查看进度。
+
+中断后续跑（替换成实际OUTPUT目录）：
+.\.runtime\Scripts\python.exe -u experiments\run_sliding_architecture_sweep.py --resume --output 'L:\ntu_class\6008\upper_computer\models\sliding_arch_sweep_实际时间戳'
+
+续跑会校验来源、配置、检查点哈希；已完成的种子/开发量化/最终重训/测试阶段直接跳过。
+未完成的一个种子或阶段从该阶段开头重做，不从中断的epoch继续。
+不要同时对同一输出目录启动多个进程，不要在运行中修改脚本、配置或源数据。
+新实验用普通启动命令生成新目录；不带--resume不会覆盖已有目录。
+
+仅预检真实数据和配置（不训练）：
+.\.runtime\Scripts\python.exe -u experiments\run_sliding_architecture_sweep.py --phase prepare
+其输出可随后通过--resume继续完整实验。
+
+仅合成数据检查所有结构梯度/FP32数值一致性/INT8运行：
+.\.runtime\Scripts\python.exe -u experiments\run_sliding_architecture_sweep.py --phase check
+
+这是在已查看过的数据上进行的探索性已见人员比较，不是新盲测/跨日/四人训一人测。
+资源是张量清单和规划预留，不是ST编译器arena或板测时延；没有STM32低于200ms的保证。

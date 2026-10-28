@@ -1,3 +1,40 @@
+# 6008 Silent Speech — BT24 / CNN integration
+
+独立交付分支 **`integration-bt24-models-20261028`**。基于队友 `main` 的 `79f1ccc`，保留原 `firmware/` 和 `tools/bt24_receiver/`；本次没有更新 `main`。
+
+本分支包括最新桌面上位机、照片/音乐App、训练代码、两版CNN模型，以及两模型×两UART速率的四份预构建HEX。**最新模型已烧录及短时运行验证；BLE长时间稳定性、UART故障恢复和真人十词控制仍待验收。**
+
+| 入口 | 用途 |
+| --- | --- |
+| [完整交接](upper_computer/history/2026-10-28_完整交接_BT24双波特率_双模型与GitHub发布.md) | 当前状态、方案、改动、产物、证据、限制与后续工作 |
+| [上位机](upper_computer/README.md) | 采集/LDA与板端实时监测 |
+| [媒体 App](app/使用说明.txt) | 本地网页照片/音乐控制，Python后端桥接 |
+| [当前训练入口](upper_computer/experiments/run_cnn_goodone_plus_current.py) | 新数据固定结构重训；需自备完整数据 |
+| [模型资产](upper_computer/models/README.md) | `mid64_temporal3`、`mid64_temporal3_20261027`及哈希 |
+| [固件归档](upper_computer/board/prebuilt/README.md) | 115200/230400 HEX及原构建证据 |
+| [发布检查](upper_computer/history/publish_20261028/validation.json) | 软件测试结果与范围 |
+
+## 启动
+
+```powershell
+git clone --branch integration-bt24-models-20261028 https://github.com/l-lorne-n/6008_silent_speech.git
+cd 6008_silent_speech\upper_computer
+.\setup.cmd
+.\start_monitor.cmd
+# 或启动媒体 App：
+..\app\start.cmd
+```
+
+已验证环境：Windows 10/11、64位Python 3.12。当前板子选 **BT24/BLE、115200、新版模型**；App通过板端身份自动选模型。蓝牙不用Windows配对。请勿让多个接收器同时占用BT24。没有型号匹配、无故障数据和板端确认命令时，连接成功也不会驱动媒体。
+
+本分支不含原始录制、Python环境、个人照片/音乐或烧录前整片备份。自行放置媒体到 `app/photo`、`app/music`；没有本地媒体时清单为空。原始采集仍用 `upper_computer/start.cmd`、230400与对应采集固件。
+
+从仓库根目录执行 `python upper_computer/board/verify_assets.py`，校验两版模型与四份HEX的203个相关文件。历史训练/构建清单保留原绝对路径；发布清单使用仓库相对路径。`.gitattributes`保留原文件字节，避免换行转换破坏哈希。
+
+## 原 main 固件说明（历史）
+
+下文是本分支基底的原README，描述队友原固件链路；本次模型固件与BLE接入以顶部交接为准。
+
 # 6008 Silent Speech
 
 <!-- TODO: 一句话说明项目目标，例如：采集 XXX 信号，识别无声语音 / subvocal speech -->

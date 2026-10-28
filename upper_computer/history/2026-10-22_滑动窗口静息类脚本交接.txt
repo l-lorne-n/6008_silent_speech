@@ -1,0 +1,27 @@
+用户想尝试滑动窗口+静息类，担心静息多数导致偏置及旧评分脚本不适用，要求写脚本由其自行训练。
+已说明：主要风险为类别不平衡，不自动等于过拟合；用均衡抽样和连续命令指标处理，不能保证无静息偏置或85%达标。
+
+交付：experiments/sliding_speech.py、experiments/run_sliding_rest.py、tests/test_sliding_speech.py、tests/test_sliding_training.py、滑动窗口静息类运行说明.txt，已更新experiments/README.md。
+用户运行：在upper_computer目录执行 .\.runtime\Scripts\python.exe -u experiments/run_sliding_rest.py。
+不改已有源代码/模型，不部署。主脚本复用已有CNN/ONNX依赖与已校验连续滤波缓存。
+
+核心协议：
+11类（10词+rest）；SpeechNet时间核16/64/32，空间2x1、1x1，宽度8/16/16/32/32，Dropout0.5。
+候选窗口800/1400ms，100ms步进，三个种子20261010/11/12，按11类宏平均验证CE选择窗口/种子/epoch。最多100轮、早停10，Adam lr.001 wd.0001，ReduceLROnPlateau factor.1 patience2。
+每轮每类400窗口（4400总数），静息1/11。类内先平衡人员，再随机试次/窗口。验证最多200/类，固定无重复；校准最多50/类，训练侧独有。
+原始整轮1507训练/490验证/499测试不变，窗口只在同一个原试次上下文内标注，不跨集合。词窗口至少75%覆盖动作提示、结束在action+150ms到rest；纯静息窗口有准备200ms边界与rest后300ms保护。含糊窗口不标静息，回放仍全部推理。
+标准化拟合训练侧连续唯一点；最终train+validation；不使用测试。最终按选中学习率轨迹从头重训。
+INT8 MinMax/99.99/99.9/99.5仅验证选择；开发INT8模型在连续validation上选24种解码组合。不会用已训练过validation的最终模型选择阈值。
+解码：初始disarmed，需预测rest>=.5连续2或3帧，随后词概率.5/.65/.8、margin0/.15、连续2/3帧才输出；输出后锁定直到至少500ms且再有连续rest。
+
+评估变更重要：
+新旧统一按输出时间评分，响应区间[cue_action,cue_rest+300ms)，严格成功要求整个试次上下文唯一输出且正确。主要分母499命令；静息窗口不加入分母。全rest模型命令率0。
+旧original/auto32/gatedSpeechNet的INT8结果复用已存事件，按新规则重算；旧68.14%是片段重叠规则，不能直接拼到新结果比较。
+新的连续推理只在原划分的最大连续区间内运行，区间边界重置而非命令边界重置，禁止窗口/解码历史跨入其他集合；滤波器历史沿用连续缓存。区间预热与rest启用漏掉的目标仍计入499。旧基线运行边界不同，因此不能宣称完全单因素对照。
+输出每个窗口概率trace.npz、合并命令events、每命令trials、逐人/总体comparison.csv/json、中文结果、资源估算及checkpoint/ONNX。
+
+本轮预检：
+11测试通过（平衡采样、无重复验证、标签保护、因果解码、重复抑制、全rest0分、晚/早输出、分割隔离、训练侧标准化、一个合成训练batch及checkpoint回载）。
+两种窗口合成数据ONNX数值对齐、INT8图5Conv+1Gemm及推理通过，目录analysis/sliding_rest_preflight_20261022。
+真实数据仅准备与哈希校验，目录analysis/sliding_rest_dataset_check_20261022；未完整训练。800ms候选66024个，1400ms31309个；800ms训练rest18053、每词约2180。每类固定400抽样避免静息占优。
+训练脚本默认全新models/sliding_rest_日期_时间；用户自行执行，完成后提供目录再分析。不要把预检随机模型当作训练结果。

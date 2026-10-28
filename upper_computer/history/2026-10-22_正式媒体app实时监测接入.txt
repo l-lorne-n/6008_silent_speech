@@ -1,0 +1,17 @@
+2026-10-22 正式媒体 app 实时监测接入交接
+
+用户要求：在 L:/ntu_class/6008/app 正式接入现有板端实时监测，暂不做重贴校准。
+
+实现：
+- app/board_bridge.py 负责 COM 串口、模型 SHA 校验、板端协议解析和 SSE 发布。复用 upper_computer/semg/board_protocol.py，不运行 CNN，不修改固件。
+- app/server.py 增加 /api/board/ports、status、connect、disconnect、control；保持原媒体和 HTTP 命令接口。仅监听127.0.0.1，跨域请求拒绝。
+- app/monitor.js、index.html、styles.css 增加实际串口选择、连接、暂停/启用、断开、候选/确认分离、计算耗时和健康指标、CH0绿/CH1橙包络固定0–500最近5秒。
+- 只有有效、模型已验证、实时模式、无故障的 emitted 命令进入原媒体调度器。候选/rest不驱动应用。暂停不补发命令，设备时间回退停用执行，断连/过期清空当前信号。网页丢弃超过1秒的排队板端命令。
+- start.ps1 检测旧版服务并提示关闭旧终端；使用说明.txt已补充新使用步骤。
+
+重要联调发现：Windows串口 read(4096) 导致实际状态更新约1Hz；改为 read(max(1,min(4096,in_waiting))) 后，8.016秒收到72次状态更新和788个包络点。包络时间戳连续、无缺口。确认命令随包解析立即发布，不等待状态刷新。
+真实验证：COM7、230400、mid64_temporal3、SHA前缀672ca5b369cc8509。上述8秒采样中纯推理最大68.294ms、每步总耗时最大68.513ms；CRC/序号异常/跳窗/板端丢包/设备flags均0。完整记录 app/preview/live-monitor-hardware-check.json。没有进行新的真人准确率评测。
+测试：python -m unittest -q test_server test_board_bridge，共17项通过；两个JS文件node --check通过。浏览器验证连接、实时信号、暂停后继续监测、断开释放以及照片页面兼容；桌面1280宽和默认窄屏检查。截图 app/preview/live-monitor-verified.png 为真实数据，非模拟曲线。
+
+交付状态：本机 http://127.0.0.1:8765 服务已启动，COM7已连接，媒体控制暂时暂停，用户点击“启用控制”即可操作。后续双击 app/start.cmd。返回采集上位机前须点击“断开”。后台服务不随网页关闭而停止。
+滤波、1400ms窗口、100ms步进、静息解锁、CNN和确认逻辑仍由原板端执行；本次未烧录、未训练、未调阈值。对准确率的讨论不能用此UI接入替代真人测试。

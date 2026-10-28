@@ -1,0 +1,47 @@
+个人两遍校准微调（2026-10-22）
+
+PowerShell运行：
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments\run_personal_sliding_finetune.py
+
+默认基模：models/sliding_rest_20261022_103406/model.pt
+每次在models/personal_sliding_时间戳下创建全新目录，不改原数据或原模型，不访问硬件。
+这里把“reset”理解成rest静息类；现有模型没有另一个reset命令类。
+
+划分：
+S011–S015各自从原测试集按录制名、轮次顺序选前两轮完整可用的10词数据。
+每个词恰好2次，共20条动作；每一轮再取一个动作后纯静息片段，共2段rest。
+选择只用试次信息和已有可用窗口，不根据模型预测挑样本。
+这20条动作的整个上下文从测试移除，包括未用于微调的窗口、静息和过渡。
+rest取自上述上下文，不额外占用其他测试试次。
+剩余测试分别80、80、80、79、80条，总399条。原模型和个人模型都在这399条上重跑。
+采用相同连续区间、预热、状态重置、解码规则；不能直接拿原499条的68.54%作对照。
+
+训练：
+每人独立从同一个FP32基模初始化，绝不接着上一个人的模型继续训练。
+默认Adam、学习率0.0001、30轮，每轮从每个源片段随机取一个窗口，即22窗口/批、1步/轮。
+允许同一次动作的不同窗口轮换使用，但不会把它们称为更多独立动作样本。
+全网络权重微调，冻结BatchNorm运行均值/方差，保留基模归一化、窗口长度和解码规则。
+使用最后一轮，不按剩余测试集选择轮数、阈值或学习率；不保证一定提高。
+INT8不能直接反向传播：在电脑微调FP32，再导出每人的FP32和INT8 ONNX。
+量化沿用原先选好的99.99百分位及原基模训练侧校准窗口，不拿剩余测试信号校准。
+这属于离线回顾性个人校准实验；基模已训练过这些人，原测试结果也看过，不能当作新日期或新人泛化。
+
+输出：
+results.txt：五人各自及合计的微调前后正确命令、严格成功、错词、无响应、静息输出。
+comparison.csv / comparison.json：详细指标，FP32/INT8分别对照。
+personal_calibration.json / calibration_windows.csv：每人的源片段和所有可用窗口。
+evaluation_records.json：剩余测试边界；protocol.json：完整固定配置。
+S011至S015各子目录：model.pt、model_fp32.onnx、model_int8_qdq.onnx及输入契约。
+各人的*_trials.csv / *_confusion.csv / paired_*.csv：逐条结果、响应区间词混淆和同试次前后对照。
+*_events.json / *_trace.npz：连续推理结果，可复核重复、漏检、区间外触发。
+wrong_response_trials表示至少输出过一次错词的试次数；即使后来输出对词，也计入此项。
+completed.json只在训练、导出、测试全部成功后生成。
+
+只检查真实来源和划分，不训练：
+.\.runtime\Scripts\python.exe -u experiments\run_personal_sliding_finetune.py --phase prepare
+
+可选--epochs 30 --lr 0.0001 --seed 20261022 --output '全新目录'。
+不覆盖已有目录，也不支持中途续跑；失败后查run.log，修复后重新运行生成新目录。
+反复根据同一剩余测试成绩修改参数，会让测试变成调参集；届时需要另采新数据验证。
+本脚本只做离线微调/导出/评估，没有部署到STM32，也没有板端延迟测量。

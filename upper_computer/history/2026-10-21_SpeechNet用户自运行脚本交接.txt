@@ -1,0 +1,28 @@
+用户认为当前61.32%连续回放INT8准确率不能接受，目标至少85%，要求研究SilentWear代码。
+随后明确指示：写好脚本，由用户自行执行，执行完再让助手看结果。因此本轮没有启动完整训练。
+
+已核对作者论文https://arxiv.org/html/2603.02847v2及官方GitHub代码/配置。
+本地已有L:\ntu_class\6008\silent_wear\SilentWear\models\cnn_architectures\SpeechNet.py。
+论文SpeechNet约15489参数，14通道，500Hz，9类（8词+静息），按人和发声条件建模；无声global77.5%、inter-session59.3%，不是85%保证。论文分数基于提示窗口、平衡准确率等特定设置，不可与当前自主连续回放直接等同。
+
+交付：
+- experiments/speechnet_two_channel.py：五层8/16/16/32/32，空间核2x1后1x1，最后固定全局平均池化；原时间核4/16/8和扩大4倍16/64/32两候选，参数6818/19202。
+- experiments/run_speechnet_comparison.py：验证选2候选×3种子，重训、PTQ、完整499条命令连续回放及中文报告；全CPU，无设备操作。
+- run_speechnet_comparison.ps1：PowerShell封装。
+- SpeechNet运行说明.txt：完整命令、阶段恢复、输出说明与解释限制。
+- experiments/third_party/SilentWear-LICENSE.txt及NOTICE保留原许可证和归属。
+- tests/test_speechnet_two_channel.py：与原作者适配配置数值一致、融合前通道隔离、资源形状检查。
+
+用户执行命令（项目根目录）：
+.\.runtime\Scripts\python.exe -u experiments/run_speechnet_comparison.py
+自动新建models/speechnet2_日期_时间，保存run.log、结果汇总.txt、comparison.csv/json、逐事件/试次结果、model.pt和export目录。
+默认最多6次100轮开发训练及一次按选中轮数重训，早停10；Adam lr.001 wd.0001，调度factor.1 patience2，最终从头重训复用选中验证轨迹的学习率计划。训练中断不按epoch续跑；完成训练/导出后可用--phase export/replay继续。
+
+复用自动分段实验1340训练/440验证片段，最终1780训练。检测、整轮划分、因果滤波及增强保持上一轮。测试仍499条，不是只计算437条匹配候选。测试不选择种子/结构/轮数/量化；输入哈希、训练和导出阶段哈希、指纹、量化图和数值核验内置。
+两种架构估算INT8张量库存+256KiB预留548.70KiB，非ST arena，未部署。
+未实现静息类、按人模型、滑动窗或新检测器；属于结构/训练方式的适配对照，并非完整复现SilentWear。
+
+预检状态：6测试通过（pytest缓存写入warning，不影响结果）；两候选各一次合成数据反向更新、浮点导出数值一致性、INT8静态校准/运行/图检查通过。真实源数据/缓存哈希和1340/440/437划分核对通过。没有完整训练/测试成绩。
+预检目录analysis/speechnet2_script_preflight_20261021，其模型随机初始化，仅作兼容性验证，不能当作训练模型或实验结果。
+
+下一次用户提供运行目录后：先检查completed.json/run.log、协议和哈希，读取comparison及逐人变化；不要把提示切段或检出后分类准确率当连续回放成绩，也不要承诺可部署。当前检测覆盖437/499=87.58%，若达到85%至少需425条正确，425/437=97.25%。S012检测覆盖78%，冻结检测器无法让每个人都达85%。

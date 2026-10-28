@@ -1,0 +1,41 @@
+冻结特征层、只微调分类层（三方对照）
+
+PowerShell运行：
+Set-Location 'L:\ntu_class\6008\upper_computer'
+.\.runtime\Scripts\python.exe -u experiments\run_personal_head_finetune.py
+
+固定参考已完成实验：models/personal_sliding_20261022_121427_504367
+固定初始化基模：该实验protocol.json中的sliding_rest_20261022_103406/model.pt
+每个人都独立从原基模初始化，不接着全模型微调结果继续训练。
+
+复用上次的完整校准清单和剩余测试清单，不重新抽取试次。
+连每一轮抽到的22个窗口及顺序都直接读取上次training_history.json。
+轮数30、学习率0.0001、Adam、种子、Dropout、归一化、解码和量化设置均沿用上次。
+仅最后Linear层的weight/bias（32×11+11=363个参数）允许梯度更新。
+卷积和BatchNorm参数冻结，BN运行统计也冻结；保存前逐项验证与基模完全一致。
+每人仍是每词2次，加2段rest；剩余测试80/80/80/79/80条，共399条。
+
+对照：
+base：原基模；full：刚才全模型微调；head：本次只微调分类层。
+base/full使用已完成实验的连续预测，按相同解码规则重新计分并核对原成绩。
+head执行新的连续回放；三者都校验窗口时间轴严格等于同一剩余测试划分。
+FP32和INT8分别对照；不重新训练base/full，也不根据测试结果挑轮次或阈值。
+量化使用原基模训练侧校准窗口，不使用剩余测试数据校准量化。
+
+结果生成在models/personal_head_时间戳下，不修改旧实验、原始数据或设备。
+results.txt：三方逐人/总计对比。
+comparison.csv/json：正确率、严格成功、错词、漏检、静息输出等详细指标。
+head_deltas.csv：head相对base/full的变化（准确率单位为百分点）。
+S011至S015：个人model.pt、FP32/INT8 ONNX、输入契约、训练日志和freeze_audit.json。
+paired_base_vs_head_*.csv / paired_full_vs_head_*.csv：每条命令的配对结果。
+各人的*_trials.csv、*_confusion.csv、*_events.json：逐条、错词和输出明细。
+completed.json只在全部成功后生成。
+
+只做真实来源、原成绩和划分核对，不训练：
+.\.runtime\Scripts\python.exe -u experiments\run_personal_head_finetune.py --phase prepare
+
+可选--output '全新目录'，不支持覆盖或续跑。
+--reference可指定兼容的已完成全模型实验；学习率、轮数和种子从其配置继承，不单独覆盖。
+失败时查看run.log，解决后重新运行到新目录。
+本实验是在看过上次测试成绩后提出的探索性对照，不是新的盲测、跨日或新人泛化验证。
+不会自动部署；只训练363个参数不会减小完整推理模型，也不提供STM32延迟保证。

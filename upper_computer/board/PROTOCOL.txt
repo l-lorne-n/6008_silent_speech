@@ -1,0 +1,80 @@
+Board inference protocol v1 (outer transport v2), 2026-10-22
+
+UART: monitoring builds select 115200 or 230400, 8N1 (default 230400).
+Build with manage.py --baud; host and module UART settings must match the image.
+Changing baud does not change the 2000 Hz ADC clock or model input contract.
+Archived v0.6.0 raw capture firmware remains fixed at 230400.
+Header/CRC unchanged from firmware/PROTOCOL.md.
+A5 5A | version:u8=2 | kind:u8 | payload_size:u16 | seq:u32 |
+sample_index:u32 | sample_count:u16 | faults:u16 | payload | CRC16:u16.
+Little endian. CRC16 CCITT init FFFF over header+payload. Frame maximum256B.
+sample_index is exclusive window-end index for kind4; ADC next-sample index otherwise.
+seq counts all frame kinds. fault bits:1 TX queue overflow,2 ADC error,4 UART error.
+
+Host commands are ASCII terminated by newline, no expected-word labels:
+I: INFO kind2 + model identity kind5.
+N: enter monitoring, reset filter/ring/decoder then warm up 2800 samples.
+C: enter raw capture with original kind1/2/3 transport.
+M,<uint32>: marker ACK, same semantics as the original capture firmware.
+Mode is not persisted; this inference image boots in monitor mode.
+Original archived capture image supports I/M; it ignores the new commands.
+
+Kind1: raw ADC, 20 sample pairs, 80 bytes. Only capture mode emits it.
+Kind2: original INFO, fs=2000, channels=2, bits=16, TX dropped count.
+Kind3: original marker ACK, token:uint32 + HAL tick:uint32; index has10ms block resolution.
+Kind5: UTF8 JSON {model,sha,fs:2000,win:2800,step:200,mode,fw:1}.
+sha is first16 hex characters of source INT8 ONNX SHA256. mode=0capture/1live/2validation.
+Envelope-capable firmware also advertises env_hz:100 and env_ms:200 in kind5.
+
+Kind8 envelope:8 bytes = CH0 float32, CH1 float32; sample_count=1.
+sample_index is the exclusive ADC block end (20pairs/block,100 packets/s).
+Values are mean(abs(filtered ADC counts)) over the most recent400 samples (200ms).
+During startup the denominator is the actual available sample count up to400.
+Calculated on MCU before normalization, independent of CNN input or decoder.
+Both traces use a fixed0-500counts viewport in the GUI; transmitted values are
+not clipped to500. Values above500 are retained in logs and reported as overflow.
+No envelope packet is sent for injected validation windows or raw capture mode.
+
+Kind4 live result: 92 bytes, struct <9I4B11f2I:
+  offset0  uptime_ms:u32
+  4        inference_us:u32 (TIM2 at1MHz, network+softmax, interrupts enabled)
+  8        pipeline_us:u32 (current step preprocessing+copy+inference+decoder)
+  12       filter_us:u32 (last200 pairs, including normalization and input quantization)
+  16       skipped_windows:u32
+  20       max_pipeline_us:u32 since mode reset
+  24       count_pipeline_ge100ms:u32
+  28       count_pipeline_ge200ms:u32
+  32       tx_dropped:u32 since boot
+  36       mode:u8
+  37       top_label:u8
+  38       emitted_label:u8 (255 means no confirmed command)
+  39       armed:u8
+  40       probabilities:11 x float32
+  84       clipped_channel_samples:u32 (ADC<=1 or>=65534)
+  88       age_samples:u32 (completed ADC samples since input window end)
+Class order: open close next music louder photo previous quieter start stop rest.
+Only emitted_label is a command. top_label can change each100ms without emitting.
+
+Continuous preprocessing uses contract SOS and sosfilt_zi*first_centered_sample,
+rawADC minus32768, no phase resets. FP32 arithmetic on MCU versus float64 reference.
+No gate, no onset labels, no padding on startup. Interrupt filter+ring, foreground CNN.
+If a window deadline is missed, firmware skips to next grid and reports it, never
+silently changes a late window's timestamp. Serial transmit DMA chains from its IRQ.
+
+Maintenance validation (not used by GUI human tests):
+V\n then5600 INT8 bytes channel-major plusCRC16 of those5600 bytes: run one normalized window.
+R\n: reset filter state and enter validation mode.
+F\n then11200 raw uint16 interleaved bytes (2800pairs) plusCRC16: continue causal
+filtering from previousF, infer newest2800-sample window. UseR before a new recording.
+Kind6:92B = inference_us:uint32 + 11 logits:float32 + 11 probabilities:float32.
+Kind7:1B=1 for invalid inputCRC. No response on incomplete validation payload;
+receive timeout3s clears partial payload. N returns to live mode with fresh state.
+No validation result is counted as a live human recognition event.
+
+Hardware implementation references:
+ST AN4839, DMA buffers/cache coherency:
+https://www.st.com/resource/en/application_note/an4839-level-1-cache-on-stm32f7-series-and-stm32h7-series-stmicroelectronics.pdf
+ARM/ST CMSIS M7 intrinsic implementation is already in firmware/Test/Drivers/CMSIS/Include/.
+Inference uses __SMLAD with expanded INT8 weights and INT16 input columns, INT32 sums.
+It preserves each QDQ boundary, ReLU, MaxPool and per-channel weight scale.
+This is a project-specific executor, not an ST Edge AI or general ONNX runtime.

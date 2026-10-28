@@ -1,0 +1,30 @@
+2026-10-27 goodone_plus/S013 四组替换
+
+按用户明确要求，将 recordings/goodone_plus/s013 中以下四组移出并备份：
+20261021_113627_8c3388
+20261021_115441_c9a385
+20261021_114145_21a399
+20261021_120003_80d5cb
+
+从 recordings/S013/session_003 完整复制以下四组进入目标，保留原录制目录名：
+20261027_205409_a33129
+20261027_205949_dfbdb0
+20261027_210831_dede40
+20261027_211351_d66e33
+
+依据：models/lda_per_recording_20261027_212442_eec2a1 中逐组LDA固定80/20及五轮留出评估。
+替换前核对新旧八组核心文件与本次已评估来源SHA256完全一致。
+先完整复制新四组到暂存目录并核验，再移动旧四组到备份，最后移动已核验新副本到目标。
+未删除原始session_001/session_003录制。其他六组目标录制逐文件SHA256不变。
+新四组目标副本与原始session_003全文件SHA256一致，session_003原始文件不变。
+最终目标仍为10组，每组50条completed动作，共500条；受试者S013，每通道2000Hz。
+
+备份（位于history，避免常规递归扫描recordings误重复导入）：
+history/data_corrections/20261027_213645_s013_goodone_plus_replace/replaced_recordings
+
+完整前后哈希与核验记录：
+history/data_corrections/20261027_213645_s013_goodone_plus_replace/replacement_manifest.json
+
+这次按已观察LDA成绩更新开发数据集，不是独立盲测筛选。
+此前以goodone_plus训练的模型、划分和成绩对应替换前数据，不会自动更新；本次没有重训模型。
+复现旧实验时若来源哈希不匹配，应使用对应旧录制/本备份，不要修改旧实验的冻结哈希。

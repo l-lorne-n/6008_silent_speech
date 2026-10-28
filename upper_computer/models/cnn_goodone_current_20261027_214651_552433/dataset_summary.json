@@ -1,0 +1,89 @@
+{
+  "counts": {
+    "test": 499,
+    "train": 1507,
+    "validation": 490
+  },
+  "by_subject": {
+    "S011": {
+      "test": 100,
+      "train": 300,
+      "validation": 100
+    },
+    "S012": {
+      "train": 310,
+      "validation": 90,
+      "test": 100
+    },
+    "S013": {
+      "train": 300,
+      "validation": 100,
+      "test": 100
+    },
+    "S014": {
+      "train": 297,
+      "validation": 100,
+      "test": 99
+    },
+    "S015": {
+      "train": 300,
+      "validation": 100,
+      "test": 100
+    }
+  },
+  "windows": 31319,
+  "window_exclusions": {
+    "ambiguous_transition": 74152,
+    "clipping": 2
+  },
+  "window_counts": {
+    "test": {
+      "photo": 496,
+      "rest": 1304,
+      "quieter": 500,
+      "open": 499,
+      "louder": 498,
+      "previous": 505,
+      "close": 508,
+      "next": 497,
+      "start": 500,
+      "music": 497,
+      "stop": 493
+    },
+    "train": {
+      "close": 1502,
+      "rest": 3878,
+      "stop": 1510,
+      "next": 1509,
+      "louder": 1468,
+      "photo": 1494,
+      "quieter": 1504,
+      "start": 1508,
+      "music": 1506,
+      "previous": 1494,
+      "open": 1511
+    },
+    "validation": {
+      "open": 483,
+      "rest": 1243,
+      "louder": 491,
+      "next": 486,
+      "close": 493,
+      "photo": 489,
+      "music": 487,
+      "start": 492,
+      "stop": 494,
+      "quieter": 490,
+      "previous": 490
+    }
+  },
+  "indices_counts": {
+    "train": 18884,
+    "validation": 2200,
+    "test": 6297,
+    "fit": 25022,
+    "dev_calibration": 550,
+    "final_calibration": 550
+  },
+  "real_training_started": false
+}

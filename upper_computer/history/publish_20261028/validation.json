@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-28",
+  "timezone": "Asia/Singapore",
+  "branch": "integration-bt24-models-20261028",
+  "upper_computer": {
+    "passed": 33,
+    "deselected": 3,
+    "files": [
+      "test_ble_transport.py",
+      "test_board_baud.py",
+      "test_board_model_versions.py",
+      "test_board_monitor.py"
+    ],
+    "deselected_reason": "Three tests audit local historical board/build manifests containing original absolute paths; not portable-clone tests."
+  },
+  "app": {
+    "passed": 26,
+    "files": [
+      "test_board_bridge.py",
+      "test_server.py"
+    ],
+    "note": "Media tests now create temporary PNG/WAV fixtures, so private media is unnecessary."
+  },
+  "javascript_syntax": {
+    "monitor.js": "passed",
+    "app.js": "passed"
+  },
+  "asset_sha256": {
+    "files_checked": 203,
+    "mismatches": 0
+  },
+  "hardware": "Not accessed during publication. Historical hardware evidence and unresolved BLE/UART issues are documented in the handoff.",
+  "training": "Not rerun during publication. Both frozen model bundles copied byte-for-byte."
+}

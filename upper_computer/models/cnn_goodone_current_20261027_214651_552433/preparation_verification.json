@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "recordings": 49,
+  "valid_trials": 2496,
+  "counts": {
+    "test": 499,
+    "train": 1507,
+    "validation": 490
+  },
+  "new_s013_included": [
+    "20261027_205409_a33129",
+    "20261027_205949_dfbdb0",
+    "20261027_210831_dede40",
+    "20261027_211351_d66e33"
+  ],
+  "old_s013_excluded": [
+    "20261021_113627_8c3388",
+    "20261021_114145_21a399",
+    "20261021_115441_c9a385",
+    "20261021_120003_80d5cb"
+  ],
+  "windows": 31319,
+  "indices_counts": {
+    "train": 18884,
+    "validation": 2200,
+    "test": 6297,
+    "fit": 25022,
+    "dev_calibration": 550,
+    "final_calibration": 550
+  },
+  "raw_hashes_and_current_inventory_verified": true,
+  "cache_seals_verified": true,
+  "train_only_normalization_recomputed": true,
+  "windows_within_original_split_context": true,
+  "real_training_started": false,
+  "retained_trial_count": 2296,
+  "retained_trials_with_changed_split": 240,
+  "synthetic_pipeline_tests_passed": 3
+}
