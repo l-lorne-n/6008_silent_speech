@@ -4,6 +4,10 @@
   const $ = id => document.getElementById(id);
   const WORDS = ['open', 'close', 'next', 'music', 'start', 'stop', 'previous', 'quieter', 'louder', 'photo'];
   const state = {view: 'home', photo: 0, music: 0, photos: [], tracks: [], volume: 50, threshold: 0};
+  const SCENE_FILTER_KEY = 'quietly.sceneCommandFilter';
+  const SCENE_BLOCKED = {photo: ['start', 'stop', 'quieter', 'louder'], music: ['open', 'close']};
+  state.sceneFilter = true;
+  try { state.sceneFilter = localStorage.getItem(SCENE_FILTER_KEY) !== 'false'; } catch { /* Still usable without storage. */ }
   const audio = $('audio');
   const lightbox = $('lightbox');
   const logs = [];
@@ -29,10 +33,18 @@
     if (lightbox.open) lightbox.close();
     if (view !== 'music') audio.pause();
     state.view = view;
+    renderSceneFilter();
     ['home', 'photo', 'music'].forEach(name => { $(`${name}-view`).hidden = name !== view; });
     const commands = view === 'home' ? ['photo', 'music'] : view === 'photo' ? ['previous', 'next', 'open', 'close', 'music'] : ['previous', 'next', 'start', 'stop', 'quieter', 'louder', 'photo'];
     $('context-commands').replaceChildren(...commands.map(word => commandButton(word)));
     window.scrollTo({top: 0, behavior: 'instant'});
+  }
+  function renderSceneFilter() {
+    document.querySelectorAll('[data-scene-filter]').forEach(input => { input.checked = state.sceneFilter; });
+    document.querySelectorAll('[data-scene-filter-state]').forEach(el => { el.textContent = state.sceneFilter ? '已开启' : '已关闭'; });
+    const words = SCENE_BLOCKED[state.view];
+    $('scene-filter-description').textContent = !state.sceneFilter ? '已关闭 · 使用原有命令处理方式' : words ? `当前${state.view === 'photo' ? '照片' : '音乐'}页忽略：${words.join(' / ')} · photo / music 仍可切换页面` : '首页不额外过滤 · 进入照片或音乐页后自动应用对应规则';
+    document.querySelectorAll('[data-scene-feedback]').forEach(el => { el.textContent = ''; });
   }
   function commandButton(word) {
     const button = document.createElement('button');
@@ -118,15 +130,17 @@
     $('volume-value').textContent = `${state.volume}%`;
     return `Volume ${state.volume}%`;
   }
-  function feedback(word, result, input) {
+  function feedback(word, result, input, filtered = false) {
+    document.querySelectorAll('[data-scene-feedback]').forEach(el => { el.textContent = filtered ? result : ''; });
     const manual = input.source === 'manual' || input.source === 'keyboard';
     $('feedback-label').textContent = manual ? (input.source === 'keyboard' ? 'KEYBOARD TEST' : 'MANUAL TEST') : 'sEMG INPUT';
     $('last-command').textContent = word;
     $('command-result').textContent = result;
     $('confidence').textContent = manual ? 'Test input · Not a model prediction' : Number.isFinite(input.confidence) ? `Model confidence ${(input.confidence * 100).toFixed(1)}%` : 'No confidence provided';
     const dock = document.querySelector('.command-dock');
-    dock.classList.remove('flash'); void dock.offsetWidth; dock.classList.add('flash');
-    document.querySelectorAll('.command-chip').forEach(el => el.classList.toggle('active', el.dataset.command === word));
+    dock.classList.remove('flash');
+    if (!filtered) { void dock.offsetWidth; dock.classList.add('flash'); }
+    document.querySelectorAll('.command-chip').forEach(el => el.classList.toggle('active', !filtered && el.dataset.command === word));
     logs.unshift({word, result, source: manual ? 'Test' : 'sEMG', time: new Date().toLocaleTimeString('en-GB', {hour12: false})});
     logs.splice(20);
     $('event-log').replaceChildren(...logs.map(log => {
@@ -151,6 +165,11 @@
     if (!manual && ((input.confidence != null && !validConfidence) || (state.threshold > 0 && (!validConfidence || input.confidence * 100 < state.threshold)))) {
       const result = validConfidence ? 'Below confidence threshold. Not executed.' : 'Missing or invalid confidence. Not executed.';
       feedback(word, result, input); return {ok: false, result};
+    }
+    if (state.sceneFilter && SCENE_BLOCKED[state.view]?.includes(word)) {
+      const result = `已过滤 ${word} · 当前为${state.view === 'photo' ? '照片' : '音乐'}界面，不执行此命令`;
+      feedback(word, result, input, true);
+      return {ok: false, filtered: true, result};
     }
     let result;
     if (word === 'music' || word === 'photo') { setView(word); result = word === 'music' ? 'Music library ready' : 'Photo library ready'; }
@@ -251,6 +270,7 @@
     eventStream.addEventListener('error', () => {
       $('connection').classList.remove('online');
       $('connection').querySelector('span').textContent = 'Bridge offline · Reconnecting';
+      window.dispatchEvent(new CustomEvent('quietly-bridge-offline'));
     });
     eventStream.addEventListener('command', event => { try { const data = JSON.parse(event.data); if (!data.board || Date.now() - data.sent_at < 1000) send({...data, source: 'semg'}); } catch { toast('Invalid command data received.'); } });
     for (const kind of ['board', 'envelope']) eventStream.addEventListener(kind, event => { try { window.dispatchEvent(new CustomEvent('quietly-' + kind, {detail: JSON.parse(event.data)})); } catch {} });
@@ -284,6 +304,11 @@
   $('command-form').addEventListener('submit', event => { event.preventDefault(); send({word: $('command-input').value, source: 'manual'}); $('command-input').value = ''; });
   $('threshold').addEventListener('input', event => { state.threshold = Math.max(0, Math.min(100, Number(event.target.value) || 0)); });
   $('threshold').addEventListener('change', event => { event.target.value = state.threshold; });
+  document.querySelectorAll('[data-scene-filter]').forEach(input => input.addEventListener('change', () => {
+    state.sceneFilter = input.checked;
+    try { localStorage.setItem(SCENE_FILTER_KEY, String(state.sceneFilter)); } catch { /* Apply for this page even if persistence is unavailable. */ }
+    renderSceneFilter();
+  }));
   $('fullscreen-button').addEventListener('click', async () => {
     try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }
     catch { toast('Fullscreen is unavailable. Try your browser F11 shortcut.'); }
@@ -297,7 +322,7 @@
     else if (key === 'h') { event.preventDefault(); setView('home'); }
   });
   window.addEventListener('semg-command', event => send({...event.detail, source: 'semg'}));
-  window.Quietly = Object.freeze({send: input => send(typeof input === 'string' ? {word: input, source: 'semg'} : {...input, source: 'semg'}), getState: () => ({view: state.view, photoIndex: state.photo, musicIndex: state.music, volume: state.volume, playing: !audio.paused, largePhoto: lightbox.open, photoCount: state.photos.length, musicCount: state.tracks.length})});
+  window.Quietly = Object.freeze({send: input => send(typeof input === 'string' ? {word: input, source: 'semg'} : {...input, source: 'semg'}), getState: () => ({view: state.view, sceneFilter: state.sceneFilter, photoIndex: state.photo, musicIndex: state.music, volume: state.volume, playing: !audio.paused, largePhoto: lightbox.open, photoCount: state.photos.length, musicCount: state.tracks.length})});
   async function init() {
     let manifest = window.MEDIA_MANIFEST || {photos: [], music: []};
     if (location.protocol !== 'file:') {

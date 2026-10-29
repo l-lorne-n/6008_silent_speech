@@ -1,0 +1,792 @@
+{"kind": "phase", "phase": "baseline", "host_ns": 9510365271100, "planned_host_ns": 9510365271100, "event_id": "event_1", "gui_submit_ns": 9510367077100}
+{"kind": "marker_sent", "event_id": "event_1", "token": 8, "host_ns": 9510369383500}
+{"kind": "marker_ack", "event_id": "event_1", "token": 8, "host_ns": 9510411182700, "sent_host_ns": 9510369383500, "device_sample_idx": 6951360, "device_tick_ms": 3475682, "rtt_ms": 41.7992, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_9", "token": 9, "host_ns": 9510509431400}
+{"kind": "marker_ack", "event_id": "sync_9", "token": 9, "host_ns": 9510514880600, "sent_host_ns": 9510509431400, "device_sample_idx": 6951640, "device_tick_ms": 3475822, "rtt_ms": 5.4492, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_10", "token": 10, "host_ns": 9512536695900}
+{"kind": "marker_ack", "event_id": "sync_10", "token": 10, "host_ns": 9512541823400, "sent_host_ns": 9512536695900, "device_sample_idx": 6955680, "device_tick_ms": 3477849, "rtt_ms": 5.1275, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_11", "token": 11, "host_ns": 9514539344700}
+{"kind": "marker_ack", "event_id": "sync_11", "token": 11, "host_ns": 9514544811100, "sent_host_ns": 9514539344700, "device_sample_idx": 6959700, "device_tick_ms": 3479852, "rtt_ms": 5.4664, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "prepare", "host_ns": 9515470317500, "planned_host_ns": 9515365271100, "trial_id": 1, "word": "photo", "label_id": 10, "block": 1, "repeat_of": null, "event_id": "event_2", "gui_submit_ns": 9515470372500}
+{"kind": "marker_sent", "event_id": "event_2", "token": 12, "host_ns": 9515470629500}
+{"kind": "marker_ack", "event_id": "event_2", "token": 12, "host_ns": 9515473269800, "sent_host_ns": 9515470629500, "device_sample_idx": 6961560, "device_tick_ms": 3480783, "rtt_ms": 2.6403, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_13", "token": 13, "host_ns": 9516548162100}
+{"kind": "marker_ack", "event_id": "sync_13", "token": 13, "host_ns": 9516571947600, "sent_host_ns": 9516548162100, "device_sample_idx": 6963720, "device_tick_ms": 3481861, "rtt_ms": 23.7855, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9516983362900, "planned_host_ns": 9516970317500, "trial_id": 1, "word": "photo", "label_id": 10, "block": 1, "repeat_of": null, "event_id": "event_3", "gui_submit_ns": 9516983418200}
+{"kind": "marker_sent", "event_id": "event_3", "token": 14, "host_ns": 9516983685800}
+{"kind": "marker_ack", "event_id": "event_3", "token": 14, "host_ns": 9516986710600, "sent_host_ns": 9516983685800, "device_sample_idx": 6964580, "device_tick_ms": 3482296, "rtt_ms": 3.0248, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_15", "token": 15, "host_ns": 9518548997800}
+{"kind": "marker_ack", "event_id": "sync_15", "token": 15, "host_ns": 9518554487900, "sent_host_ns": 9518548997800, "device_sample_idx": 6967720, "device_tick_ms": 3483862, "rtt_ms": 5.4901, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9519043909700, "planned_host_ns": 9518983362900, "trial_id": 1, "word": "photo", "label_id": 10, "block": 1, "repeat_of": null, "event_id": "event_4", "gui_submit_ns": 9519043947300}
+{"kind": "marker_sent", "event_id": "event_4", "token": 16, "host_ns": 9519044160900}
+{"kind": "marker_ack", "event_id": "event_4", "token": 16, "host_ns": 9519047244600, "sent_host_ns": 9519044160900, "device_sample_idx": 6968700, "device_tick_ms": 3484357, "rtt_ms": 3.0837, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_17", "token": 17, "host_ns": 9520557391300}
+{"kind": "marker_ack", "event_id": "sync_17", "token": 17, "host_ns": 9520564452100, "sent_host_ns": 9520557391300, "device_sample_idx": 6971740, "device_tick_ms": 3485870, "rtt_ms": 7.0608, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9521065847600, "status": "completed", "reason": null, "trial_id": 1, "word": "photo", "label_id": 10, "block": 1, "repeat_of": null, "event_id": "event_5"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9521065847600, "planned_host_ns": 9521043909700, "trial_id": 2, "word": "quieter", "label_id": 7, "block": 1, "repeat_of": null, "event_id": "event_6", "gui_submit_ns": 9521066679500}
+{"kind": "marker_sent", "event_id": "event_6", "token": 18, "host_ns": 9521067084100}
+{"kind": "marker_ack", "event_id": "event_6", "token": 18, "host_ns": 9521073028000, "sent_host_ns": 9521067084100, "device_sample_idx": 6972760, "device_tick_ms": 3486380, "rtt_ms": 5.9439, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_19", "token": 19, "host_ns": 9522568208200}
+{"kind": "phase", "phase": "action", "host_ns": 9522572819900, "planned_host_ns": 9522565847600, "trial_id": 2, "word": "quieter", "label_id": 7, "block": 1, "repeat_of": null, "event_id": "event_7", "gui_submit_ns": 9522572879200}
+{"kind": "marker_sent", "event_id": "event_7", "token": 20, "host_ns": 9522573296100}
+{"kind": "marker_ack", "event_id": "sync_19", "token": 19, "host_ns": 9522574408600, "sent_host_ns": 9522568208200, "device_sample_idx": 6975760, "device_tick_ms": 3487881, "rtt_ms": 6.2004, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_ack", "event_id": "event_7", "token": 20, "host_ns": 9522576944100, "sent_host_ns": 9522573296100, "device_sample_idx": 6975760, "device_tick_ms": 3487886, "rtt_ms": 3.648, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_21", "token": 21, "host_ns": 9524578836200}
+{"kind": "phase", "phase": "rest", "host_ns": 9524583396500, "planned_host_ns": 9524572819900, "trial_id": 2, "word": "quieter", "label_id": 7, "block": 1, "repeat_of": null, "event_id": "event_8", "gui_submit_ns": 9524583452000}
+{"kind": "marker_sent", "event_id": "event_8", "token": 22, "host_ns": 9524583709100}
+{"kind": "marker_ack", "event_id": "sync_21", "token": 21, "host_ns": 9524584270900, "sent_host_ns": 9524578836200, "device_sample_idx": 6979780, "device_tick_ms": 3489892, "rtt_ms": 5.4347, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_ack", "event_id": "event_8", "token": 22, "host_ns": 9524588839400, "sent_host_ns": 9524583709100, "device_sample_idx": 6979780, "device_tick_ms": 3489897, "rtt_ms": 5.1303, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_23", "token": 23, "host_ns": 9526598489500}
+{"kind": "marker_ack", "event_id": "sync_23", "token": 23, "host_ns": 9526621604400, "sent_host_ns": 9526598489500, "device_sample_idx": 6983820, "device_tick_ms": 3491911, "rtt_ms": 23.1149, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9526626139900, "status": "completed", "reason": null, "trial_id": 2, "word": "quieter", "label_id": 7, "block": 1, "repeat_of": null, "event_id": "event_9"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9526626139900, "planned_host_ns": 9526583396500, "trial_id": 3, "word": "open", "label_id": 1, "block": 1, "repeat_of": null, "event_id": "event_10", "gui_submit_ns": 9526627001800}
+{"kind": "marker_sent", "event_id": "event_10", "token": 24, "host_ns": 9526627553800}
+{"kind": "marker_ack", "event_id": "event_10", "token": 24, "host_ns": 9526632871000, "sent_host_ns": 9526627553800, "device_sample_idx": 6983880, "device_tick_ms": 3491941, "rtt_ms": 5.3172, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9528186760800, "planned_host_ns": 9528126139900, "trial_id": 3, "word": "open", "label_id": 1, "block": 1, "repeat_of": null, "event_id": "event_11", "gui_submit_ns": 9528186826600}
+{"kind": "marker_sent", "event_id": "event_11", "token": 25, "host_ns": 9528187168600}
+{"kind": "marker_ack", "event_id": "event_11", "token": 25, "host_ns": 9528192855800, "sent_host_ns": 9528187168600, "device_sample_idx": 6987000, "device_tick_ms": 3493500, "rtt_ms": 5.6872, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_26", "token": 26, "host_ns": 9528609998500}
+{"kind": "marker_ack", "event_id": "sync_26", "token": 26, "host_ns": 9528614964900, "sent_host_ns": 9528609998500, "device_sample_idx": 6987840, "device_tick_ms": 3493923, "rtt_ms": 4.9664, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9530262591600, "planned_host_ns": 9530186760800, "trial_id": 3, "word": "open", "label_id": 1, "block": 1, "repeat_of": null, "event_id": "event_12", "gui_submit_ns": 9530262655800}
+{"kind": "marker_sent", "event_id": "event_12", "token": 27, "host_ns": 9530262890400}
+{"kind": "marker_ack", "event_id": "event_12", "token": 27, "host_ns": 9530265845800, "sent_host_ns": 9530262890400, "device_sample_idx": 6991140, "device_tick_ms": 3495576, "rtt_ms": 2.9554, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_28", "token": 28, "host_ns": 9530634070200}
+{"kind": "marker_ack", "event_id": "sync_28", "token": 28, "host_ns": 9530638960400, "sent_host_ns": 9530634070200, "device_sample_idx": 6991880, "device_tick_ms": 3495947, "rtt_ms": 4.8902, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9532286938900, "status": "completed", "reason": null, "trial_id": 3, "word": "open", "label_id": 1, "block": 1, "repeat_of": null, "event_id": "event_13"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9532286938900, "planned_host_ns": 9532262591600, "trial_id": 4, "word": "louder", "label_id": 8, "block": 1, "repeat_of": null, "event_id": "event_14", "gui_submit_ns": 9532287789000}
+{"kind": "marker_sent", "event_id": "event_14", "token": 29, "host_ns": 9532288528000}
+{"kind": "marker_ack", "event_id": "event_14", "token": 29, "host_ns": 9532292582000, "sent_host_ns": 9532288528000, "device_sample_idx": 6995200, "device_tick_ms": 3497602, "rtt_ms": 4.054, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_30", "token": 30, "host_ns": 9532655945200}
+{"kind": "marker_ack", "event_id": "sync_30", "token": 30, "host_ns": 9532659784000, "sent_host_ns": 9532655945200, "device_sample_idx": 6995920, "device_tick_ms": 3497969, "rtt_ms": 3.8388, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9533792316900, "planned_host_ns": 9533786938900, "trial_id": 4, "word": "louder", "label_id": 8, "block": 1, "repeat_of": null, "event_id": "event_15", "gui_submit_ns": 9533792372400}
+{"kind": "marker_sent", "event_id": "event_15", "token": 31, "host_ns": 9533792720200}
+{"kind": "marker_ack", "event_id": "event_15", "token": 31, "host_ns": 9533795743700, "sent_host_ns": 9533792720200, "device_sample_idx": 6998200, "device_tick_ms": 3499106, "rtt_ms": 3.0235, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_32", "token": 32, "host_ns": 9534658557900}
+{"kind": "marker_ack", "event_id": "sync_32", "token": 32, "host_ns": 9534664012500, "sent_host_ns": 9534658557900, "device_sample_idx": 6999940, "device_tick_ms": 3499972, "rtt_ms": 5.4546, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9535804496300, "planned_host_ns": 9535792316900, "trial_id": 4, "word": "louder", "label_id": 8, "block": 1, "repeat_of": null, "event_id": "event_16", "gui_submit_ns": 9535804566800}
+{"kind": "marker_sent", "event_id": "event_16", "token": 33, "host_ns": 9535808323800}
+{"kind": "marker_ack", "event_id": "event_16", "token": 33, "host_ns": 9535824713400, "sent_host_ns": 9535808323800, "device_sample_idx": 7002240, "device_tick_ms": 3501122, "rtt_ms": 16.3896, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_34", "token": 34, "host_ns": 9536680061500}
+{"kind": "marker_ack", "event_id": "sync_34", "token": 34, "host_ns": 9536703874100, "sent_host_ns": 9536680061500, "device_sample_idx": 7003980, "device_tick_ms": 3501993, "rtt_ms": 23.8126, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9537858839600, "status": "completed", "reason": null, "trial_id": 4, "word": "louder", "label_id": 8, "block": 1, "repeat_of": null, "event_id": "event_17"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9537858839600, "planned_host_ns": 9537804496300, "trial_id": 5, "word": "previous", "label_id": 9, "block": 1, "repeat_of": null, "event_id": "event_18", "gui_submit_ns": 9537859703000}
+{"kind": "marker_sent", "event_id": "event_18", "token": 35, "host_ns": 9537860412300}
+{"kind": "marker_ack", "event_id": "event_18", "token": 35, "host_ns": 9537862483600, "sent_host_ns": 9537860412300, "device_sample_idx": 7006340, "device_tick_ms": 3503174, "rtt_ms": 2.0713, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_36", "token": 36, "host_ns": 9538680688200}
+{"kind": "marker_ack", "event_id": "sync_36", "token": 36, "host_ns": 9538703942900, "sent_host_ns": 9538680688200, "device_sample_idx": 7007980, "device_tick_ms": 3503994, "rtt_ms": 23.2547, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9539403115600, "planned_host_ns": 9539358839600, "trial_id": 5, "word": "previous", "label_id": 9, "block": 1, "repeat_of": null, "event_id": "event_19", "gui_submit_ns": 9539403166500}
+{"kind": "marker_sent", "event_id": "event_19", "token": 37, "host_ns": 9539403386900}
+{"kind": "marker_ack", "event_id": "event_19", "token": 37, "host_ns": 9539406482300, "sent_host_ns": 9539403386900, "device_sample_idx": 7009420, "device_tick_ms": 3504717, "rtt_ms": 3.0954, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_38", "token": 38, "host_ns": 9540681088900}
+{"kind": "marker_ack", "event_id": "sync_38", "token": 38, "host_ns": 9540683972500, "sent_host_ns": 9540681088900, "device_sample_idx": 7011980, "device_tick_ms": 3505995, "rtt_ms": 2.8836, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9541456162900, "planned_host_ns": 9541403115600, "trial_id": 5, "word": "previous", "label_id": 9, "block": 1, "repeat_of": null, "event_id": "event_20", "gui_submit_ns": 9541456204000}
+{"kind": "marker_sent", "event_id": "event_20", "token": 39, "host_ns": 9541456466900}
+{"kind": "marker_ack", "event_id": "event_20", "token": 39, "host_ns": 9541462242500, "sent_host_ns": 9541456466900, "device_sample_idx": 7013540, "device_tick_ms": 3506770, "rtt_ms": 5.7756, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_40", "token": 40, "host_ns": 9542695135100}
+{"kind": "marker_ack", "event_id": "sync_40", "token": 40, "host_ns": 9542700227900, "sent_host_ns": 9542695135100, "device_sample_idx": 7016000, "device_tick_ms": 3508009, "rtt_ms": 5.0928, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9543487237700, "status": "completed", "reason": null, "trial_id": 5, "word": "previous", "label_id": 9, "block": 1, "repeat_of": null, "event_id": "event_21"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9543487237700, "planned_host_ns": 9543456162900, "trial_id": 6, "word": "close", "label_id": 2, "block": 1, "repeat_of": null, "event_id": "event_22", "gui_submit_ns": 9543488511500}
+{"kind": "marker_sent", "event_id": "event_22", "token": 41, "host_ns": 9543488835500}
+{"kind": "marker_ack", "event_id": "event_22", "token": 41, "host_ns": 9543492246300, "sent_host_ns": 9543488835500, "device_sample_idx": 7017600, "device_tick_ms": 3508802, "rtt_ms": 3.4108, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_42", "token": 42, "host_ns": 9544713095400}
+{"kind": "marker_ack", "event_id": "sync_42", "token": 42, "host_ns": 9544718393100, "sent_host_ns": 9544713095400, "device_sample_idx": 7020040, "device_tick_ms": 3510027, "rtt_ms": 5.2977, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9545000783000, "planned_host_ns": 9544987237700, "trial_id": 6, "word": "close", "label_id": 2, "block": 1, "repeat_of": null, "event_id": "event_23", "gui_submit_ns": 9545000821200}
+{"kind": "marker_sent", "event_id": "event_23", "token": 43, "host_ns": 9545001521500}
+{"kind": "marker_ack", "event_id": "event_23", "token": 43, "host_ns": 9545003239200, "sent_host_ns": 9545001521500, "device_sample_idx": 7020620, "device_tick_ms": 3510315, "rtt_ms": 1.7177, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_44", "token": 44, "host_ns": 9546713067200}
+{"kind": "marker_ack", "event_id": "sync_44", "token": 44, "host_ns": 9546732171700, "sent_host_ns": 9546713067200, "device_sample_idx": 7024040, "device_tick_ms": 3512027, "rtt_ms": 19.1045, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9547082362400, "planned_host_ns": 9547000783000, "trial_id": 6, "word": "close", "label_id": 2, "block": 1, "repeat_of": null, "event_id": "event_24", "gui_submit_ns": 9547082404700}
+{"kind": "marker_sent", "event_id": "event_24", "token": 45, "host_ns": 9547082665300}
+{"kind": "marker_ack", "event_id": "event_24", "token": 45, "host_ns": 9547086838500, "sent_host_ns": 9547082665300, "device_sample_idx": 7024780, "device_tick_ms": 3512396, "rtt_ms": 4.1732, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_46", "token": 46, "host_ns": 9548738313500}
+{"kind": "marker_ack", "event_id": "sync_46", "token": 46, "host_ns": 9548761694300, "sent_host_ns": 9548738313500, "device_sample_idx": 7028100, "device_tick_ms": 3514052, "rtt_ms": 23.3808, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9549094400600, "status": "completed", "reason": null, "trial_id": 6, "word": "close", "label_id": 2, "block": 1, "repeat_of": null, "event_id": "event_25"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9549094400600, "planned_host_ns": 9549082362400, "trial_id": 7, "word": "next", "label_id": 3, "block": 1, "repeat_of": null, "event_id": "event_26", "gui_submit_ns": 9549095343900}
+{"kind": "marker_sent", "event_id": "event_26", "token": 47, "host_ns": 9549098314100}
+{"kind": "marker_ack", "event_id": "event_26", "token": 47, "host_ns": 9549113821100, "sent_host_ns": 9549098314100, "device_sample_idx": 7028820, "device_tick_ms": 3514412, "rtt_ms": 15.507, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9550594491800, "planned_host_ns": 9550594400600, "trial_id": 7, "word": "next", "label_id": 3, "block": 1, "repeat_of": null, "event_id": "event_27", "gui_submit_ns": 9550594548900}
+{"kind": "marker_sent", "event_id": "event_27", "token": 48, "host_ns": 9550594830100}
+{"kind": "marker_ack", "event_id": "event_27", "token": 48, "host_ns": 9550596705500, "sent_host_ns": 9550594830100, "device_sample_idx": 7031800, "device_tick_ms": 3515909, "rtt_ms": 1.8754, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_49", "token": 49, "host_ns": 9550762643500}
+{"kind": "marker_ack", "event_id": "sync_49", "token": 49, "host_ns": 9550793117100, "sent_host_ns": 9550762643500, "device_sample_idx": 7032140, "device_tick_ms": 3516076, "rtt_ms": 30.4736, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9552616258000, "planned_host_ns": 9552594491800, "trial_id": 7, "word": "next", "label_id": 3, "block": 1, "repeat_of": null, "event_id": "event_28", "gui_submit_ns": 9552616301700}
+{"kind": "marker_sent", "event_id": "event_28", "token": 50, "host_ns": 9552617753100}
+{"kind": "marker_ack", "event_id": "event_28", "token": 50, "host_ns": 9552622000600, "sent_host_ns": 9552617753100, "device_sample_idx": 7035860, "device_tick_ms": 3517932, "rtt_ms": 4.2475, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_51", "token": 51, "host_ns": 9552764918700}
+{"kind": "marker_ack", "event_id": "sync_51", "token": 51, "host_ns": 9552770891500, "sent_host_ns": 9552764918700, "device_sample_idx": 7036140, "device_tick_ms": 3518079, "rtt_ms": 5.9728, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9554674643800, "status": "completed", "reason": null, "trial_id": 7, "word": "next", "label_id": 3, "block": 1, "repeat_of": null, "event_id": "event_29"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9554674643800, "planned_host_ns": 9554616258000, "trial_id": 8, "word": "start", "label_id": 5, "block": 1, "repeat_of": null, "event_id": "event_30", "gui_submit_ns": 9554675688200}
+{"kind": "marker_sent", "event_id": "event_30", "token": 52, "host_ns": 9554675940100}
+{"kind": "marker_ack", "event_id": "event_30", "token": 52, "host_ns": 9554681766000, "sent_host_ns": 9554675940100, "device_sample_idx": 7039980, "device_tick_ms": 3519990, "rtt_ms": 5.8259, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_53", "token": 53, "host_ns": 9554766962700}
+{"kind": "marker_ack", "event_id": "sync_53", "token": 53, "host_ns": 9554790697600, "sent_host_ns": 9554766962700, "device_sample_idx": 7040160, "device_tick_ms": 3520081, "rtt_ms": 23.7349, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9556234440200, "planned_host_ns": 9556174643800, "trial_id": 8, "word": "start", "label_id": 5, "block": 1, "repeat_of": null, "event_id": "event_31", "gui_submit_ns": 9556234517900}
+{"kind": "marker_sent", "event_id": "event_31", "token": 54, "host_ns": 9556234753100}
+{"kind": "marker_ack", "event_id": "event_31", "token": 54, "host_ns": 9556236617500, "sent_host_ns": 9556234753100, "device_sample_idx": 7043080, "device_tick_ms": 3521549, "rtt_ms": 1.8644, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_55", "token": 55, "host_ns": 9556767648100}
+{"kind": "marker_ack", "event_id": "sync_55", "token": 55, "host_ns": 9556773117400, "sent_host_ns": 9556767648100, "device_sample_idx": 7044160, "device_tick_ms": 3522082, "rtt_ms": 5.4693, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9558302575600, "planned_host_ns": 9558234440200, "trial_id": 8, "word": "start", "label_id": 5, "block": 1, "repeat_of": null, "event_id": "event_32", "gui_submit_ns": 9558302656400}
+{"kind": "marker_sent", "event_id": "event_32", "token": 56, "host_ns": 9558302977200}
+{"kind": "marker_ack", "event_id": "event_32", "token": 56, "host_ns": 9558307235400, "sent_host_ns": 9558302977200, "device_sample_idx": 7047220, "device_tick_ms": 3523617, "rtt_ms": 4.2582, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_57", "token": 57, "host_ns": 9558775788200}
+{"kind": "marker_ack", "event_id": "sync_57", "token": 57, "host_ns": 9558800099500, "sent_host_ns": 9558775788200, "device_sample_idx": 7048180, "device_tick_ms": 3524090, "rtt_ms": 24.3113, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9560327940600, "status": "completed", "reason": null, "trial_id": 8, "word": "start", "label_id": 5, "block": 1, "repeat_of": null, "event_id": "event_33"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9560327940600, "planned_host_ns": 9560302575600, "trial_id": 9, "word": "music", "label_id": 4, "block": 1, "repeat_of": null, "event_id": "event_34", "gui_submit_ns": 9560328813900}
+{"kind": "marker_sent", "event_id": "event_34", "token": 58, "host_ns": 9560329069600}
+{"kind": "marker_ack", "event_id": "event_34", "token": 58, "host_ns": 9560331558300, "sent_host_ns": 9560329069600, "device_sample_idx": 7051280, "device_tick_ms": 3525643, "rtt_ms": 2.4887, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_59", "token": 59, "host_ns": 9560797489000}
+{"kind": "marker_ack", "event_id": "sync_59", "token": 59, "host_ns": 9560820504900, "sent_host_ns": 9560797489000, "device_sample_idx": 7052220, "device_tick_ms": 3526112, "rtt_ms": 23.0159, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9561865405400, "planned_host_ns": 9561827940600, "trial_id": 9, "word": "music", "label_id": 4, "block": 1, "repeat_of": null, "event_id": "event_35", "gui_submit_ns": 9561865456900}
+{"kind": "marker_sent", "event_id": "event_35", "token": 60, "host_ns": 9561867294000}
+{"kind": "marker_ack", "event_id": "event_35", "token": 60, "host_ns": 9561871471000, "sent_host_ns": 9561867294000, "device_sample_idx": 7054360, "device_tick_ms": 3527182, "rtt_ms": 4.177, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_61", "token": 61, "host_ns": 9562815251200}
+{"kind": "marker_ack", "event_id": "sync_61", "token": 61, "host_ns": 9562844780600, "sent_host_ns": 9562815251200, "device_sample_idx": 7056240, "device_tick_ms": 3528130, "rtt_ms": 29.5294, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9563926902100, "planned_host_ns": 9563865405400, "trial_id": 9, "word": "music", "label_id": 4, "block": 1, "repeat_of": null, "event_id": "event_36", "gui_submit_ns": 9563926959600}
+{"kind": "marker_sent", "event_id": "event_36", "token": 62, "host_ns": 9563927313500}
+{"kind": "marker_ack", "event_id": "event_36", "token": 62, "host_ns": 9563931830900, "sent_host_ns": 9563927313500, "device_sample_idx": 7058480, "device_tick_ms": 3529242, "rtt_ms": 4.5174, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_63", "token": 63, "host_ns": 9564817096600}
+{"kind": "marker_ack", "event_id": "sync_63", "token": 63, "host_ns": 9564841049600, "sent_host_ns": 9564817096600, "device_sample_idx": 7060260, "device_tick_ms": 3530131, "rtt_ms": 23.953, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9565967911500, "status": "completed", "reason": null, "trial_id": 9, "word": "music", "label_id": 4, "block": 1, "repeat_of": null, "event_id": "event_37"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9565967911500, "planned_host_ns": 9565926902100, "trial_id": 10, "word": "stop", "label_id": 6, "block": 1, "repeat_of": null, "event_id": "event_38", "gui_submit_ns": 9565968839600}
+{"kind": "marker_sent", "event_id": "event_38", "token": 64, "host_ns": 9565969214000}
+{"kind": "marker_ack", "event_id": "event_38", "token": 64, "host_ns": 9565971454300, "sent_host_ns": 9565969214000, "device_sample_idx": 7062560, "device_tick_ms": 3531284, "rtt_ms": 2.2403, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_65", "token": 65, "host_ns": 9566819892700}
+{"kind": "marker_ack", "event_id": "sync_65", "token": 65, "host_ns": 9566843188800, "sent_host_ns": 9566819892700, "device_sample_idx": 7064260, "device_tick_ms": 3532134, "rtt_ms": 23.2961, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9567550477600, "planned_host_ns": 9567467911500, "trial_id": 10, "word": "stop", "label_id": 6, "block": 1, "repeat_of": null, "event_id": "event_39", "gui_submit_ns": 9567550527800}
+{"kind": "marker_sent", "event_id": "event_39", "token": 66, "host_ns": 9567550773500}
+{"kind": "marker_ack", "event_id": "event_39", "token": 66, "host_ns": 9567552486300, "sent_host_ns": 9567550773500, "device_sample_idx": 7065720, "device_tick_ms": 3532865, "rtt_ms": 1.7128, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_67", "token": 67, "host_ns": 9568838693900}
+{"kind": "marker_ack", "event_id": "sync_67", "token": 67, "host_ns": 9568871172900, "sent_host_ns": 9568838693900, "device_sample_idx": 7068300, "device_tick_ms": 3534153, "rtt_ms": 32.479, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9569631518700, "planned_host_ns": 9569550477600, "trial_id": 10, "word": "stop", "label_id": 6, "block": 1, "repeat_of": null, "event_id": "event_40", "gui_submit_ns": 9569631571400}
+{"kind": "marker_sent", "event_id": "event_40", "token": 68, "host_ns": 9569631819700}
+{"kind": "marker_ack", "event_id": "event_40", "token": 68, "host_ns": 9569634793100, "sent_host_ns": 9569631819700, "device_sample_idx": 7069880, "device_tick_ms": 3534946, "rtt_ms": 2.9734, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_69", "token": 69, "host_ns": 9570838401300}
+{"kind": "marker_ack", "event_id": "sync_69", "token": 69, "host_ns": 9570868729600, "sent_host_ns": 9570838401300, "device_sample_idx": 7072300, "device_tick_ms": 3536153, "rtt_ms": 30.3283, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9571656074300, "status": "completed", "reason": null, "trial_id": 10, "word": "stop", "label_id": 6, "block": 1, "repeat_of": null, "event_id": "event_41"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9571656074300, "planned_host_ns": 9571631518700, "trial_id": 11, "word": "close", "label_id": 2, "block": 2, "repeat_of": null, "event_id": "event_42", "gui_submit_ns": 9571657331800}
+{"kind": "marker_sent", "event_id": "event_42", "token": 70, "host_ns": 9571658863900}
+{"kind": "marker_ack", "event_id": "event_42", "token": 70, "host_ns": 9571661138300, "sent_host_ns": 9571658863900, "device_sample_idx": 7073940, "device_tick_ms": 3536974, "rtt_ms": 2.2744, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_71", "token": 71, "host_ns": 9572850684300}
+{"kind": "marker_ack", "event_id": "sync_71", "token": 71, "host_ns": 9572879888900, "sent_host_ns": 9572850684300, "device_sample_idx": 7076320, "device_tick_ms": 3538165, "rtt_ms": 29.2046, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9573167335000, "planned_host_ns": 9573156074300, "trial_id": 11, "word": "close", "label_id": 2, "block": 2, "repeat_of": null, "event_id": "event_43", "gui_submit_ns": 9573167390100}
+{"kind": "marker_sent", "event_id": "event_43", "token": 72, "host_ns": 9573168837700}
+{"kind": "marker_ack", "event_id": "event_43", "token": 72, "host_ns": 9573171308400, "sent_host_ns": 9573168837700, "device_sample_idx": 7076960, "device_tick_ms": 3538484, "rtt_ms": 2.4707, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_73", "token": 73, "host_ns": 9574863721600}
+{"kind": "marker_ack", "event_id": "sync_73", "token": 73, "host_ns": 9574887313800, "sent_host_ns": 9574863721600, "device_sample_idx": 7080340, "device_tick_ms": 3540179, "rtt_ms": 23.5922, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9575189721500, "planned_host_ns": 9575167335000, "trial_id": 11, "word": "close", "label_id": 2, "block": 2, "repeat_of": null, "event_id": "event_44", "gui_submit_ns": 9575189760700}
+{"kind": "marker_sent", "event_id": "event_44", "token": 74, "host_ns": 9575189993600}
+{"kind": "marker_ack", "event_id": "event_44", "token": 74, "host_ns": 9575191776700, "sent_host_ns": 9575189993600, "device_sample_idx": 7081000, "device_tick_ms": 3540505, "rtt_ms": 1.7831, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_75", "token": 75, "host_ns": 9576871940500}
+{"kind": "marker_ack", "event_id": "sync_75", "token": 75, "host_ns": 9576911366100, "sent_host_ns": 9576871940500, "device_sample_idx": 7084360, "device_tick_ms": 3542187, "rtt_ms": 39.4256, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9577193965400, "status": "completed", "reason": null, "trial_id": 11, "word": "close", "label_id": 2, "block": 2, "repeat_of": null, "event_id": "event_45"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9577193965400, "planned_host_ns": 9577189721500, "trial_id": 12, "word": "stop", "label_id": 6, "block": 2, "repeat_of": null, "event_id": "event_46", "gui_submit_ns": 9577194906700}
+{"kind": "marker_sent", "event_id": "event_46", "token": 76, "host_ns": 9577198121800}
+{"kind": "marker_ack", "event_id": "event_46", "token": 76, "host_ns": 9577214838200, "sent_host_ns": 9577198121800, "device_sample_idx": 7085020, "device_tick_ms": 3542513, "rtt_ms": 16.7164, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9578777102800, "planned_host_ns": 9578693965400, "trial_id": 12, "word": "stop", "label_id": 6, "block": 2, "repeat_of": null, "event_id": "event_47", "gui_submit_ns": 9578777137000}
+{"kind": "marker_sent", "event_id": "event_47", "token": 77, "host_ns": 9578777450700}
+{"kind": "marker_ack", "event_id": "event_47", "token": 77, "host_ns": 9578780942700, "sent_host_ns": 9578777450700, "device_sample_idx": 7088180, "device_tick_ms": 3544092, "rtt_ms": 3.492, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_78", "token": 78, "host_ns": 9578880159200}
+{"kind": "marker_ack", "event_id": "sync_78", "token": 78, "host_ns": 9578904173100, "sent_host_ns": 9578880159200, "device_sample_idx": 7088380, "device_tick_ms": 3544195, "rtt_ms": 24.0139, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9580786785500, "planned_host_ns": 9580777102800, "trial_id": 12, "word": "stop", "label_id": 6, "block": 2, "repeat_of": null, "event_id": "event_48", "gui_submit_ns": 9580786839400}
+{"kind": "marker_sent", "event_id": "event_48", "token": 79, "host_ns": 9580787159900}
+{"kind": "marker_ack", "event_id": "event_48", "token": 79, "host_ns": 9580790774800, "sent_host_ns": 9580787159900, "device_sample_idx": 7092200, "device_tick_ms": 3546102, "rtt_ms": 3.6149, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_80", "token": 80, "host_ns": 9580907474000}
+{"kind": "marker_ack", "event_id": "sync_80", "token": 80, "host_ns": 9580940545900, "sent_host_ns": 9580907474000, "device_sample_idx": 7092440, "device_tick_ms": 3546222, "rtt_ms": 33.0719, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9582805724700, "status": "completed", "reason": null, "trial_id": 12, "word": "stop", "label_id": 6, "block": 2, "repeat_of": null, "event_id": "event_49"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9582805724700, "planned_host_ns": 9582786785500, "trial_id": 13, "word": "next", "label_id": 3, "block": 2, "repeat_of": null, "event_id": "event_50", "gui_submit_ns": 9582806719400}
+{"kind": "marker_sent", "event_id": "event_50", "token": 81, "host_ns": 9582807185600}
+{"kind": "marker_ack", "event_id": "event_50", "token": 81, "host_ns": 9582810801600, "sent_host_ns": 9582807185600, "device_sample_idx": 7096240, "device_tick_ms": 3548122, "rtt_ms": 3.616, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_82", "token": 82, "host_ns": 9582933927700}
+{"kind": "marker_ack", "event_id": "sync_82", "token": 82, "host_ns": 9582938644000, "sent_host_ns": 9582933927700, "device_sample_idx": 7096480, "device_tick_ms": 3548249, "rtt_ms": 4.7163, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9584318559900, "planned_host_ns": 9584305724700, "trial_id": 13, "word": "next", "label_id": 3, "block": 2, "repeat_of": null, "event_id": "event_51", "gui_submit_ns": 9584318624800}
+{"kind": "marker_sent", "event_id": "event_51", "token": 83, "host_ns": 9584319504200}
+{"kind": "marker_ack", "event_id": "event_51", "token": 83, "host_ns": 9584322115700, "sent_host_ns": 9584319504200, "device_sample_idx": 7099260, "device_tick_ms": 3549635, "rtt_ms": 2.6115, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_84", "token": 84, "host_ns": 9584936636200}
+{"kind": "marker_ack", "event_id": "sync_84", "token": 84, "host_ns": 9584942101600, "sent_host_ns": 9584936636200, "device_sample_idx": 7100500, "device_tick_ms": 3550252, "rtt_ms": 5.4654, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9586329444500, "planned_host_ns": 9586318559900, "trial_id": 13, "word": "next", "label_id": 3, "block": 2, "repeat_of": null, "event_id": "event_52", "gui_submit_ns": 9586329520200}
+{"kind": "marker_sent", "event_id": "event_52", "token": 85, "host_ns": 9586330263700}
+{"kind": "marker_ack", "event_id": "event_52", "token": 85, "host_ns": 9586348209500, "sent_host_ns": 9586330263700, "device_sample_idx": 7103280, "device_tick_ms": 3551646, "rtt_ms": 17.9458, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_86", "token": 86, "host_ns": 9586937974800}
+{"kind": "marker_ack", "event_id": "sync_86", "token": 86, "host_ns": 9586942021700, "sent_host_ns": 9586937974800, "device_sample_idx": 7104500, "device_tick_ms": 3552253, "rtt_ms": 4.0469, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9588395517100, "status": "completed", "reason": null, "trial_id": 13, "word": "next", "label_id": 3, "block": 2, "repeat_of": null, "event_id": "event_53"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9588395517100, "planned_host_ns": 9588329444500, "trial_id": 14, "word": "louder", "label_id": 8, "block": 2, "repeat_of": null, "event_id": "event_54", "gui_submit_ns": 9588396539400}
+{"kind": "marker_sent", "event_id": "event_54", "token": 87, "host_ns": 9588396963300}
+{"kind": "marker_ack", "event_id": "event_54", "token": 87, "host_ns": 9588400538400, "sent_host_ns": 9588396963300, "device_sample_idx": 7107420, "device_tick_ms": 3553712, "rtt_ms": 3.5751, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_88", "token": 88, "host_ns": 9588953616100}
+{"kind": "marker_ack", "event_id": "sync_88", "token": 88, "host_ns": 9588957415400, "sent_host_ns": 9588953616100, "device_sample_idx": 7108520, "device_tick_ms": 3554269, "rtt_ms": 3.7993, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9589912670500, "planned_host_ns": 9589895517100, "trial_id": 14, "word": "louder", "label_id": 8, "block": 2, "repeat_of": null, "event_id": "event_55", "gui_submit_ns": 9589913324500}
+{"kind": "marker_sent", "event_id": "event_55", "token": 89, "host_ns": 9589916444700}
+{"kind": "marker_ack", "event_id": "event_55", "token": 89, "host_ns": 9589931976100, "sent_host_ns": 9589916444700, "device_sample_idx": 7110460, "device_tick_ms": 3555232, "rtt_ms": 15.5314, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_90", "token": 90, "host_ns": 9590963624700}
+{"kind": "marker_ack", "event_id": "sync_90", "token": 90, "host_ns": 9590980225300, "sent_host_ns": 9590963624700, "device_sample_idx": 7112540, "device_tick_ms": 3556279, "rtt_ms": 16.6006, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9591970888400, "planned_host_ns": 9591912670500, "trial_id": 14, "word": "louder", "label_id": 8, "block": 2, "repeat_of": null, "event_id": "event_56", "gui_submit_ns": 9591970936200}
+{"kind": "marker_sent", "event_id": "event_56", "token": 91, "host_ns": 9591971234100}
+{"kind": "marker_ack", "event_id": "event_56", "token": 91, "host_ns": 9591974156500, "sent_host_ns": 9591971234100, "device_sample_idx": 7114560, "device_tick_ms": 3557287, "rtt_ms": 2.9224, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_92", "token": 92, "host_ns": 9592976913400}
+{"kind": "marker_ack", "event_id": "sync_92", "token": 92, "host_ns": 9592992829500, "sent_host_ns": 9592976913400, "device_sample_idx": 7116580, "device_tick_ms": 3558292, "rtt_ms": 15.9161, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9593979634000, "status": "completed", "reason": null, "trial_id": 14, "word": "louder", "label_id": 8, "block": 2, "repeat_of": null, "event_id": "event_57"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9593979634000, "planned_host_ns": 9593970888400, "trial_id": 15, "word": "photo", "label_id": 10, "block": 2, "repeat_of": null, "event_id": "event_58", "gui_submit_ns": 9593980702000}
+{"kind": "marker_sent", "event_id": "event_58", "token": 93, "host_ns": 9593980996500}
+{"kind": "marker_ack", "event_id": "event_58", "token": 93, "host_ns": 9593983964700, "sent_host_ns": 9593980996500, "device_sample_idx": 7118580, "device_tick_ms": 3559297, "rtt_ms": 2.9682, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_94", "token": 94, "host_ns": 9594977711700}
+{"kind": "marker_ack", "event_id": "sync_94", "token": 94, "host_ns": 9594983323400, "sent_host_ns": 9594977711700, "device_sample_idx": 7120580, "device_tick_ms": 3560293, "rtt_ms": 5.6117, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9595489068200, "planned_host_ns": 9595479634000, "trial_id": 15, "word": "photo", "label_id": 10, "block": 2, "repeat_of": null, "event_id": "event_59", "gui_submit_ns": 9595489116300}
+{"kind": "marker_sent", "event_id": "event_59", "token": 95, "host_ns": 9595489835700}
+{"kind": "marker_ack", "event_id": "event_59", "token": 95, "host_ns": 9595493163800, "sent_host_ns": 9595489835700, "device_sample_idx": 7121600, "device_tick_ms": 3560805, "rtt_ms": 3.3281, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_96", "token": 96, "host_ns": 9596979865800}
+{"kind": "marker_ack", "event_id": "sync_96", "token": 96, "host_ns": 9596997434700, "sent_host_ns": 9596979865800, "device_sample_idx": 7124580, "device_tick_ms": 3562296, "rtt_ms": 17.5689, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9597512488400, "planned_host_ns": 9597489068200, "trial_id": 15, "word": "photo", "label_id": 10, "block": 2, "repeat_of": null, "event_id": "event_60", "gui_submit_ns": 9597512547900}
+{"kind": "marker_sent", "event_id": "event_60", "token": 97, "host_ns": 9597512811100}
+{"kind": "marker_ack", "event_id": "event_60", "token": 97, "host_ns": 9597514750500, "sent_host_ns": 9597512811100, "device_sample_idx": 7125640, "device_tick_ms": 3562828, "rtt_ms": 1.9394, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_98", "token": 98, "host_ns": 9598983497500}
+{"kind": "marker_ack", "event_id": "sync_98", "token": 98, "host_ns": 9598986519500, "sent_host_ns": 9598983497500, "device_sample_idx": 7128580, "device_tick_ms": 3564299, "rtt_ms": 3.022, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9599546634300, "status": "completed", "reason": null, "trial_id": 15, "word": "photo", "label_id": 10, "block": 2, "repeat_of": null, "event_id": "event_61"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9599546634300, "planned_host_ns": 9599512488400, "trial_id": 16, "word": "quieter", "label_id": 7, "block": 2, "repeat_of": null, "event_id": "event_62", "gui_submit_ns": 9599547707000}
+{"kind": "marker_sent", "event_id": "event_62", "token": 99, "host_ns": 9599548025900}
+{"kind": "marker_ack", "event_id": "event_62", "token": 99, "host_ns": 9599550177900, "sent_host_ns": 9599548025900, "device_sample_idx": 7129720, "device_tick_ms": 3564864, "rtt_ms": 2.152, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_100", "token": 100, "host_ns": 9601011845600}
+{"kind": "marker_ack", "event_id": "sync_100", "token": 100, "host_ns": 9601035007300, "sent_host_ns": 9601011845600, "device_sample_idx": 7132640, "device_tick_ms": 3566328, "rtt_ms": 23.1617, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9601053953600, "planned_host_ns": 9601046634300, "trial_id": 16, "word": "quieter", "label_id": 7, "block": 2, "repeat_of": null, "event_id": "event_63", "gui_submit_ns": 9601054147300}
+{"kind": "marker_sent", "event_id": "event_63", "token": 101, "host_ns": 9601056539100}
+{"kind": "marker_ack", "event_id": "event_63", "token": 101, "host_ns": 9601071919400, "sent_host_ns": 9601056539100, "device_sample_idx": 7132740, "device_tick_ms": 3566372, "rtt_ms": 15.3803, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_102", "token": 102, "host_ns": 9603035877100}
+{"kind": "marker_ack", "event_id": "sync_102", "token": 102, "host_ns": 9603068698200, "sent_host_ns": 9603035877100, "device_sample_idx": 7136700, "device_tick_ms": 3568352, "rtt_ms": 32.8211, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9603072843500, "planned_host_ns": 9603053953600, "trial_id": 16, "word": "quieter", "label_id": 7, "block": 2, "repeat_of": null, "event_id": "event_64", "gui_submit_ns": 9603072895600}
+{"kind": "marker_sent", "event_id": "event_64", "token": 103, "host_ns": 9603073158600}
+{"kind": "marker_ack", "event_id": "event_64", "token": 103, "host_ns": 9603075047900, "sent_host_ns": 9603073158600, "device_sample_idx": 7136760, "device_tick_ms": 3568389, "rtt_ms": 1.8893, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_104", "token": 104, "host_ns": 9605026009700}
+{"kind": "marker_ack", "event_id": "sync_104", "token": 104, "host_ns": 9605054530600, "sent_host_ns": 9605026009700, "device_sample_idx": 7140680, "device_tick_ms": 3570342, "rtt_ms": 28.5209, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9605081755900, "status": "completed", "reason": null, "trial_id": 16, "word": "quieter", "label_id": 7, "block": 2, "repeat_of": null, "event_id": "event_65"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9605081755900, "planned_host_ns": 9605072843500, "trial_id": 17, "word": "start", "label_id": 5, "block": 2, "repeat_of": null, "event_id": "event_66", "gui_submit_ns": 9605082757700}
+{"kind": "marker_sent", "event_id": "event_66", "token": 105, "host_ns": 9605086088400}
+{"kind": "marker_ack", "event_id": "event_66", "token": 105, "host_ns": 9605104015100, "sent_host_ns": 9605086088400, "device_sample_idx": 7140800, "device_tick_ms": 3570402, "rtt_ms": 17.9267, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9606614656000, "planned_host_ns": 9606581755900, "trial_id": 17, "word": "start", "label_id": 5, "block": 2, "repeat_of": null, "event_id": "event_67", "gui_submit_ns": 9606614696800}
+{"kind": "marker_sent", "event_id": "event_67", "token": 106, "host_ns": 9606615616500}
+{"kind": "marker_ack", "event_id": "event_67", "token": 106, "host_ns": 9606620063300, "sent_host_ns": 9606615616500, "device_sample_idx": 7143860, "device_tick_ms": 3571932, "rtt_ms": 4.4468, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_107", "token": 107, "host_ns": 9607025779800}
+{"kind": "marker_ack", "event_id": "sync_107", "token": 107, "host_ns": 9607031201500, "sent_host_ns": 9607025779800, "device_sample_idx": 7144680, "device_tick_ms": 3572342, "rtt_ms": 5.4217, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9608640674300, "planned_host_ns": 9608614656000, "trial_id": 17, "word": "start", "label_id": 5, "block": 2, "repeat_of": null, "event_id": "event_68", "gui_submit_ns": 9608640744900}
+{"kind": "marker_sent", "event_id": "event_68", "token": 108, "host_ns": 9608641044700}
+{"kind": "marker_ack", "event_id": "event_68", "token": 108, "host_ns": 9608644179900, "sent_host_ns": 9608641044700, "device_sample_idx": 7147900, "device_tick_ms": 3573957, "rtt_ms": 3.1352, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_109", "token": 109, "host_ns": 9609026418600}
+{"kind": "marker_ack", "event_id": "sync_109", "token": 109, "host_ns": 9609043480500, "sent_host_ns": 9609026418600, "device_sample_idx": 7148680, "device_tick_ms": 3574343, "rtt_ms": 17.0619, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9610723997000, "status": "completed", "reason": null, "trial_id": 17, "word": "start", "label_id": 5, "block": 2, "repeat_of": null, "event_id": "event_69"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9610723997000, "planned_host_ns": 9610640674300, "trial_id": 18, "word": "music", "label_id": 4, "block": 2, "repeat_of": null, "event_id": "event_70", "gui_submit_ns": 9610725064500}
+{"kind": "marker_sent", "event_id": "event_70", "token": 110, "host_ns": 9610725572500}
+{"kind": "marker_ack", "event_id": "event_70", "token": 110, "host_ns": 9610730224100, "sent_host_ns": 9610725572500, "device_sample_idx": 7152080, "device_tick_ms": 3576042, "rtt_ms": 4.6516, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_111", "token": 111, "host_ns": 9611028198300}
+{"kind": "marker_ack", "event_id": "sync_111", "token": 111, "host_ns": 9611065614900, "sent_host_ns": 9611028198300, "device_sample_idx": 7152680, "device_tick_ms": 3576344, "rtt_ms": 37.4166, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9612282248500, "planned_host_ns": 9612223997000, "trial_id": 18, "word": "music", "label_id": 4, "block": 2, "repeat_of": null, "event_id": "event_71", "gui_submit_ns": 9612282324700}
+{"kind": "marker_sent", "event_id": "event_71", "token": 112, "host_ns": 9612282650500}
+{"kind": "marker_ack", "event_id": "event_71", "token": 112, "host_ns": 9612284791000, "sent_host_ns": 9612282650500, "device_sample_idx": 7155180, "device_tick_ms": 3577599, "rtt_ms": 2.1405, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_113", "token": 113, "host_ns": 9613028918000}
+{"kind": "marker_ack", "event_id": "sync_113", "token": 113, "host_ns": 9613047651300, "sent_host_ns": 9613028918000, "device_sample_idx": 7156680, "device_tick_ms": 3578345, "rtt_ms": 18.7333, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9614284315200, "planned_host_ns": 9614282248500, "trial_id": 18, "word": "music", "label_id": 4, "block": 2, "repeat_of": null, "event_id": "event_72", "gui_submit_ns": 9614284368300}
+{"kind": "marker_sent", "event_id": "event_72", "token": 114, "host_ns": 9614285881600}
+{"kind": "marker_ack", "event_id": "event_72", "token": 114, "host_ns": 9614304797000, "sent_host_ns": 9614285881600, "device_sample_idx": 7159200, "device_tick_ms": 3579602, "rtt_ms": 18.9154, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_115", "token": 115, "host_ns": 9615029435200}
+{"kind": "marker_ack", "event_id": "sync_115", "token": 115, "host_ns": 9615054545400, "sent_host_ns": 9615029435200, "device_sample_idx": 7160680, "device_tick_ms": 3580346, "rtt_ms": 25.1102, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9616305006200, "status": "completed", "reason": null, "trial_id": 18, "word": "music", "label_id": 4, "block": 2, "repeat_of": null, "event_id": "event_73"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9616305006200, "planned_host_ns": 9616284315200, "trial_id": 19, "word": "previous", "label_id": 9, "block": 2, "repeat_of": null, "event_id": "event_74", "gui_submit_ns": 9616306045500}
+{"kind": "marker_sent", "event_id": "event_74", "token": 116, "host_ns": 9616306420200}
+{"kind": "marker_ack", "event_id": "event_74", "token": 116, "host_ns": 9616311203600, "sent_host_ns": 9616306420200, "device_sample_idx": 7163240, "device_tick_ms": 3581623, "rtt_ms": 4.7834, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_117", "token": 117, "host_ns": 9617032836400}
+{"kind": "marker_ack", "event_id": "sync_117", "token": 117, "host_ns": 9617060124400, "sent_host_ns": 9617032836400, "device_sample_idx": 7164680, "device_tick_ms": 3582349, "rtt_ms": 27.288, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9617858001100, "planned_host_ns": 9617805006200, "trial_id": 19, "word": "previous", "label_id": 9, "block": 2, "repeat_of": null, "event_id": "event_75", "gui_submit_ns": 9617858042000}
+{"kind": "marker_sent", "event_id": "event_75", "token": 118, "host_ns": 9617858287900}
+{"kind": "marker_ack", "event_id": "event_75", "token": 118, "host_ns": 9617860129400, "sent_host_ns": 9617858287900, "device_sample_idx": 7166340, "device_tick_ms": 3583175, "rtt_ms": 1.8415, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_119", "token": 119, "host_ns": 9619035367400}
+{"kind": "marker_ack", "event_id": "sync_119", "token": 119, "host_ns": 9619054761800, "sent_host_ns": 9619035367400, "device_sample_idx": 7168700, "device_tick_ms": 3584352, "rtt_ms": 19.3944, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9619892050900, "planned_host_ns": 9619858001100, "trial_id": 19, "word": "previous", "label_id": 9, "block": 2, "repeat_of": null, "event_id": "event_76", "gui_submit_ns": 9619892107900}
+{"kind": "marker_sent", "event_id": "event_76", "token": 120, "host_ns": 9619892428400}
+{"kind": "marker_ack", "event_id": "event_76", "token": 120, "host_ns": 9619894458800, "sent_host_ns": 9619892428400, "device_sample_idx": 7170400, "device_tick_ms": 3585209, "rtt_ms": 2.0304, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_121", "token": 121, "host_ns": 9621036684600}
+{"kind": "marker_ack", "event_id": "sync_121", "token": 121, "host_ns": 9621040653200, "sent_host_ns": 9621036684600, "device_sample_idx": 7172700, "device_tick_ms": 3586353, "rtt_ms": 3.9686, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9621914121800, "status": "completed", "reason": null, "trial_id": 19, "word": "previous", "label_id": 9, "block": 2, "repeat_of": null, "event_id": "event_77"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9621914121800, "planned_host_ns": 9621892050900, "trial_id": 20, "word": "open", "label_id": 1, "block": 2, "repeat_of": null, "event_id": "event_78", "gui_submit_ns": 9621915131800}
+{"kind": "marker_sent", "event_id": "event_78", "token": 122, "host_ns": 9621915517300}
+{"kind": "marker_ack", "event_id": "event_78", "token": 122, "host_ns": 9621919233400, "sent_host_ns": 9621915517300, "device_sample_idx": 7174460, "device_tick_ms": 3587232, "rtt_ms": 3.7161, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_123", "token": 123, "host_ns": 9623036934400}
+{"kind": "marker_ack", "event_id": "sync_123", "token": 123, "host_ns": 9623062969700, "sent_host_ns": 9623036934400, "device_sample_idx": 7176700, "device_tick_ms": 3588354, "rtt_ms": 26.0353, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9623505391100, "planned_host_ns": 9623414121800, "trial_id": 20, "word": "open", "label_id": 1, "block": 2, "repeat_of": null, "event_id": "event_79", "gui_submit_ns": 9623505430300}
+{"kind": "marker_sent", "event_id": "event_79", "token": 124, "host_ns": 9623505655700}
+{"kind": "marker_ack", "event_id": "event_79", "token": 124, "host_ns": 9623509938100, "sent_host_ns": 9623505655700, "device_sample_idx": 7177640, "device_tick_ms": 3588822, "rtt_ms": 4.2824, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_125", "token": 125, "host_ns": 9625055332100}
+{"kind": "marker_ack", "event_id": "sync_125", "token": 125, "host_ns": 9625060377600, "sent_host_ns": 9625055332100, "device_sample_idx": 7180740, "device_tick_ms": 3590372, "rtt_ms": 5.0455, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9625567675200, "planned_host_ns": 9625505391100, "trial_id": 20, "word": "open", "label_id": 1, "block": 2, "repeat_of": null, "event_id": "event_80", "gui_submit_ns": 9625567724700}
+{"kind": "marker_sent", "event_id": "event_80", "token": 126, "host_ns": 9625567991800}
+{"kind": "marker_ack", "event_id": "event_80", "token": 126, "host_ns": 9625569705400, "sent_host_ns": 9625567991800, "device_sample_idx": 7181760, "device_tick_ms": 3590885, "rtt_ms": 1.7136, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_127", "token": 127, "host_ns": 9627065104400}
+{"kind": "marker_ack", "event_id": "sync_127", "token": 127, "host_ns": 9627070334700, "sent_host_ns": 9627065104400, "device_sample_idx": 7184760, "device_tick_ms": 3592382, "rtt_ms": 5.2303, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9627575850300, "status": "completed", "reason": null, "trial_id": 20, "word": "open", "label_id": 1, "block": 2, "repeat_of": null, "event_id": "event_81"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9627575850300, "planned_host_ns": 9627567675200, "trial_id": 21, "word": "close", "label_id": 2, "block": 3, "repeat_of": null, "event_id": "event_82", "gui_submit_ns": 9627576868900}
+{"kind": "marker_sent", "event_id": "event_82", "token": 128, "host_ns": 9627577163500}
+{"kind": "marker_ack", "event_id": "event_82", "token": 128, "host_ns": 9627579064600, "sent_host_ns": 9627577163500, "device_sample_idx": 7185780, "device_tick_ms": 3592894, "rtt_ms": 1.9011, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_129", "token": 129, "host_ns": 9629066929500}
+{"kind": "marker_ack", "event_id": "sync_129", "token": 129, "host_ns": 9629070338200, "sent_host_ns": 9629066929500, "device_sample_idx": 7188760, "device_tick_ms": 3594384, "rtt_ms": 3.4087, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9629093242400, "planned_host_ns": 9629075850300, "trial_id": 21, "word": "close", "label_id": 2, "block": 3, "repeat_of": null, "event_id": "event_83", "gui_submit_ns": 9629093284200}
+{"kind": "marker_sent", "event_id": "event_83", "token": 130, "host_ns": 9629095028400}
+{"kind": "marker_ack", "event_id": "event_83", "token": 130, "host_ns": 9629113085000, "sent_host_ns": 9629095028400, "device_sample_idx": 7188820, "device_tick_ms": 3594412, "rtt_ms": 18.0566, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_131", "token": 131, "host_ns": 9631069559800}
+{"kind": "marker_ack", "event_id": "sync_131", "token": 131, "host_ns": 9631088574300, "sent_host_ns": 9631069559800, "device_sample_idx": 7192760, "device_tick_ms": 3596387, "rtt_ms": 19.0145, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9631159323700, "planned_host_ns": 9631093242400, "trial_id": 21, "word": "close", "label_id": 2, "block": 3, "repeat_of": null, "event_id": "event_84", "gui_submit_ns": 9631159368300}
+{"kind": "marker_sent", "event_id": "event_84", "token": 132, "host_ns": 9631159643100}
+{"kind": "marker_ack", "event_id": "event_84", "token": 132, "host_ns": 9631162594700, "sent_host_ns": 9631159643100, "device_sample_idx": 7192940, "device_tick_ms": 3596477, "rtt_ms": 2.9516, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_133", "token": 133, "host_ns": 9633072600800}
+{"kind": "marker_ack", "event_id": "sync_133", "token": 133, "host_ns": 9633076864900, "sent_host_ns": 9633072600800, "device_sample_idx": 7196760, "device_tick_ms": 3598390, "rtt_ms": 4.2641, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9633175032700, "status": "completed", "reason": null, "trial_id": 21, "word": "close", "label_id": 2, "block": 3, "repeat_of": null, "event_id": "event_85"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9633175032700, "planned_host_ns": 9633159323700, "trial_id": 22, "word": "louder", "label_id": 8, "block": 3, "repeat_of": null, "event_id": "event_86", "gui_submit_ns": 9633176188100}
+{"kind": "marker_sent", "event_id": "event_86", "token": 134, "host_ns": 9633176471000}
+{"kind": "marker_ack", "event_id": "event_86", "token": 134, "host_ns": 9633180204500, "sent_host_ns": 9633176471000, "device_sample_idx": 7196980, "device_tick_ms": 3598494, "rtt_ms": 3.7335, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9634692978300, "planned_host_ns": 9634675032700, "trial_id": 22, "word": "louder", "label_id": 8, "block": 3, "repeat_of": null, "event_id": "event_87", "gui_submit_ns": 9634693016000}
+{"kind": "marker_sent", "event_id": "event_87", "token": 135, "host_ns": 9634694534400}
+{"kind": "marker_ack", "event_id": "event_87", "token": 135, "host_ns": 9634698767000, "sent_host_ns": 9634694534400, "device_sample_idx": 7200020, "device_tick_ms": 3600012, "rtt_ms": 4.2326, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_136", "token": 136, "host_ns": 9635074551100}
+{"kind": "marker_ack", "event_id": "sync_136", "token": 136, "host_ns": 9635080026100, "sent_host_ns": 9635074551100, "device_sample_idx": 7200780, "device_tick_ms": 3600392, "rtt_ms": 5.475, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9636743635300, "planned_host_ns": 9636692978300, "trial_id": 22, "word": "louder", "label_id": 8, "block": 3, "repeat_of": null, "event_id": "event_88", "gui_submit_ns": 9636743693400}
+{"kind": "marker_sent", "event_id": "event_88", "token": 137, "host_ns": 9636744444800}
+{"kind": "marker_ack", "event_id": "event_88", "token": 137, "host_ns": 9636749138000, "sent_host_ns": 9636744444800, "device_sample_idx": 7204120, "device_tick_ms": 3602062, "rtt_ms": 4.6932, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_138", "token": 138, "host_ns": 9637086238400}
+{"kind": "marker_ack", "event_id": "sync_138", "token": 138, "host_ns": 9637108889400, "sent_host_ns": 9637086238400, "device_sample_idx": 7204800, "device_tick_ms": 3602403, "rtt_ms": 22.651, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9638811685300, "status": "completed", "reason": null, "trial_id": 22, "word": "louder", "label_id": 8, "block": 3, "repeat_of": null, "event_id": "event_89"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9638811685300, "planned_host_ns": 9638743635300, "trial_id": 23, "word": "quieter", "label_id": 7, "block": 3, "repeat_of": null, "event_id": "event_90", "gui_submit_ns": 9638812532400}
+{"kind": "marker_sent", "event_id": "event_90", "token": 139, "host_ns": 9638812869500}
+{"kind": "marker_ack", "event_id": "event_90", "token": 139, "host_ns": 9638818509700, "sent_host_ns": 9638812869500, "device_sample_idx": 7208260, "device_tick_ms": 3604130, "rtt_ms": 5.6402, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_140", "token": 140, "host_ns": 9639095057600}
+{"kind": "marker_ack", "event_id": "sync_140", "token": 140, "host_ns": 9639099961900, "sent_host_ns": 9639095057600, "device_sample_idx": 7208820, "device_tick_ms": 3604412, "rtt_ms": 4.9043, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9640352206700, "planned_host_ns": 9640311685300, "trial_id": 23, "word": "quieter", "label_id": 7, "block": 3, "repeat_of": null, "event_id": "event_91", "gui_submit_ns": 9640352260200}
+{"kind": "marker_sent", "event_id": "event_91", "token": 141, "host_ns": 9640352505400}
+{"kind": "marker_ack", "event_id": "event_91", "token": 141, "host_ns": 9640358697600, "sent_host_ns": 9640352505400, "device_sample_idx": 7211340, "device_tick_ms": 3605670, "rtt_ms": 6.1922, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_142", "token": 142, "host_ns": 9641105321400}
+{"kind": "marker_ack", "event_id": "sync_142", "token": 142, "host_ns": 9641144935900, "sent_host_ns": 9641105321400, "device_sample_idx": 7212840, "device_tick_ms": 3606423, "rtt_ms": 39.6145, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9642359033300, "planned_host_ns": 9642352206700, "trial_id": 23, "word": "quieter", "label_id": 7, "block": 3, "repeat_of": null, "event_id": "event_92", "gui_submit_ns": 9642359111700}
+{"kind": "marker_sent", "event_id": "event_92", "token": 143, "host_ns": 9642360783100}
+{"kind": "marker_ack", "event_id": "event_92", "token": 143, "host_ns": 9642363003400, "sent_host_ns": 9642360783100, "device_sample_idx": 7215340, "device_tick_ms": 3607678, "rtt_ms": 2.2203, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_144", "token": 144, "host_ns": 9643105624600}
+{"kind": "marker_ack", "event_id": "sync_144", "token": 144, "host_ns": 9643109680100, "sent_host_ns": 9643105624600, "device_sample_idx": 7216840, "device_tick_ms": 3608423, "rtt_ms": 4.0555, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9644405117900, "status": "completed", "reason": null, "trial_id": 23, "word": "quieter", "label_id": 7, "block": 3, "repeat_of": null, "event_id": "event_93"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9644405117900, "planned_host_ns": 9644359033300, "trial_id": 24, "word": "previous", "label_id": 9, "block": 3, "repeat_of": null, "event_id": "event_94", "gui_submit_ns": 9644406078500}
+{"kind": "marker_sent", "event_id": "event_94", "token": 145, "host_ns": 9644406349800}
+{"kind": "marker_ack", "event_id": "event_94", "token": 145, "host_ns": 9644408316700, "sent_host_ns": 9644406349800, "device_sample_idx": 7219440, "device_tick_ms": 3609724, "rtt_ms": 1.9669, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_146", "token": 146, "host_ns": 9645136582400}
+{"kind": "marker_ack", "event_id": "sync_146", "token": 146, "host_ns": 9645138417500, "sent_host_ns": 9645136582400, "device_sample_idx": 7220900, "device_tick_ms": 3610454, "rtt_ms": 1.8351, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9645921652400, "planned_host_ns": 9645905117900, "trial_id": 24, "word": "previous", "label_id": 9, "block": 3, "repeat_of": null, "event_id": "event_95", "gui_submit_ns": 9645921712000}
+{"kind": "marker_sent", "event_id": "event_95", "token": 147, "host_ns": 9645922010300}
+{"kind": "marker_ack", "event_id": "event_95", "token": 147, "host_ns": 9645924041600, "sent_host_ns": 9645922010300, "device_sample_idx": 7222460, "device_tick_ms": 3611240, "rtt_ms": 2.0313, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_148", "token": 148, "host_ns": 9647128961700}
+{"kind": "marker_ack", "event_id": "sync_148", "token": 148, "host_ns": 9647159577000, "sent_host_ns": 9647128961700, "device_sample_idx": 7224880, "device_tick_ms": 3612447, "rtt_ms": 30.6153, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9647938369600, "planned_host_ns": 9647921652400, "trial_id": 24, "word": "previous", "label_id": 9, "block": 3, "repeat_of": null, "event_id": "event_96", "gui_submit_ns": 9647938427300}
+{"kind": "marker_sent", "event_id": "event_96", "token": 149, "host_ns": 9647938641400}
+{"kind": "marker_ack", "event_id": "event_96", "token": 149, "host_ns": 9647941838100, "sent_host_ns": 9647938641400, "device_sample_idx": 7226500, "device_tick_ms": 3613256, "rtt_ms": 3.1967, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_150", "token": 150, "host_ns": 9649132135600}
+{"kind": "marker_ack", "event_id": "sync_150", "token": 150, "host_ns": 9649161325700, "sent_host_ns": 9649132135600, "device_sample_idx": 7228900, "device_tick_ms": 3614450, "rtt_ms": 29.1901, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9649941583100, "status": "completed", "reason": null, "trial_id": 24, "word": "previous", "label_id": 9, "block": 3, "repeat_of": null, "event_id": "event_97"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9649941583100, "planned_host_ns": 9649938369600, "trial_id": 25, "word": "next", "label_id": 3, "block": 3, "repeat_of": null, "event_id": "event_98", "gui_submit_ns": 9649942666100}
+{"kind": "marker_sent", "event_id": "event_98", "token": 151, "host_ns": 9649943081800}
+{"kind": "marker_ack", "event_id": "event_98", "token": 151, "host_ns": 9649948194900, "sent_host_ns": 9649943081800, "device_sample_idx": 7230520, "device_tick_ms": 3615261, "rtt_ms": 5.1131, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_152", "token": 152, "host_ns": 9651134296200}
+{"kind": "marker_ack", "event_id": "sync_152", "token": 152, "host_ns": 9651172838200, "sent_host_ns": 9651134296200, "device_sample_idx": 7232900, "device_tick_ms": 3616452, "rtt_ms": 38.542, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9651526848400, "planned_host_ns": 9651441583100, "trial_id": 25, "word": "next", "label_id": 3, "block": 3, "repeat_of": null, "event_id": "event_99", "gui_submit_ns": 9651526899900}
+{"kind": "marker_sent", "event_id": "event_99", "token": 153, "host_ns": 9651527173800}
+{"kind": "marker_ack", "event_id": "event_99", "token": 153, "host_ns": 9651528919500, "sent_host_ns": 9651527173800, "device_sample_idx": 7233680, "device_tick_ms": 3616845, "rtt_ms": 1.7457, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_154", "token": 154, "host_ns": 9653135198000}
+{"kind": "marker_ack", "event_id": "sync_154", "token": 154, "host_ns": 9653140962200, "sent_host_ns": 9653135198000, "device_sample_idx": 7236900, "device_tick_ms": 3618453, "rtt_ms": 5.7642, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9653601735800, "planned_host_ns": 9653526848400, "trial_id": 25, "word": "next", "label_id": 3, "block": 3, "repeat_of": null, "event_id": "event_100", "gui_submit_ns": 9653601791800}
+{"kind": "marker_sent", "event_id": "event_100", "token": 155, "host_ns": 9653602058100}
+{"kind": "marker_ack", "event_id": "event_100", "token": 155, "host_ns": 9653608027200, "sent_host_ns": 9653602058100, "device_sample_idx": 7237840, "device_tick_ms": 3618920, "rtt_ms": 5.9691, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_156", "token": 156, "host_ns": 9655135206500}
+{"kind": "marker_ack", "event_id": "sync_156", "token": 156, "host_ns": 9655150082100, "sent_host_ns": 9655135206500, "device_sample_idx": 7240900, "device_tick_ms": 3620453, "rtt_ms": 14.8756, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9655667159000, "status": "completed", "reason": null, "trial_id": 25, "word": "next", "label_id": 3, "block": 3, "repeat_of": null, "event_id": "event_101"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9655667159000, "planned_host_ns": 9655601735800, "trial_id": 26, "word": "start", "label_id": 5, "block": 3, "repeat_of": null, "event_id": "event_102", "gui_submit_ns": 9655668061300}
+{"kind": "marker_sent", "event_id": "event_102", "token": 157, "host_ns": 9655668335800}
+{"kind": "marker_ack", "event_id": "event_102", "token": 157, "host_ns": 9655671376000, "sent_host_ns": 9655668335800, "device_sample_idx": 7241960, "device_tick_ms": 3620986, "rtt_ms": 3.0402, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_158", "token": 158, "host_ns": 9657139302700}
+{"kind": "marker_ack", "event_id": "sync_158", "token": 158, "host_ns": 9657159270400, "sent_host_ns": 9657139302700, "device_sample_idx": 7244900, "device_tick_ms": 3622457, "rtt_ms": 19.9677, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9657191807200, "planned_host_ns": 9657167159000, "trial_id": 26, "word": "start", "label_id": 5, "block": 3, "repeat_of": null, "event_id": "event_103", "gui_submit_ns": 9657191883100}
+{"kind": "marker_sent", "event_id": "event_103", "token": 159, "host_ns": 9657194153600}
+{"kind": "marker_ack", "event_id": "event_103", "token": 159, "host_ns": 9657212569600, "sent_host_ns": 9657194153600, "device_sample_idx": 7245020, "device_tick_ms": 3622512, "rtt_ms": 18.416, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_160", "token": 160, "host_ns": 9659140962500}
+{"kind": "marker_ack", "event_id": "sync_160", "token": 160, "host_ns": 9659180676600, "sent_host_ns": 9659140962500, "device_sample_idx": 7248900, "device_tick_ms": 3624459, "rtt_ms": 39.7141, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9659203888400, "planned_host_ns": 9659191807200, "trial_id": 26, "word": "start", "label_id": 5, "block": 3, "repeat_of": null, "event_id": "event_104", "gui_submit_ns": 9659203942500}
+{"kind": "marker_sent", "event_id": "event_104", "token": 161, "host_ns": 9659204188100}
+{"kind": "marker_ack", "event_id": "event_104", "token": 161, "host_ns": 9659207712900, "sent_host_ns": 9659204188100, "device_sample_idx": 7249040, "device_tick_ms": 3624522, "rtt_ms": 3.5248, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_162", "token": 162, "host_ns": 9661153493500}
+{"kind": "marker_ack", "event_id": "sync_162", "token": 162, "host_ns": 9661173280400, "sent_host_ns": 9661153493500, "device_sample_idx": 7252940, "device_tick_ms": 3626472, "rtt_ms": 19.7869, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9661280922600, "status": "completed", "reason": null, "trial_id": 26, "word": "start", "label_id": 5, "block": 3, "repeat_of": null, "event_id": "event_105"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9661280922600, "planned_host_ns": 9661203888400, "trial_id": 27, "word": "photo", "label_id": 10, "block": 3, "repeat_of": null, "event_id": "event_106", "gui_submit_ns": 9661281937100}
+{"kind": "marker_sent", "event_id": "event_106", "token": 163, "host_ns": 9661282230000}
+{"kind": "marker_ack", "event_id": "event_106", "token": 163, "host_ns": 9661287688700, "sent_host_ns": 9661282230000, "device_sample_idx": 7253200, "device_tick_ms": 3626600, "rtt_ms": 5.4587, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9662782222800, "planned_host_ns": 9662780922600, "trial_id": 27, "word": "photo", "label_id": 10, "block": 3, "repeat_of": null, "event_id": "event_107", "gui_submit_ns": 9662782257100}
+{"kind": "marker_sent", "event_id": "event_107", "token": 164, "host_ns": 9662783426500}
+{"kind": "marker_ack", "event_id": "event_107", "token": 164, "host_ns": 9662787724800, "sent_host_ns": 9662783426500, "device_sample_idx": 7256200, "device_tick_ms": 3628102, "rtt_ms": 4.2983, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_165", "token": 165, "host_ns": 9663153671300}
+{"kind": "marker_ack", "event_id": "sync_165", "token": 165, "host_ns": 9663158965100, "sent_host_ns": 9663153671300, "device_sample_idx": 7256940, "device_tick_ms": 3628472, "rtt_ms": 5.2938, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9664790706900, "planned_host_ns": 9664782222800, "trial_id": 27, "word": "photo", "label_id": 10, "block": 3, "repeat_of": null, "event_id": "event_108", "gui_submit_ns": 9664790764400}
+{"kind": "marker_sent", "event_id": "event_108", "token": 166, "host_ns": 9664791028200}
+{"kind": "marker_ack", "event_id": "event_108", "token": 166, "host_ns": 9664792961600, "sent_host_ns": 9664791028200, "device_sample_idx": 7260200, "device_tick_ms": 3630109, "rtt_ms": 1.9334, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_167", "token": 167, "host_ns": 9665161005600}
+{"kind": "marker_ack", "event_id": "sync_167", "token": 167, "host_ns": 9665181286400, "sent_host_ns": 9665161005600, "device_sample_idx": 7260940, "device_tick_ms": 3630479, "rtt_ms": 20.2808, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9666816429100, "status": "completed", "reason": null, "trial_id": 27, "word": "photo", "label_id": 10, "block": 3, "repeat_of": null, "event_id": "event_109"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9666816429100, "planned_host_ns": 9666790706900, "trial_id": 28, "word": "music", "label_id": 4, "block": 3, "repeat_of": null, "event_id": "event_110", "gui_submit_ns": 9666817264100}
+{"kind": "marker_sent", "event_id": "event_110", "token": 168, "host_ns": 9666817566200}
+{"kind": "marker_ack", "event_id": "event_110", "token": 168, "host_ns": 9666820831200, "sent_host_ns": 9666817566200, "device_sample_idx": 7264260, "device_tick_ms": 3632136, "rtt_ms": 3.265, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_169", "token": 169, "host_ns": 9667177526100}
+{"kind": "marker_ack", "event_id": "sync_169", "token": 169, "host_ns": 9667194586800, "sent_host_ns": 9667177526100, "device_sample_idx": 7264980, "device_tick_ms": 3632496, "rtt_ms": 17.0607, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9668322345400, "planned_host_ns": 9668316429100, "trial_id": 28, "word": "music", "label_id": 4, "block": 3, "repeat_of": null, "event_id": "event_111", "gui_submit_ns": 9668322394900}
+{"kind": "marker_sent", "event_id": "event_111", "token": 170, "host_ns": 9668323198300}
+{"kind": "marker_ack", "event_id": "event_111", "token": 170, "host_ns": 9668327313600, "sent_host_ns": 9668323198300, "device_sample_idx": 7267280, "device_tick_ms": 3633642, "rtt_ms": 4.1153, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_171", "token": 171, "host_ns": 9669193258500}
+{"kind": "marker_ack", "event_id": "sync_171", "token": 171, "host_ns": 9669198744900, "sent_host_ns": 9669193258500, "device_sample_idx": 7269020, "device_tick_ms": 3634512, "rtt_ms": 5.4864, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9670384717000, "planned_host_ns": 9670322345400, "trial_id": 28, "word": "music", "label_id": 4, "block": 3, "repeat_of": null, "event_id": "event_112", "gui_submit_ns": 9670384781100}
+{"kind": "marker_sent", "event_id": "event_112", "token": 172, "host_ns": 9670385085400}
+{"kind": "marker_ack", "event_id": "event_112", "token": 172, "host_ns": 9670387419000, "sent_host_ns": 9670385085400, "device_sample_idx": 7271400, "device_tick_ms": 3635704, "rtt_ms": 2.3336, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_173", "token": 173, "host_ns": 9671210553000}
+{"kind": "marker_ack", "event_id": "sync_173", "token": 173, "host_ns": 9671231220000, "sent_host_ns": 9671210553000, "device_sample_idx": 7273040, "device_tick_ms": 3636529, "rtt_ms": 20.667, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9672460263200, "status": "completed", "reason": null, "trial_id": 28, "word": "music", "label_id": 4, "block": 3, "repeat_of": null, "event_id": "event_113"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9672460263200, "planned_host_ns": 9672384717000, "trial_id": 29, "word": "stop", "label_id": 6, "block": 3, "repeat_of": null, "event_id": "event_114", "gui_submit_ns": 9672461599200}
+{"kind": "marker_sent", "event_id": "event_114", "token": 174, "host_ns": 9672462008300}
+{"kind": "marker_ack", "event_id": "event_114", "token": 174, "host_ns": 9672468006500, "sent_host_ns": 9672462008300, "device_sample_idx": 7275560, "device_tick_ms": 3637781, "rtt_ms": 5.9982, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_175", "token": 175, "host_ns": 9673217945000}
+{"kind": "marker_ack", "event_id": "sync_175", "token": 175, "host_ns": 9673222522200, "sent_host_ns": 9673217945000, "device_sample_idx": 7277060, "device_tick_ms": 3638537, "rtt_ms": 4.5772, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9673973183300, "planned_host_ns": 9673960263200, "trial_id": 29, "word": "stop", "label_id": 6, "block": 3, "repeat_of": null, "event_id": "event_115", "gui_submit_ns": 9673973232500}
+{"kind": "marker_sent", "event_id": "event_115", "token": 176, "host_ns": 9673973556000}
+{"kind": "marker_ack", "event_id": "event_115", "token": 176, "host_ns": 9673977224100, "sent_host_ns": 9673973556000, "device_sample_idx": 7278580, "device_tick_ms": 3639292, "rtt_ms": 3.6681, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_177", "token": 177, "host_ns": 9675223818000}
+{"kind": "marker_ack", "event_id": "sync_177", "token": 177, "host_ns": 9675240522300, "sent_host_ns": 9675223818000, "device_sample_idx": 7281080, "device_tick_ms": 3640543, "rtt_ms": 16.7043, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9675999237200, "planned_host_ns": 9675973183300, "trial_id": 29, "word": "stop", "label_id": 6, "block": 3, "repeat_of": null, "event_id": "event_116", "gui_submit_ns": 9675999297200}
+{"kind": "marker_sent", "event_id": "event_116", "token": 178, "host_ns": 9675999584600}
+{"kind": "marker_ack", "event_id": "event_116", "token": 178, "host_ns": 9676001718300, "sent_host_ns": 9675999584600, "device_sample_idx": 7282620, "device_tick_ms": 3641318, "rtt_ms": 2.1337, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_179", "token": 179, "host_ns": 9677222882100}
+{"kind": "marker_ack", "event_id": "sync_179", "token": 179, "host_ns": 9677228453600, "sent_host_ns": 9677222882100, "device_sample_idx": 7285080, "device_tick_ms": 3642542, "rtt_ms": 5.5715, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9678036505900, "status": "completed", "reason": null, "trial_id": 29, "word": "stop", "label_id": 6, "block": 3, "repeat_of": null, "event_id": "event_117"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9678036505900, "planned_host_ns": 9677999237200, "trial_id": 30, "word": "open", "label_id": 1, "block": 3, "repeat_of": null, "event_id": "event_118", "gui_submit_ns": 9678037426900}
+{"kind": "marker_sent", "event_id": "event_118", "token": 180, "host_ns": 9678037744800}
+{"kind": "marker_ack", "event_id": "event_118", "token": 180, "host_ns": 9678040758900, "sent_host_ns": 9678037744800, "device_sample_idx": 7286700, "device_tick_ms": 3643357, "rtt_ms": 3.0141, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_181", "token": 181, "host_ns": 9679247316000}
+{"kind": "marker_ack", "event_id": "sync_181", "token": 181, "host_ns": 9679263762000, "sent_host_ns": 9679247316000, "device_sample_idx": 7289120, "device_tick_ms": 3644566, "rtt_ms": 16.446, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9679552828800, "planned_host_ns": 9679536505900, "trial_id": 30, "word": "open", "label_id": 1, "block": 3, "repeat_of": null, "event_id": "event_119", "gui_submit_ns": 9679552883200}
+{"kind": "marker_sent", "event_id": "event_119", "token": 182, "host_ns": 9679553104800}
+{"kind": "marker_ack", "event_id": "event_119", "token": 182, "host_ns": 9679557563400, "sent_host_ns": 9679553104800, "device_sample_idx": 7289740, "device_tick_ms": 3644872, "rtt_ms": 4.4586, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_183", "token": 183, "host_ns": 9681258793500}
+{"kind": "marker_ack", "event_id": "sync_183", "token": 183, "host_ns": 9681275089200, "sent_host_ns": 9681258793500, "device_sample_idx": 7293140, "device_tick_ms": 3646578, "rtt_ms": 16.2957, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9681567680000, "planned_host_ns": 9681552828800, "trial_id": 30, "word": "open", "label_id": 1, "block": 3, "repeat_of": null, "event_id": "event_120", "gui_submit_ns": 9681567753900}
+{"kind": "marker_sent", "event_id": "event_120", "token": 184, "host_ns": 9681569355900}
+{"kind": "marker_ack", "event_id": "event_120", "token": 184, "host_ns": 9681571475100, "sent_host_ns": 9681569355900, "device_sample_idx": 7293760, "device_tick_ms": 3646888, "rtt_ms": 2.1192, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_185", "token": 185, "host_ns": 9683293779000}
+{"kind": "marker_ack", "event_id": "sync_185", "token": 185, "host_ns": 9683320921900, "sent_host_ns": 9683293779000, "device_sample_idx": 7297220, "device_tick_ms": 3648613, "rtt_ms": 27.1429, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9683576412400, "status": "completed", "reason": null, "trial_id": 30, "word": "open", "label_id": 1, "block": 3, "repeat_of": null, "event_id": "event_121"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9683576412400, "planned_host_ns": 9683567680000, "trial_id": 31, "word": "open", "label_id": 1, "block": 4, "repeat_of": null, "event_id": "event_122", "gui_submit_ns": 9683577396100}
+{"kind": "marker_sent", "event_id": "event_122", "token": 186, "host_ns": 9683578201500}
+{"kind": "marker_ack", "event_id": "event_122", "token": 186, "host_ns": 9683581129500, "sent_host_ns": 9683578201500, "device_sample_idx": 7297780, "device_tick_ms": 3648897, "rtt_ms": 2.928, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9685082423200, "planned_host_ns": 9685076412400, "trial_id": 31, "word": "open", "label_id": 1, "block": 4, "repeat_of": null, "event_id": "event_123", "gui_submit_ns": 9685082480100}
+{"kind": "marker_sent", "event_id": "event_123", "token": 187, "host_ns": 9685083942400}
+{"kind": "marker_ack", "event_id": "event_123", "token": 187, "host_ns": 9685086820800, "sent_host_ns": 9685083942400, "device_sample_idx": 7300800, "device_tick_ms": 3650403, "rtt_ms": 2.8784, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_188", "token": 188, "host_ns": 9685274371400}
+{"kind": "marker_ack", "event_id": "sync_188", "token": 188, "host_ns": 9685291513000, "sent_host_ns": 9685274371400, "device_sample_idx": 7301180, "device_tick_ms": 3650593, "rtt_ms": 17.1416, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9687094861000, "planned_host_ns": 9687082423200, "trial_id": 31, "word": "open", "label_id": 1, "block": 4, "repeat_of": null, "event_id": "event_124", "gui_submit_ns": 9687094924200}
+{"kind": "marker_sent", "event_id": "event_124", "token": 189, "host_ns": 9687096740700}
+{"kind": "marker_ack", "event_id": "event_124", "token": 189, "host_ns": 9687100255100, "sent_host_ns": 9687096740700, "device_sample_idx": 7304820, "device_tick_ms": 3652416, "rtt_ms": 3.5144, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_190", "token": 190, "host_ns": 9687274251300}
+{"kind": "marker_ack", "event_id": "sync_190", "token": 190, "host_ns": 9687278072200, "sent_host_ns": 9687274251300, "device_sample_idx": 7305180, "device_tick_ms": 3652593, "rtt_ms": 3.8209, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9689172645600, "status": "completed", "reason": null, "trial_id": 31, "word": "open", "label_id": 1, "block": 4, "repeat_of": null, "event_id": "event_125"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9689172645600, "planned_host_ns": 9689094861000, "trial_id": 32, "word": "louder", "label_id": 8, "block": 4, "repeat_of": null, "event_id": "event_126", "gui_submit_ns": 9689173528900}
+{"kind": "marker_sent", "event_id": "event_126", "token": 191, "host_ns": 9689173837800}
+{"kind": "marker_ack", "event_id": "event_126", "token": 191, "host_ns": 9689176538200, "sent_host_ns": 9689173837800, "device_sample_idx": 7308980, "device_tick_ms": 3654493, "rtt_ms": 2.7004, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_192", "token": 192, "host_ns": 9689275204200}
+{"kind": "marker_ack", "event_id": "sync_192", "token": 192, "host_ns": 9689278035800, "sent_host_ns": 9689275204200, "device_sample_idx": 7309180, "device_tick_ms": 3654594, "rtt_ms": 2.8316, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9690688856000, "planned_host_ns": 9690672645600, "trial_id": 32, "word": "louder", "label_id": 8, "block": 4, "repeat_of": null, "event_id": "event_127", "gui_submit_ns": 9690689135600}
+{"kind": "marker_sent", "event_id": "event_127", "token": 193, "host_ns": 9690692449800}
+{"kind": "marker_ack", "event_id": "event_127", "token": 193, "host_ns": 9690708565900, "sent_host_ns": 9690692449800, "device_sample_idx": 7312020, "device_tick_ms": 3656012, "rtt_ms": 16.1161, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_194", "token": 194, "host_ns": 9691282926900}
+{"kind": "marker_ack", "event_id": "sync_194", "token": 194, "host_ns": 9691287957400, "sent_host_ns": 9691282926900, "device_sample_idx": 7313200, "device_tick_ms": 3656602, "rtt_ms": 5.0305, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9692703594500, "planned_host_ns": 9692688856000, "trial_id": 32, "word": "louder", "label_id": 8, "block": 4, "repeat_of": null, "event_id": "event_128", "gui_submit_ns": 9692704048800}
+{"kind": "marker_sent", "event_id": "event_128", "token": 195, "host_ns": 9692705593200}
+{"kind": "marker_ack", "event_id": "event_128", "token": 195, "host_ns": 9692707441300, "sent_host_ns": 9692705593200, "device_sample_idx": 7316040, "device_tick_ms": 3658025, "rtt_ms": 1.8481, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_196", "token": 196, "host_ns": 9693282961900}
+{"kind": "marker_ack", "event_id": "sync_196", "token": 196, "host_ns": 9693317026500, "sent_host_ns": 9693282961900, "device_sample_idx": 7317200, "device_tick_ms": 3658602, "rtt_ms": 34.0646, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9694753768600, "status": "completed", "reason": null, "trial_id": 32, "word": "louder", "label_id": 8, "block": 4, "repeat_of": null, "event_id": "event_129"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9694753768600, "planned_host_ns": 9694703594500, "trial_id": 33, "word": "next", "label_id": 3, "block": 4, "repeat_of": null, "event_id": "event_130", "gui_submit_ns": 9694754658200}
+{"kind": "marker_sent", "event_id": "event_130", "token": 197, "host_ns": 9694755016400}
+{"kind": "marker_ack", "event_id": "event_130", "token": 197, "host_ns": 9694756846100, "sent_host_ns": 9694755016400, "device_sample_idx": 7320140, "device_tick_ms": 3660074, "rtt_ms": 1.8297, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_198", "token": 198, "host_ns": 9695301743600}
+{"kind": "marker_ack", "event_id": "sync_198", "token": 198, "host_ns": 9695315214800, "sent_host_ns": 9695301743600, "device_sample_idx": 7321240, "device_tick_ms": 3660621, "rtt_ms": 13.4712, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9696257632200, "planned_host_ns": 9696253768600, "trial_id": 33, "word": "next", "label_id": 3, "block": 4, "repeat_of": null, "event_id": "event_131", "gui_submit_ns": 9696257710300}
+{"kind": "marker_sent", "event_id": "event_131", "token": 199, "host_ns": 9696258025100}
+{"kind": "marker_ack", "event_id": "event_131", "token": 199, "host_ns": 9696260973000, "sent_host_ns": 9696258025100, "device_sample_idx": 7323140, "device_tick_ms": 3661578, "rtt_ms": 2.9479, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_200", "token": 200, "host_ns": 9697292276300}
+{"kind": "marker_ack", "event_id": "sync_200", "token": 200, "host_ns": 9697297777200, "sent_host_ns": 9697292276300, "device_sample_idx": 7325220, "device_tick_ms": 3662612, "rtt_ms": 5.5009, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9698314377000, "planned_host_ns": 9698257632200, "trial_id": 33, "word": "next", "label_id": 3, "block": 4, "repeat_of": null, "event_id": "event_132", "gui_submit_ns": 9698314429500}
+{"kind": "marker_sent", "event_id": "event_132", "token": 201, "host_ns": 9698314718000}
+{"kind": "marker_ack", "event_id": "event_132", "token": 201, "host_ns": 9698316584000, "sent_host_ns": 9698314718000, "device_sample_idx": 7327260, "device_tick_ms": 3663634, "rtt_ms": 1.866, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_202", "token": 202, "host_ns": 9699296369600}
+{"kind": "marker_ack", "event_id": "sync_202", "token": 202, "host_ns": 9699332647700, "sent_host_ns": 9699296369600, "device_sample_idx": 7329220, "device_tick_ms": 3664616, "rtt_ms": 36.2781, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9700323309700, "status": "completed", "reason": null, "trial_id": 33, "word": "next", "label_id": 3, "block": 4, "repeat_of": null, "event_id": "event_133"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9700323309700, "planned_host_ns": 9700314377000, "trial_id": 34, "word": "close", "label_id": 2, "block": 4, "repeat_of": null, "event_id": "event_134", "gui_submit_ns": 9700324203800}
+{"kind": "marker_sent", "event_id": "event_134", "token": 203, "host_ns": 9700325633300}
+{"kind": "marker_ack", "event_id": "event_134", "token": 203, "host_ns": 9700345079600, "sent_host_ns": 9700325633300, "device_sample_idx": 7331280, "device_tick_ms": 3665645, "rtt_ms": 19.4463, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_204", "token": 204, "host_ns": 9701319286500}
+{"kind": "marker_ack", "event_id": "sync_204", "token": 204, "host_ns": 9701340007600, "sent_host_ns": 9701319286500, "device_sample_idx": 7333260, "device_tick_ms": 3666639, "rtt_ms": 20.7211, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9701841529000, "planned_host_ns": 9701823309700, "trial_id": 34, "word": "close", "label_id": 2, "block": 4, "repeat_of": null, "event_id": "event_135", "gui_submit_ns": 9701841565500}
+{"kind": "marker_sent", "event_id": "event_135", "token": 205, "host_ns": 9701842013600}
+{"kind": "marker_ack", "event_id": "event_135", "token": 205, "host_ns": 9701846166900, "sent_host_ns": 9701842013600, "device_sample_idx": 7334320, "device_tick_ms": 3667162, "rtt_ms": 4.1533, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_206", "token": 206, "host_ns": 9703331095000}
+{"kind": "marker_ack", "event_id": "sync_206", "token": 206, "host_ns": 9703356885400, "sent_host_ns": 9703331095000, "device_sample_idx": 7337300, "device_tick_ms": 3668651, "rtt_ms": 25.7904, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9703843094000, "planned_host_ns": 9703841529000, "trial_id": 34, "word": "close", "label_id": 2, "block": 4, "repeat_of": null, "event_id": "event_136", "gui_submit_ns": 9703843149900}
+{"kind": "marker_sent", "event_id": "event_136", "token": 207, "host_ns": 9703843413200}
+{"kind": "marker_ack", "event_id": "event_136", "token": 207, "host_ns": 9703846064700, "sent_host_ns": 9703843413200, "device_sample_idx": 7338320, "device_tick_ms": 3669163, "rtt_ms": 2.6515, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_208", "token": 208, "host_ns": 9705312156800}
+{"kind": "marker_ack", "event_id": "sync_208", "token": 208, "host_ns": 9705329446500, "sent_host_ns": 9705312156800, "device_sample_idx": 7341260, "device_tick_ms": 3670632, "rtt_ms": 17.2897, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9705850486700, "status": "completed", "reason": null, "trial_id": 34, "word": "close", "label_id": 2, "block": 4, "repeat_of": null, "event_id": "event_137"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9705850486700, "planned_host_ns": 9705843094000, "trial_id": 35, "word": "photo", "label_id": 10, "block": 4, "repeat_of": null, "event_id": "event_138", "gui_submit_ns": 9705851343300}
+{"kind": "marker_sent", "event_id": "event_138", "token": 209, "host_ns": 9705851955600}
+{"kind": "marker_ack", "event_id": "event_138", "token": 209, "host_ns": 9705856925100, "sent_host_ns": 9705851955600, "device_sample_idx": 7342340, "device_tick_ms": 3671172, "rtt_ms": 4.9695, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_210", "token": 210, "host_ns": 9707319474700}
+{"kind": "marker_ack", "event_id": "sync_210", "token": 210, "host_ns": 9707343363300, "sent_host_ns": 9707319474700, "device_sample_idx": 7345260, "device_tick_ms": 3672639, "rtt_ms": 23.8886, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9707431052800, "planned_host_ns": 9707350486700, "trial_id": 35, "word": "photo", "label_id": 10, "block": 4, "repeat_of": null, "event_id": "event_139", "gui_submit_ns": 9707431105900}
+{"kind": "marker_sent", "event_id": "event_139", "token": 211, "host_ns": 9707431743300}
+{"kind": "marker_ack", "event_id": "event_139", "token": 211, "host_ns": 9707435969800, "sent_host_ns": 9707431743300, "device_sample_idx": 7345500, "device_tick_ms": 3672752, "rtt_ms": 4.2265, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_212", "token": 212, "host_ns": 9709341968900}
+{"kind": "marker_ack", "event_id": "sync_212", "token": 212, "host_ns": 9709347256000, "sent_host_ns": 9709341968900, "device_sample_idx": 7349320, "device_tick_ms": 3674662, "rtt_ms": 5.2871, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9709470058200, "planned_host_ns": 9709431052800, "trial_id": 35, "word": "photo", "label_id": 10, "block": 4, "repeat_of": null, "event_id": "event_140", "gui_submit_ns": 9709470114300}
+{"kind": "marker_sent", "event_id": "event_140", "token": 213, "host_ns": 9709470379500}
+{"kind": "marker_ack", "event_id": "event_140", "token": 213, "host_ns": 9709475979000, "sent_host_ns": 9709470379500, "device_sample_idx": 7349580, "device_tick_ms": 3674790, "rtt_ms": 5.5995, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_214", "token": 214, "host_ns": 9711366048200}
+{"kind": "marker_ack", "event_id": "sync_214", "token": 214, "host_ns": 9711394639800, "sent_host_ns": 9711366048200, "device_sample_idx": 7353360, "device_tick_ms": 3676686, "rtt_ms": 28.5916, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9711486650100, "status": "completed", "reason": null, "trial_id": 35, "word": "photo", "label_id": 10, "block": 4, "repeat_of": null, "event_id": "event_141"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9711486650100, "planned_host_ns": 9711470058200, "trial_id": 36, "word": "music", "label_id": 4, "block": 4, "repeat_of": null, "event_id": "event_142", "gui_submit_ns": 9711487660900}
+{"kind": "marker_sent", "event_id": "event_142", "token": 215, "host_ns": 9711487993200}
+{"kind": "marker_ack", "event_id": "event_142", "token": 215, "host_ns": 9711490526100, "sent_host_ns": 9711487993200, "device_sample_idx": 7353600, "device_tick_ms": 3676808, "rtt_ms": 2.5329, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9712992896900, "planned_host_ns": 9712986650100, "trial_id": 36, "word": "music", "label_id": 4, "block": 4, "repeat_of": null, "event_id": "event_143", "gui_submit_ns": 9712992936800}
+{"kind": "marker_sent", "event_id": "event_143", "token": 216, "host_ns": 9712993141800}
+{"kind": "marker_ack", "event_id": "event_143", "token": 216, "host_ns": 9712995707800, "sent_host_ns": 9712993141800, "device_sample_idx": 7356620, "device_tick_ms": 3678313, "rtt_ms": 2.566, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_217", "token": 217, "host_ns": 9713343630800}
+{"kind": "marker_ack", "event_id": "sync_217", "token": 217, "host_ns": 9713368086600, "sent_host_ns": 9713343630800, "device_sample_idx": 7357320, "device_tick_ms": 3678664, "rtt_ms": 24.4558, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9715008001200, "planned_host_ns": 9714992896900, "trial_id": 36, "word": "music", "label_id": 4, "block": 4, "repeat_of": null, "event_id": "event_144", "gui_submit_ns": 9715008037400}
+{"kind": "marker_sent", "event_id": "event_144", "token": 218, "host_ns": 9715011484700}
+{"kind": "marker_ack", "event_id": "event_144", "token": 218, "host_ns": 9715026856500, "sent_host_ns": 9715011484700, "device_sample_idx": 7360660, "device_tick_ms": 3680332, "rtt_ms": 15.3718, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_219", "token": 219, "host_ns": 9715367873300}
+{"kind": "marker_ack", "event_id": "sync_219", "token": 219, "host_ns": 9715399203600, "sent_host_ns": 9715367873300, "device_sample_idx": 7361360, "device_tick_ms": 3680688, "rtt_ms": 31.3303, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9717044237300, "status": "completed", "reason": null, "trial_id": 36, "word": "music", "label_id": 4, "block": 4, "repeat_of": null, "event_id": "event_145"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9717044237300, "planned_host_ns": 9717008001200, "trial_id": 37, "word": "start", "label_id": 5, "block": 4, "repeat_of": null, "event_id": "event_146", "gui_submit_ns": 9717045158900}
+{"kind": "marker_sent", "event_id": "event_146", "token": 220, "host_ns": 9717045437900}
+{"kind": "marker_ack", "event_id": "event_146", "token": 220, "host_ns": 9717048515800, "sent_host_ns": 9717045437900, "device_sample_idx": 7364720, "device_tick_ms": 3682366, "rtt_ms": 3.0779, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_221", "token": 221, "host_ns": 9717387162900}
+{"kind": "marker_ack", "event_id": "sync_221", "token": 221, "host_ns": 9717404358400, "sent_host_ns": 9717387162900, "device_sample_idx": 7365400, "device_tick_ms": 3682708, "rtt_ms": 17.1955, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9718547102700, "planned_host_ns": 9718544237300, "trial_id": 37, "word": "start", "label_id": 5, "block": 4, "repeat_of": null, "event_id": "event_147", "gui_submit_ns": 9718547158400}
+{"kind": "marker_sent", "event_id": "event_147", "token": 222, "host_ns": 9718547430800}
+{"kind": "marker_ack", "event_id": "event_147", "token": 222, "host_ns": 9718550234800, "sent_host_ns": 9718547430800, "device_sample_idx": 7367720, "device_tick_ms": 3683868, "rtt_ms": 2.804, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_223", "token": 223, "host_ns": 9719380292900}
+{"kind": "marker_ack", "event_id": "sync_223", "token": 223, "host_ns": 9719386746200, "sent_host_ns": 9719380292900, "device_sample_idx": 7369400, "device_tick_ms": 3684701, "rtt_ms": 6.4533, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9720608205100, "planned_host_ns": 9720547102700, "trial_id": 37, "word": "start", "label_id": 5, "block": 4, "repeat_of": null, "event_id": "event_148", "gui_submit_ns": 9720608269800}
+{"kind": "marker_sent", "event_id": "event_148", "token": 224, "host_ns": 9720608559200}
+{"kind": "marker_ack", "event_id": "event_148", "token": 224, "host_ns": 9720610457200, "sent_host_ns": 9720608559200, "device_sample_idx": 7371840, "device_tick_ms": 3685929, "rtt_ms": 1.898, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_225", "token": 225, "host_ns": 9721381216500}
+{"kind": "marker_ack", "event_id": "sync_225", "token": 225, "host_ns": 9721386737400, "sent_host_ns": 9721381216500, "device_sample_idx": 7373400, "device_tick_ms": 3686702, "rtt_ms": 5.5209, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9722679520300, "status": "completed", "reason": null, "trial_id": 37, "word": "start", "label_id": 5, "block": 4, "repeat_of": null, "event_id": "event_149"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9722679520300, "planned_host_ns": 9722608205100, "trial_id": 38, "word": "stop", "label_id": 6, "block": 4, "repeat_of": null, "event_id": "event_150", "gui_submit_ns": 9722680357300}
+{"kind": "marker_sent", "event_id": "event_150", "token": 226, "host_ns": 9722681122800}
+{"kind": "marker_ack", "event_id": "event_150", "token": 226, "host_ns": 9722685240300, "sent_host_ns": 9722681122800, "device_sample_idx": 7376000, "device_tick_ms": 3688002, "rtt_ms": 4.1175, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_227", "token": 227, "host_ns": 9723393889700}
+{"kind": "marker_ack", "event_id": "sync_227", "token": 227, "host_ns": 9723412283500, "sent_host_ns": 9723393889700, "device_sample_idx": 7377420, "device_tick_ms": 3688714, "rtt_ms": 18.3938, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9724195331700, "planned_host_ns": 9724179520300, "trial_id": 38, "word": "stop", "label_id": 6, "block": 4, "repeat_of": null, "event_id": "event_151", "gui_submit_ns": 9724195388000}
+{"kind": "marker_sent", "event_id": "event_151", "token": 228, "host_ns": 9724195658900}
+{"kind": "marker_ack", "event_id": "event_151", "token": 228, "host_ns": 9724200374200, "sent_host_ns": 9724195658900, "device_sample_idx": 7379020, "device_tick_ms": 3689516, "rtt_ms": 4.7153, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_229", "token": 229, "host_ns": 9725397529800}
+{"kind": "marker_ack", "event_id": "sync_229", "token": 229, "host_ns": 9725403081000, "sent_host_ns": 9725397529800, "device_sample_idx": 7381420, "device_tick_ms": 3690718, "rtt_ms": 5.5512, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9726248909700, "planned_host_ns": 9726195331700, "trial_id": 38, "word": "stop", "label_id": 6, "block": 4, "repeat_of": null, "event_id": "event_152", "gui_submit_ns": 9726248992300}
+{"kind": "marker_sent", "event_id": "event_152", "token": 230, "host_ns": 9726249305600}
+{"kind": "marker_ack", "event_id": "event_152", "token": 230, "host_ns": 9726255149600, "sent_host_ns": 9726249305600, "device_sample_idx": 7383140, "device_tick_ms": 3691570, "rtt_ms": 5.844, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_231", "token": 231, "host_ns": 9727401105600}
+{"kind": "marker_ack", "event_id": "sync_231", "token": 231, "host_ns": 9727406433300, "sent_host_ns": 9727401105600, "device_sample_idx": 7385440, "device_tick_ms": 3692722, "rtt_ms": 5.3277, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9728300736600, "status": "completed", "reason": null, "trial_id": 38, "word": "stop", "label_id": 6, "block": 4, "repeat_of": null, "event_id": "event_153"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9728300736600, "planned_host_ns": 9728248909700, "trial_id": 39, "word": "quieter", "label_id": 7, "block": 4, "repeat_of": null, "event_id": "event_154", "gui_submit_ns": 9728301606700}
+{"kind": "marker_sent", "event_id": "event_154", "token": 232, "host_ns": 9728301882800}
+{"kind": "marker_ack", "event_id": "event_154", "token": 232, "host_ns": 9728305970200, "sent_host_ns": 9728301882800, "device_sample_idx": 7387240, "device_tick_ms": 3693623, "rtt_ms": 4.0874, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_233", "token": 233, "host_ns": 9729408382700}
+{"kind": "marker_ack", "event_id": "sync_233", "token": 233, "host_ns": 9729430918500, "sent_host_ns": 9729408382700, "device_sample_idx": 7389440, "device_tick_ms": 3694729, "rtt_ms": 22.5358, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9729805212300, "planned_host_ns": 9729800736600, "trial_id": 39, "word": "quieter", "label_id": 7, "block": 4, "repeat_of": null, "event_id": "event_155", "gui_submit_ns": 9729805277600}
+{"kind": "marker_sent", "event_id": "event_155", "token": 234, "host_ns": 9729806058900}
+{"kind": "marker_ack", "event_id": "event_155", "token": 234, "host_ns": 9729809023900, "sent_host_ns": 9729806058900, "device_sample_idx": 7390240, "device_tick_ms": 3695127, "rtt_ms": 2.965, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_235", "token": 235, "host_ns": 9731410819200}
+{"kind": "marker_ack", "event_id": "sync_235", "token": 235, "host_ns": 9731416362900, "sent_host_ns": 9731410819200, "device_sample_idx": 7393460, "device_tick_ms": 3696732, "rtt_ms": 5.5437, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9731883880600, "planned_host_ns": 9731805212300, "trial_id": 39, "word": "quieter", "label_id": 7, "block": 4, "repeat_of": null, "event_id": "event_156", "gui_submit_ns": 9731883939100}
+{"kind": "marker_sent", "event_id": "event_156", "token": 236, "host_ns": 9731884223800}
+{"kind": "marker_ack", "event_id": "event_156", "token": 236, "host_ns": 9731885937900, "sent_host_ns": 9731884223800, "device_sample_idx": 7394400, "device_tick_ms": 3697205, "rtt_ms": 1.7141, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_237", "token": 237, "host_ns": 9733416801900}
+{"kind": "marker_ack", "event_id": "sync_237", "token": 237, "host_ns": 9733433590200, "sent_host_ns": 9733416801900, "device_sample_idx": 7397460, "device_tick_ms": 3698738, "rtt_ms": 16.7883, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9733955681900, "status": "completed", "reason": null, "trial_id": 39, "word": "quieter", "label_id": 7, "block": 4, "repeat_of": null, "event_id": "event_157"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9733955681900, "planned_host_ns": 9733883880600, "trial_id": 40, "word": "previous", "label_id": 9, "block": 4, "repeat_of": null, "event_id": "event_158", "gui_submit_ns": 9733956545300}
+{"kind": "marker_sent", "event_id": "event_158", "token": 238, "host_ns": 9733956882700}
+{"kind": "marker_ack", "event_id": "event_158", "token": 238, "host_ns": 9733960855900, "sent_host_ns": 9733956882700, "device_sample_idx": 7398540, "device_tick_ms": 3699278, "rtt_ms": 3.9732, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_239", "token": 239, "host_ns": 9735442796000}
+{"kind": "marker_ack", "event_id": "sync_239", "token": 239, "host_ns": 9735499923700, "sent_host_ns": 9735442796000, "device_sample_idx": 7401520, "device_tick_ms": 3700764, "rtt_ms": 57.1277, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9735527099500, "planned_host_ns": 9735455681900, "trial_id": 40, "word": "previous", "label_id": 9, "block": 4, "repeat_of": null, "event_id": "event_159", "gui_submit_ns": 9735527162000}
+{"kind": "marker_sent", "event_id": "event_159", "token": 240, "host_ns": 9735527432400}
+{"kind": "marker_ack", "event_id": "event_159", "token": 240, "host_ns": 9735529384100, "sent_host_ns": 9735527432400, "device_sample_idx": 7401680, "device_tick_ms": 3700848, "rtt_ms": 1.9517, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_241", "token": 241, "host_ns": 9737443316300}
+{"kind": "marker_ack", "event_id": "sync_241", "token": 241, "host_ns": 9737447761500, "sent_host_ns": 9737443316300, "device_sample_idx": 7405520, "device_tick_ms": 3702764, "rtt_ms": 4.4452, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9737549429400, "planned_host_ns": 9737527099500, "trial_id": 40, "word": "previous", "label_id": 9, "block": 4, "repeat_of": null, "event_id": "event_160", "gui_submit_ns": 9737549488000}
+{"kind": "marker_sent", "event_id": "event_160", "token": 242, "host_ns": 9737550538100}
+{"kind": "marker_ack", "event_id": "event_160", "token": 242, "host_ns": 9737554645700, "sent_host_ns": 9737550538100, "device_sample_idx": 7405740, "device_tick_ms": 3702872, "rtt_ms": 4.1076, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_243", "token": 243, "host_ns": 9739449143700}
+{"kind": "marker_ack", "event_id": "sync_243", "token": 243, "host_ns": 9739464868400, "sent_host_ns": 9739449143700, "device_sample_idx": 7409540, "device_tick_ms": 3704770, "rtt_ms": 15.7247, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9739616534800, "status": "completed", "reason": null, "trial_id": 40, "word": "previous", "label_id": 9, "block": 4, "repeat_of": null, "event_id": "event_161"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9739616534800, "planned_host_ns": 9739549429400, "trial_id": 41, "word": "photo", "label_id": 10, "block": 5, "repeat_of": null, "event_id": "event_162", "gui_submit_ns": 9739617448200}
+{"kind": "marker_sent", "event_id": "event_162", "token": 244, "host_ns": 9739617742600}
+{"kind": "marker_ack", "event_id": "event_162", "token": 244, "host_ns": 9739621239500, "sent_host_ns": 9739617742600, "device_sample_idx": 7409860, "device_tick_ms": 3704939, "rtt_ms": 3.4969, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9741182055800, "planned_host_ns": 9741116534800, "trial_id": 41, "word": "photo", "label_id": 10, "block": 5, "repeat_of": null, "event_id": "event_163", "gui_submit_ns": 9741182134800}
+{"kind": "marker_sent", "event_id": "event_163", "token": 245, "host_ns": 9741182463100}
+{"kind": "marker_ack", "event_id": "event_163", "token": 245, "host_ns": 9741184526300, "sent_host_ns": 9741182463100, "device_sample_idx": 7413000, "device_tick_ms": 3706504, "rtt_ms": 2.0632, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_246", "token": 246, "host_ns": 9741450565400}
+{"kind": "marker_ack", "event_id": "sync_246", "token": 246, "host_ns": 9741455922400, "sent_host_ns": 9741450565400, "device_sample_idx": 7413540, "device_tick_ms": 3706772, "rtt_ms": 5.357, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9743231395900, "planned_host_ns": 9743182055800, "trial_id": 41, "word": "photo", "label_id": 10, "block": 5, "repeat_of": null, "event_id": "event_164", "gui_submit_ns": 9743231454500}
+{"kind": "marker_sent", "event_id": "event_164", "token": 247, "host_ns": 9743231676000}
+{"kind": "marker_ack", "event_id": "event_164", "token": 247, "host_ns": 9743234497000, "sent_host_ns": 9743231676000, "device_sample_idx": 7417100, "device_tick_ms": 3708553, "rtt_ms": 2.821, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_248", "token": 248, "host_ns": 9743455324900}
+{"kind": "marker_ack", "event_id": "sync_248", "token": 248, "host_ns": 9743470076400, "sent_host_ns": 9743455324900, "device_sample_idx": 7417540, "device_tick_ms": 3708777, "rtt_ms": 14.7515, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9745294377000, "status": "completed", "reason": null, "trial_id": 41, "word": "photo", "label_id": 10, "block": 5, "repeat_of": null, "event_id": "event_165"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9745294377000, "planned_host_ns": 9745231395900, "trial_id": 42, "word": "music", "label_id": 4, "block": 5, "repeat_of": null, "event_id": "event_166", "gui_submit_ns": 9745295201200}
+{"kind": "marker_sent", "event_id": "event_166", "token": 249, "host_ns": 9745295472800}
+{"kind": "marker_ack", "event_id": "event_166", "token": 249, "host_ns": 9745298664600, "sent_host_ns": 9745295472800, "device_sample_idx": 7421220, "device_tick_ms": 3710617, "rtt_ms": 3.1918, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_250", "token": 250, "host_ns": 9745460929400}
+{"kind": "marker_ack", "event_id": "sync_250", "token": 250, "host_ns": 9745476488200, "sent_host_ns": 9745460929400, "device_sample_idx": 7421560, "device_tick_ms": 3710782, "rtt_ms": 15.5588, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9746838475200, "planned_host_ns": 9746794377000, "trial_id": 42, "word": "music", "label_id": 4, "block": 5, "repeat_of": null, "event_id": "event_167", "gui_submit_ns": 9746838527200}
+{"kind": "marker_sent", "event_id": "event_167", "token": 251, "host_ns": 9746838780800}
+{"kind": "marker_ack", "event_id": "event_167", "token": 251, "host_ns": 9746844403000, "sent_host_ns": 9746838780800, "device_sample_idx": 7424320, "device_tick_ms": 3712160, "rtt_ms": 5.6222, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_252", "token": 252, "host_ns": 9747485796400}
+{"kind": "marker_ack", "event_id": "sync_252", "token": 252, "host_ns": 9747542793000, "sent_host_ns": 9747485796400, "device_sample_idx": 7425600, "device_tick_ms": 3712807, "rtt_ms": 56.9966, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9748864217300, "planned_host_ns": 9748838475200, "trial_id": 42, "word": "music", "label_id": 4, "block": 5, "repeat_of": null, "event_id": "event_168", "gui_submit_ns": 9748864273800}
+{"kind": "marker_sent", "event_id": "event_168", "token": 253, "host_ns": 9748864578300}
+{"kind": "marker_ack", "event_id": "event_168", "token": 253, "host_ns": 9748867742100, "sent_host_ns": 9748864578300, "device_sample_idx": 7428360, "device_tick_ms": 3714186, "rtt_ms": 3.1638, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_254", "token": 254, "host_ns": 9749497152400}
+{"kind": "marker_ack", "event_id": "sync_254", "token": 254, "host_ns": 9749502900700, "sent_host_ns": 9749497152400, "device_sample_idx": 7429620, "device_tick_ms": 3714819, "rtt_ms": 5.7483, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9750865268400, "status": "completed", "reason": null, "trial_id": 42, "word": "music", "label_id": 4, "block": 5, "repeat_of": null, "event_id": "event_169"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9750865268400, "planned_host_ns": 9750864217300, "trial_id": 43, "word": "previous", "label_id": 9, "block": 5, "repeat_of": null, "event_id": "event_170", "gui_submit_ns": 9750866247400}
+{"kind": "marker_sent", "event_id": "event_170", "token": 255, "host_ns": 9750885127900}
+{"kind": "marker_ack", "event_id": "event_170", "token": 255, "host_ns": 9750900313500, "sent_host_ns": 9750885127900, "device_sample_idx": 7432400, "device_tick_ms": 3716207, "rtt_ms": 15.1856, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_256", "token": 256, "host_ns": 9751523397500}
+{"kind": "marker_ack", "event_id": "sync_256", "token": 256, "host_ns": 9751529020700, "sent_host_ns": 9751523397500, "device_sample_idx": 7433680, "device_tick_ms": 3716845, "rtt_ms": 5.6232, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9752408027900, "planned_host_ns": 9752365268400, "trial_id": 43, "word": "previous", "label_id": 9, "block": 5, "repeat_of": null, "event_id": "event_171", "gui_submit_ns": 9752408081600}
+{"kind": "marker_sent", "event_id": "event_171", "token": 257, "host_ns": 9752408337200}
+{"kind": "marker_ack", "event_id": "event_171", "token": 257, "host_ns": 9752414105700, "sent_host_ns": 9752408337200, "device_sample_idx": 7435460, "device_tick_ms": 3717730, "rtt_ms": 5.7685, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_258", "token": 258, "host_ns": 9753552095900}
+{"kind": "marker_ack", "event_id": "sync_258", "token": 258, "host_ns": 9753569114400, "sent_host_ns": 9753552095900, "device_sample_idx": 7437740, "device_tick_ms": 3718874, "rtt_ms": 17.0185, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9754414958100, "planned_host_ns": 9754408027900, "trial_id": 43, "word": "previous", "label_id": 9, "block": 5, "repeat_of": null, "event_id": "event_172", "gui_submit_ns": 9754414996500}
+{"kind": "marker_sent", "event_id": "event_172", "token": 259, "host_ns": 9754415207500}
+{"kind": "marker_ack", "event_id": "event_172", "token": 259, "host_ns": 9754418246300, "sent_host_ns": 9754415207500, "device_sample_idx": 7439460, "device_tick_ms": 3719737, "rtt_ms": 3.0388, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_260", "token": 260, "host_ns": 9755571280100}
+{"kind": "marker_ack", "event_id": "sync_260", "token": 260, "host_ns": 9755600906400, "sent_host_ns": 9755571280100, "device_sample_idx": 7441780, "device_tick_ms": 3720893, "rtt_ms": 29.6263, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9756469115700, "status": "completed", "reason": null, "trial_id": 43, "word": "previous", "label_id": 9, "block": 5, "repeat_of": null, "event_id": "event_173"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9756469115700, "planned_host_ns": 9756414958100, "trial_id": 44, "word": "next", "label_id": 3, "block": 5, "repeat_of": null, "event_id": "event_174", "gui_submit_ns": 9756470110500}
+{"kind": "marker_sent", "event_id": "event_174", "token": 261, "host_ns": 9756470512500}
+{"kind": "marker_ack", "event_id": "event_174", "token": 261, "host_ns": 9756473915700, "sent_host_ns": 9756470512500, "device_sample_idx": 7443580, "device_tick_ms": 3721792, "rtt_ms": 3.4032, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_262", "token": 262, "host_ns": 9757572635300}
+{"kind": "marker_ack", "event_id": "sync_262", "token": 262, "host_ns": 9757575484500, "sent_host_ns": 9757572635300, "device_sample_idx": 7445780, "device_tick_ms": 3722895, "rtt_ms": 2.8492, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9757971613600, "planned_host_ns": 9757969115700, "trial_id": 44, "word": "next", "label_id": 3, "block": 5, "repeat_of": null, "event_id": "event_175", "gui_submit_ns": 9757971883100}
+{"kind": "marker_sent", "event_id": "event_175", "token": 263, "host_ns": 9757972616100}
+{"kind": "marker_ack", "event_id": "event_175", "token": 263, "host_ns": 9757975242200, "sent_host_ns": 9757972616100, "device_sample_idx": 7446580, "device_tick_ms": 3723295, "rtt_ms": 2.6261, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_264", "token": 264, "host_ns": 9759590358700}
+{"kind": "marker_ack", "event_id": "sync_264", "token": 264, "host_ns": 9759595165000, "sent_host_ns": 9759590358700, "device_sample_idx": 7449820, "device_tick_ms": 3724912, "rtt_ms": 4.8063, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9759973759700, "planned_host_ns": 9759971613600, "trial_id": 44, "word": "next", "label_id": 3, "block": 5, "repeat_of": null, "event_id": "event_176", "gui_submit_ns": 9759973820100}
+{"kind": "marker_sent", "event_id": "event_176", "token": 265, "host_ns": 9759974073300}
+{"kind": "marker_ack", "event_id": "event_176", "token": 265, "host_ns": 9759977314800, "sent_host_ns": 9759974073300, "device_sample_idx": 7450580, "device_tick_ms": 3725296, "rtt_ms": 3.2415, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_266", "token": 266, "host_ns": 9761590695300}
+{"kind": "marker_ack", "event_id": "sync_266", "token": 266, "host_ns": 9761619063300, "sent_host_ns": 9761590695300, "device_sample_idx": 7453820, "device_tick_ms": 3726913, "rtt_ms": 28.368, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9762010998700, "status": "completed", "reason": null, "trial_id": 44, "word": "next", "label_id": 3, "block": 5, "repeat_of": null, "event_id": "event_177"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9762010998700, "planned_host_ns": 9761973759700, "trial_id": 45, "word": "open", "label_id": 1, "block": 5, "repeat_of": null, "event_id": "event_178", "gui_submit_ns": 9762011919800}
+{"kind": "marker_sent", "event_id": "event_178", "token": 267, "host_ns": 9762012184400}
+{"kind": "marker_ack", "event_id": "event_178", "token": 267, "host_ns": 9762013899400, "sent_host_ns": 9762012184400, "device_sample_idx": 7454660, "device_tick_ms": 3727334, "rtt_ms": 1.715, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9763571005300, "planned_host_ns": 9763510998700, "trial_id": 45, "word": "open", "label_id": 1, "block": 5, "repeat_of": null, "event_id": "event_179", "gui_submit_ns": 9763571045000}
+{"kind": "marker_sent", "event_id": "event_179", "token": 268, "host_ns": 9763571378300}
+{"kind": "marker_ack", "event_id": "event_179", "token": 268, "host_ns": 9763573676900, "sent_host_ns": 9763571378300, "device_sample_idx": 7457780, "device_tick_ms": 3728894, "rtt_ms": 2.2986, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_269", "token": 269, "host_ns": 9763590917600}
+{"kind": "marker_ack", "event_id": "sync_269", "token": 269, "host_ns": 9763595062200, "sent_host_ns": 9763590917600, "device_sample_idx": 7457820, "device_tick_ms": 3728913, "rtt_ms": 4.1446, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9765594563200, "planned_host_ns": 9765571005300, "trial_id": 45, "word": "open", "label_id": 1, "block": 5, "repeat_of": null, "event_id": "event_180", "gui_submit_ns": 9765594606400}
+{"kind": "marker_sent", "event_id": "event_180", "token": 270, "host_ns": 9765594835300}
+{"kind": "marker_sent", "event_id": "sync_271", "token": 271, "host_ns": 9765595234200}
+{"kind": "marker_ack", "event_id": "event_180", "token": 270, "host_ns": 9765596751600, "sent_host_ns": 9765594835300, "device_sample_idx": 7461820, "device_tick_ms": 3730917, "rtt_ms": 1.9163, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_ack", "event_id": "sync_271", "token": 271, "host_ns": 9765599528700, "sent_host_ns": 9765595234200, "device_sample_idx": 7461820, "device_tick_ms": 3730918, "rtt_ms": 4.2945, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_272", "token": 272, "host_ns": 9767599386100}
+{"kind": "marker_ack", "event_id": "sync_272", "token": 272, "host_ns": 9767604916800, "sent_host_ns": 9767599386100, "device_sample_idx": 7465840, "device_tick_ms": 3732922, "rtt_ms": 5.5307, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9767624670200, "status": "completed", "reason": null, "trial_id": 45, "word": "open", "label_id": 1, "block": 5, "repeat_of": null, "event_id": "event_181"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9767624670200, "planned_host_ns": 9767594563200, "trial_id": 46, "word": "louder", "label_id": 8, "block": 5, "repeat_of": null, "event_id": "event_182", "gui_submit_ns": 9767625771500}
+{"kind": "marker_sent", "event_id": "event_182", "token": 273, "host_ns": 9767627350400}
+{"kind": "marker_ack", "event_id": "event_182", "token": 273, "host_ns": 9767629332800, "sent_host_ns": 9767627350400, "device_sample_idx": 7465880, "device_tick_ms": 3732950, "rtt_ms": 1.9824, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9769126476400, "planned_host_ns": 9769124670200, "trial_id": 46, "word": "louder", "label_id": 8, "block": 5, "repeat_of": null, "event_id": "event_183", "gui_submit_ns": 9769126517200}
+{"kind": "marker_sent", "event_id": "event_183", "token": 274, "host_ns": 9769129649600}
+{"kind": "marker_ack", "event_id": "event_183", "token": 274, "host_ns": 9769145452800, "sent_host_ns": 9769129649600, "device_sample_idx": 7468900, "device_tick_ms": 3734452, "rtt_ms": 15.8032, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_275", "token": 275, "host_ns": 9769600740500}
+{"kind": "marker_ack", "event_id": "sync_275", "token": 275, "host_ns": 9769604845000, "sent_host_ns": 9769600740500, "device_sample_idx": 7469840, "device_tick_ms": 3734923, "rtt_ms": 4.1045, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9771160483200, "planned_host_ns": 9771126476400, "trial_id": 46, "word": "louder", "label_id": 8, "block": 5, "repeat_of": null, "event_id": "event_184", "gui_submit_ns": 9771160555700}
+{"kind": "marker_sent", "event_id": "event_184", "token": 276, "host_ns": 9771161236700}
+{"kind": "marker_ack", "event_id": "event_184", "token": 276, "host_ns": 9771164081100, "sent_host_ns": 9771161236700, "device_sample_idx": 7472960, "device_tick_ms": 3736484, "rtt_ms": 2.8444, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_277", "token": 277, "host_ns": 9771604656400}
+{"kind": "marker_ack", "event_id": "sync_277", "token": 277, "host_ns": 9771632720000, "sent_host_ns": 9771604656400, "device_sample_idx": 7473840, "device_tick_ms": 3736927, "rtt_ms": 28.0636, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9773254963500, "status": "completed", "reason": null, "trial_id": 46, "word": "louder", "label_id": 8, "block": 5, "repeat_of": null, "event_id": "event_185"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9773254963500, "planned_host_ns": 9773160483200, "trial_id": 47, "word": "quieter", "label_id": 7, "block": 5, "repeat_of": null, "event_id": "event_186", "gui_submit_ns": 9773255827800}
+{"kind": "marker_sent", "event_id": "event_186", "token": 278, "host_ns": 9773256111300}
+{"kind": "marker_ack", "event_id": "event_186", "token": 278, "host_ns": 9773257991500, "sent_host_ns": 9773256111300, "device_sample_idx": 7477140, "device_tick_ms": 3738579, "rtt_ms": 1.8802, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_279", "token": 279, "host_ns": 9773624322000}
+{"kind": "marker_ack", "event_id": "sync_279", "token": 279, "host_ns": 9773630611300, "sent_host_ns": 9773624322000, "device_sample_idx": 7477880, "device_tick_ms": 3738947, "rtt_ms": 6.2893, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9774788296600, "planned_host_ns": 9774754963500, "trial_id": 47, "word": "quieter", "label_id": 7, "block": 5, "repeat_of": null, "event_id": "event_187", "gui_submit_ns": 9774788353600}
+{"kind": "marker_sent", "event_id": "event_187", "token": 280, "host_ns": 9774789151000}
+{"kind": "marker_ack", "event_id": "event_187", "token": 280, "host_ns": 9774808867200, "sent_host_ns": 9774789151000, "device_sample_idx": 7480220, "device_tick_ms": 3740112, "rtt_ms": 19.7162, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_281", "token": 281, "host_ns": 9775629057400}
+{"kind": "marker_ack", "event_id": "sync_281", "token": 281, "host_ns": 9775634538000, "sent_host_ns": 9775629057400, "device_sample_idx": 7481900, "device_tick_ms": 3740952, "rtt_ms": 5.4806, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9776880073400, "planned_host_ns": 9776788296600, "trial_id": 47, "word": "quieter", "label_id": 7, "block": 5, "repeat_of": null, "event_id": "event_188", "gui_submit_ns": 9776880130500}
+{"kind": "marker_sent", "event_id": "event_188", "token": 282, "host_ns": 9776880456900}
+{"kind": "marker_ack", "event_id": "event_188", "token": 282, "host_ns": 9776883121400, "sent_host_ns": 9776880456900, "device_sample_idx": 7484400, "device_tick_ms": 3742203, "rtt_ms": 2.6645, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_283", "token": 283, "host_ns": 9777630421900}
+{"kind": "marker_ack", "event_id": "sync_283", "token": 283, "host_ns": 9777634563000, "sent_host_ns": 9777630421900, "device_sample_idx": 7485900, "device_tick_ms": 3742953, "rtt_ms": 4.1411, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9778910910500, "status": "completed", "reason": null, "trial_id": 47, "word": "quieter", "label_id": 7, "block": 5, "repeat_of": null, "event_id": "event_189"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9778910910500, "planned_host_ns": 9778880073400, "trial_id": 48, "word": "stop", "label_id": 6, "block": 5, "repeat_of": null, "event_id": "event_190", "gui_submit_ns": 9778911813000}
+{"kind": "marker_sent", "event_id": "event_190", "token": 284, "host_ns": 9778913298300}
+{"kind": "marker_ack", "event_id": "event_190", "token": 284, "host_ns": 9778916295300, "sent_host_ns": 9778913298300, "device_sample_idx": 7488460, "device_tick_ms": 3744236, "rtt_ms": 2.997, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_285", "token": 285, "host_ns": 9779652720400}
+{"kind": "marker_ack", "event_id": "sync_285", "token": 285, "host_ns": 9779676064600, "sent_host_ns": 9779652720400, "device_sample_idx": 7489940, "device_tick_ms": 3744975, "rtt_ms": 23.3442, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9780413157900, "planned_host_ns": 9780410910500, "trial_id": 48, "word": "stop", "label_id": 6, "block": 5, "repeat_of": null, "event_id": "event_191", "gui_submit_ns": 9780413239400}
+{"kind": "marker_sent", "event_id": "event_191", "token": 286, "host_ns": 9780413573600}
+{"kind": "marker_ack", "event_id": "event_191", "token": 286, "host_ns": 9780416735900, "sent_host_ns": 9780413573600, "device_sample_idx": 7491460, "device_tick_ms": 3745736, "rtt_ms": 3.1623, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_287", "token": 287, "host_ns": 9781652747600}
+{"kind": "marker_ack", "event_id": "sync_287", "token": 287, "host_ns": 9781687864700, "sent_host_ns": 9781652747600, "device_sample_idx": 7493940, "device_tick_ms": 3746976, "rtt_ms": 35.1171, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9782417074200, "planned_host_ns": 9782413157900, "trial_id": 48, "word": "stop", "label_id": 6, "block": 5, "repeat_of": null, "event_id": "event_192", "gui_submit_ns": 9782417119100}
+{"kind": "marker_sent", "event_id": "event_192", "token": 288, "host_ns": 9782418886100}
+{"kind": "marker_ack", "event_id": "event_192", "token": 288, "host_ns": 9782422965100, "sent_host_ns": 9782418886100, "device_sample_idx": 7495480, "device_tick_ms": 3747742, "rtt_ms": 4.079, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_289", "token": 289, "host_ns": 9783669925200}
+{"kind": "marker_ack", "event_id": "sync_289", "token": 289, "host_ns": 9783676180700, "sent_host_ns": 9783669925200, "device_sample_idx": 7497980, "device_tick_ms": 3748993, "rtt_ms": 6.2555, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9784435313700, "status": "completed", "reason": null, "trial_id": 48, "word": "stop", "label_id": 6, "block": 5, "repeat_of": null, "event_id": "event_193"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9784435313700, "planned_host_ns": 9784417074200, "trial_id": 49, "word": "start", "label_id": 5, "block": 5, "repeat_of": null, "event_id": "event_194", "gui_submit_ns": 9784436133100}
+{"kind": "marker_sent", "event_id": "event_194", "token": 290, "host_ns": 9784436373100}
+{"kind": "marker_ack", "event_id": "event_194", "token": 290, "host_ns": 9784438360300, "sent_host_ns": 9784436373100, "device_sample_idx": 7499500, "device_tick_ms": 3749759, "rtt_ms": 1.9872, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_291", "token": 291, "host_ns": 9785676038100}
+{"kind": "marker_ack", "event_id": "sync_291", "token": 291, "host_ns": 9785710255700, "sent_host_ns": 9785676038100, "device_sample_idx": 7501980, "device_tick_ms": 3750999, "rtt_ms": 34.2176, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9785963493300, "planned_host_ns": 9785935313700, "trial_id": 49, "word": "start", "label_id": 5, "block": 5, "repeat_of": null, "event_id": "event_195", "gui_submit_ns": 9785963551600}
+{"kind": "marker_sent", "event_id": "event_195", "token": 292, "host_ns": 9785963855900}
+{"kind": "marker_ack", "event_id": "event_195", "token": 292, "host_ns": 9785966938700, "sent_host_ns": 9785963855900, "device_sample_idx": 7502560, "device_tick_ms": 3751287, "rtt_ms": 3.0828, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_293", "token": 293, "host_ns": 9787685415300}
+{"kind": "marker_ack", "event_id": "sync_293", "token": 293, "host_ns": 9787719315000, "sent_host_ns": 9787685415300, "device_sample_idx": 7506000, "device_tick_ms": 3753008, "rtt_ms": 33.8997, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9787988403100, "planned_host_ns": 9787963493300, "trial_id": 49, "word": "start", "label_id": 5, "block": 5, "repeat_of": null, "event_id": "event_196", "gui_submit_ns": 9787988459200}
+{"kind": "marker_sent", "event_id": "event_196", "token": 294, "host_ns": 9787988681600}
+{"kind": "marker_ack", "event_id": "event_196", "token": 294, "host_ns": 9787993611600, "sent_host_ns": 9787988681600, "device_sample_idx": 7506620, "device_tick_ms": 3753312, "rtt_ms": 4.93, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_295", "token": 295, "host_ns": 9789691245900}
+{"kind": "marker_ack", "event_id": "sync_295", "token": 295, "host_ns": 9789718115900, "sent_host_ns": 9789691245900, "device_sample_idx": 7510020, "device_tick_ms": 3755014, "rtt_ms": 26.87, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9790003690100, "status": "completed", "reason": null, "trial_id": 49, "word": "start", "label_id": 5, "block": 5, "repeat_of": null, "event_id": "event_197"}
+{"kind": "phase", "phase": "prepare", "host_ns": 9790003690100, "planned_host_ns": 9789988403100, "trial_id": 50, "word": "close", "label_id": 2, "block": 5, "repeat_of": null, "event_id": "event_198", "gui_submit_ns": 9790004858300}
+{"kind": "marker_sent", "event_id": "event_198", "token": 296, "host_ns": 9790005165400}
+{"kind": "marker_ack", "event_id": "event_198", "token": 296, "host_ns": 9790008781800, "sent_host_ns": 9790005165400, "device_sample_idx": 7510640, "device_tick_ms": 3755328, "rtt_ms": 3.6164, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "action", "host_ns": 9791594406400, "planned_host_ns": 9791503690100, "trial_id": 50, "word": "close", "label_id": 2, "block": 5, "repeat_of": null, "event_id": "event_199", "gui_submit_ns": 9791594443400}
+{"kind": "marker_sent", "event_id": "event_199", "token": 297, "host_ns": 9791594699400}
+{"kind": "marker_ack", "event_id": "event_199", "token": 297, "host_ns": 9791597203900, "sent_host_ns": 9791594699400, "device_sample_idx": 7513820, "device_tick_ms": 3756918, "rtt_ms": 2.5045, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_298", "token": 298, "host_ns": 9791719764900}
+{"kind": "marker_ack", "event_id": "sync_298", "token": 298, "host_ns": 9791748437300, "sent_host_ns": 9791719764900, "device_sample_idx": 7514080, "device_tick_ms": 3757043, "rtt_ms": 28.6724, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "phase", "phase": "rest", "host_ns": 9793686759400, "planned_host_ns": 9793594406400, "trial_id": 50, "word": "close", "label_id": 2, "block": 5, "repeat_of": null, "event_id": "event_200", "gui_submit_ns": 9793686823500}
+{"kind": "marker_sent", "event_id": "event_200", "token": 299, "host_ns": 9793688382100}
+{"kind": "marker_ack", "event_id": "event_200", "token": 299, "host_ns": 9793692522500, "sent_host_ns": 9793688382100, "device_sample_idx": 7518020, "device_tick_ms": 3759012, "rtt_ms": 4.1404, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_300", "token": 300, "host_ns": 9793698453200}
+{"kind": "marker_ack", "event_id": "sync_300", "token": 300, "host_ns": 9793703936000, "sent_host_ns": 9793698453200, "device_sample_idx": 7518040, "device_tick_ms": 3759022, "rtt_ms": 5.4828, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "marker_sent", "event_id": "sync_301", "token": 301, "host_ns": 9795724731700}
+{"kind": "marker_ack", "event_id": "sync_301", "token": 301, "host_ns": 9795753526100, "sent_host_ns": 9795724731700, "device_sample_idx": 7522080, "device_tick_ms": 3761048, "rtt_ms": 28.7944, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}
+{"kind": "trial_result", "host_ns": 9795757862900, "status": "completed", "reason": null, "trial_id": 50, "word": "close", "label_id": 2, "block": 5, "repeat_of": null, "event_id": "event_201"}
+{"kind": "phase", "phase": "finished", "host_ns": 9795757862900, "planned_host_ns": 9795686759400, "event_id": "event_202", "gui_submit_ns": 9795758758900}
+{"kind": "marker_sent", "event_id": "event_202", "token": 302, "host_ns": 9795759076700}
+{"kind": "marker_ack", "event_id": "event_202", "token": 302, "host_ns": 9795762436100, "sent_host_ns": 9795759076700, "device_sample_idx": 7522160, "device_tick_ms": 3761082, "rtt_ms": 3.3594, "marker_quantization_samples": 20, "marker_quantization_ms": 10.0}

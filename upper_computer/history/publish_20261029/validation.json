@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Singapore",
+  "branch": "integration-app-data-20261029",
+  "app": {
+    "passed": 26,
+    "files": [
+      "test_server.py",
+      "test_board_bridge.py"
+    ]
+  },
+  "upper_computer": {
+    "passed": 33,
+    "deselected": 3,
+    "files": [
+      "test_ble_transport.py",
+      "test_board_baud.py",
+      "test_board_model_versions.py",
+      "test_board_monitor.py"
+    ],
+    "deselected_reason": "Three historical local build/absolute-path audit cases are not portable-clone tests."
+  },
+  "javascript_syntax": "app.js and monitor.js passed",
+  "browser_ui": "Local live App passed scene-filter and readiness headless Edge checks earlier in this chat; published frontend copied byte-for-byte. No hardware.",
+  "raw_recordings": {
+    "files": 354,
+    "bytes": 2586339528,
+    "sha256_mismatches": 0,
+    "model_core_inputs": {
+      "mid64_temporal3": 196,
+      "mid64_temporal3_20261027": 196
+    },
+    "s013_before_after_full_files": 120
+  },
+  "model_and_firmware_assets": {
+    "files_checked": 203,
+    "sha256_mismatches": 0
+  },
+  "hardware": "Not accessed; no firmware flashed.",
+  "training": "Not rerun; frozen weights preserved."
+}

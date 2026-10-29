@@ -12,6 +12,11 @@
   <script src="monitor.js" defer></script>
 </head>
 <body>
+  <div class="command-readiness page-readiness" data-command-readiness role="status" aria-live="polite" aria-atomic="true" lang="zh-CN">
+    <span class="readiness-light" aria-hidden="true"></span>
+    <div class="readiness-copy"><strong class="readiness-title">暂不能接收命令</strong><span class="readiness-detail">未连接设备 · 请先连接 STM32</span></div>
+    <span class="readiness-label">静默命令状态</span>
+  </div>
   <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 5 5 3-3 4 4"/></symbol>
@@ -32,6 +37,12 @@
       <div class="project-tag">EE6008 <span>/</span> SILENT SPEECH INTERFACE</div>
       <div class="top-actions"><span class="connection" id="connection"><i></i><span>Connecting to command bridge</span></span><button class="icon-button" id="settings-button" aria-label="Open command console" title="Command console"><svg><use href="#i-sliders"/></svg></button><button class="icon-button" id="fullscreen-button" aria-label="Fullscreen" title="Fullscreen"><svg><use href="#i-expand"/></svg></button></div>
     </header>
+
+    <section class="scene-filter-panel" aria-label="场景命令过滤" lang="zh-CN">
+      <label class="scene-filter-toggle"><input type="checkbox" role="switch" data-scene-filter checked aria-describedby="scene-filter-description"><span>场景命令过滤</span><strong data-scene-filter-state>已开启</strong></label>
+      <p id="scene-filter-description">进入照片或音乐页后自动应用对应规则</p>
+      <p class="scene-filter-feedback" data-scene-feedback role="status" aria-live="polite"></p>
+    </section>
 
     <main id="main">
       <section id="home-view" class="view">
@@ -69,7 +80,13 @@
     <div class="page-footer"><span>QUIETLY / Silent Media Space</span><span>SURFACE ELECTROMYOGRAPHY <span class="footer-dot">·</span> EE6008</span></div>
   </div>
 
-  <dialog id="lightbox" class="lightbox" aria-label="Full-size photo"><div class="lightbox-top"><span id="lightbox-title"></span><button class="lightbox-close" id="close-lightbox" aria-label="close — Exit full-size photo"><kbd>close</kbd><svg><use href="#i-close"/></svg></button></div><div class="lightbox-main"><button class="lightbox-step" data-command="previous" aria-label="previous — Previous photo or home"><svg><use href="#i-previous"/></svg></button><img id="lightbox-image" alt=""/><button class="lightbox-step" data-command="next" aria-label="next — Next photo"><svg><use href="#i-next"/></svg></button></div><div class="lightbox-bottom"><span>Use <b>previous</b> / <b>next</b> to browse · <b>previous</b> on photo 01 returns home</span><span id="lightbox-counter"></span></div></dialog>
+  <dialog id="lightbox" class="lightbox" aria-label="Full-size photo">
+    <div class="command-readiness" data-command-readiness role="status" aria-live="polite" aria-atomic="true" lang="zh-CN">
+      <span class="readiness-light" aria-hidden="true"></span>
+      <div class="readiness-copy"><strong class="readiness-title">暂不能接收命令</strong><span class="readiness-detail">未连接设备 · 请先连接 STM32</span></div>
+      <span class="readiness-label">静默命令状态</span>
+    </div>
+    <div class="lightbox-top"><span id="lightbox-title"></span><label class="scene-filter-toggle" lang="zh-CN"><input type="checkbox" role="switch" data-scene-filter checked><span>场景命令过滤</span><strong data-scene-filter-state>已开启</strong></label><button class="lightbox-close" id="close-lightbox" aria-label="close — Exit full-size photo"><kbd>close</kbd><svg><use href="#i-close"/></svg></button></div><div class="lightbox-main"><button class="lightbox-step" data-command="previous" aria-label="previous — Previous photo or home"><svg><use href="#i-previous"/></svg></button><img id="lightbox-image" alt=""/><button class="lightbox-step" data-command="next" aria-label="next — Next photo"><svg><use href="#i-next"/></svg></button></div><div class="lightbox-bottom"><div><span>Use <b>previous</b> / <b>next</b> to browse · <b>previous</b> on photo 01 returns home</span><p class="scene-filter-feedback" data-scene-feedback role="status" aria-live="polite" lang="zh-CN"></p></div><span id="lightbox-counter"></span></div></dialog>
 
   <dialog id="settings" class="settings" aria-labelledby="settings-title"><div class="settings-heading"><div><p class="eyebrow">INPUT & CONNECTION</p><h2 id="settings-title">Command console</h2></div><button class="icon-button" id="close-settings" aria-label="Close command console"><svg><use href="#i-close"/></svg></button></div><p class="settings-intro">Buttons and keyboard shortcuts test the interface. Connect your STM32 in the live monitor to control this space silently.</p><div class="settings-section"><h3>Manual test</h3><div id="test-commands" class="test-commands"></div><form id="command-form"><input id="command-input" placeholder="Type a command, e.g. music" autocomplete="off" aria-label="Test command"/><button type="submit" class="solid-button">Send</button></form><p class="help-text">Shortcuts: M music · P photos · ← / → browse · Space play/pause · Enter expand · Esc close · ↑ / ↓ volume · H home</p></div><div class="settings-section"><h3>sEMG input</h3><p class="help-text" id="bridge-info">Local endpoint: POST /api/command</p><label class="threshold-label">Minimum confidence <input id="threshold" type="number" min="0" max="100" step="1" value="0"/><span>%</span></label><p class="help-text">At 0%, all valid commands are accepted. Above 0%, model commands without confidence are also blocked. Manual tests bypass this threshold.</p><div class="signal-heading"><span>Live signal · CH0 / CH1</span><span id="signal-status">Waiting for samples</span></div><canvas id="signal-canvas" width="900" height="160" aria-label="Incoming two-channel sEMG waveform"></canvas><p class="help-text">Only received samples are plotted. No simulated waveform.</p></div><div class="settings-section"><h3>Recent commands</h3><ol id="event-log" class="event-log"><li>No commands yet</li></ol></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>

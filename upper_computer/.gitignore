@@ -9,7 +9,17 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-recordings/
+# Publish only the two explicitly selected dataset roots and their documentation.
+recordings/*
+!recordings/goodone_plus/
+!recordings/S013/
+recordings/S013/*
+!recordings/S013/session_001/
+!recordings/README.md
+!recordings/DATASET_MANIFEST.json
+!recordings/MODEL_DATASETS.json
+!recordings/S013_REPLACEMENT_20261027.json
+!recordings/verify_recordings.py
 simulated/
 tests/output/
 firmware/Test/MDK-ARM/Test/

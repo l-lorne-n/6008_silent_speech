@@ -13,6 +13,35 @@
     return body;
   }
   function error(text) { $('board-error').textContent = text || ''; $('board-error').hidden = !text; }
+  function renderReadiness(data) {
+    const r = data.latest;
+    let title = '暂不能接收命令', detail = '未连接设备 · 请先连接 STM32';
+    let ready = false;
+    if (data.connecting) detail = '正在连接设备 · 请稍候';
+    else if (data.connected) {
+      if (!data.verified) detail = '等待板端模型验证 · 暂不能接收命令';
+      else if (data.stale || !r) detail = '等待新的推理数据 · 暂不能接收命令';
+      else if (r.flags) detail = r.flags & 4 ? 'UART 故障 · 请复位 STM32 后重新连接' : '板端故障 · 请检查设备';
+      else if (r.mode !== 1) detail = '板端未处于实时监测模式';
+      else if (!data.enabled) detail = '控制已暂停 · 请在实时监测中启用控制';
+      else if (!r.armed) {
+        title = '未静息确认 · 暂不能接收命令';
+        detail = '请放松，保持静息 · 等待提示变绿后再做下一个口型';
+      } else {
+        ready = true;
+        title = '静息已确认 · 可以接收命令';
+        detail = '请做下一个命令口型 · 命令确认后需再次静息';
+      }
+    }
+    document.querySelectorAll('[data-command-readiness]').forEach(banner => {
+      banner.classList.toggle('is-ready', ready);
+      const heading = banner.querySelector('.readiness-title');
+      const description = banner.querySelector('.readiness-detail');
+      // Do not re-announce identical text on every 100 ms telemetry update.
+      if (heading.textContent !== title) heading.textContent = title;
+      if (description.textContent !== detail) description.textContent = detail;
+    });
+  }
   function controls() {
     const active = status.connected || status.connecting;
     $('connect-board').disabled = busy || active;
@@ -22,6 +51,7 @@
   }
   function render(data) {
     status = data;
+    renderReadiness(data);
     const live = data.connected && data.verified && !data.stale;
     const fault = data.latest && data.latest.flags;
     $('board-status').textContent = data.connecting ? '正在连接设备…' : !data.connected ? '未连接设备' : fault ? (fault & 4 ? 'UART 故障 · 请复位 STM32' : '板端故障 · 控制已阻止') : !data.verified ? '正在验证板端模型…' : data.stale ? '等待新推理数据…' : data.enabled ? '实时控制已启用' : '仅监测 · 控制已暂停';
@@ -97,6 +127,7 @@
   $('disconnect-board').onclick = () => action(async () => render(await api('disconnect', {})));
   $('pause-board').onclick = () => action(async () => render(await api('control', {enabled: !status.enabled})));
   window.addEventListener('quietly-board', e => { received = Date.now(); render(e.detail); });
+  window.addEventListener('quietly-bridge-offline', () => render({...status, stale: true}));
   window.addEventListener('quietly-envelope', e => {
     if (Date.now() - e.detail.sent_at > 1000) return;
     for (const p of e.detail.points) {
