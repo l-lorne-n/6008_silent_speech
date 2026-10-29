@@ -1,0 +1,283 @@
+{
+  "passed": true,
+  "methods": [
+    "fixed50_x40",
+    "pooled_k3_x10"
+  ],
+  "numpy_version": "2.5.3",
+  "sklearn_version": "1.9.1",
+  "bundle_manifest_sha256": "6e410a1f170b03cbdc54ff7e5aa4410d1eb102e41ee4ab751659c7063f6aad16",
+  "raw_sources_verified": true,
+  "raw_features_reextracted": true,
+  "exact_reference_predictions": true,
+  "saved_models_verified": true,
+  "weighted_scaler_moments_verified": true,
+  "results": {
+    "fixed50_x40": {
+      "correct": 915,
+      "total": 2246,
+      "accuracy": 0.40739091718610865,
+      "macro_f1": 0.40445781562680094,
+      "confusion_matrix": [
+        [
+          85,
+          13,
+          14,
+          15,
+          13,
+          9,
+          17,
+          38,
+          2,
+          19
+        ],
+        [
+          5,
+          73,
+          44,
+          21,
+          15,
+          0,
+          21,
+          5,
+          29,
+          12
+        ],
+        [
+          3,
+          6,
+          145,
+          27,
+          0,
+          2,
+          14,
+          8,
+          16,
+          4
+        ],
+        [
+          9,
+          9,
+          32,
+          80,
+          13,
+          6,
+          44,
+          17,
+          10,
+          5
+        ],
+        [
+          17,
+          10,
+          29,
+          13,
+          69,
+          12,
+          12,
+          24,
+          27,
+          10
+        ],
+        [
+          9,
+          18,
+          10,
+          32,
+          15,
+          63,
+          21,
+          24,
+          15,
+          17
+        ],
+        [
+          1,
+          7,
+          26,
+          39,
+          2,
+          6,
+          119,
+          20,
+          2,
+          3
+        ],
+        [
+          5,
+          3,
+          38,
+          21,
+          16,
+          5,
+          27,
+          87,
+          16,
+          7
+        ],
+        [
+          1,
+          9,
+          41,
+          4,
+          8,
+          12,
+          18,
+          13,
+          91,
+          28
+        ],
+        [
+          7,
+          25,
+          20,
+          13,
+          10,
+          9,
+          6,
+          14,
+          17,
+          103
+        ]
+      ]
+    },
+    "pooled_k3_x10": {
+      "correct": 686,
+      "total": 1026,
+      "accuracy": 0.6686159844054581,
+      "macro_f1": 0.6692202846187654,
+      "confusion_matrix": [
+        [
+          69,
+          6,
+          1,
+          2,
+          7,
+          3,
+          2,
+          3,
+          5,
+          5
+        ],
+        [
+          4,
+          69,
+          0,
+          0,
+          2,
+          12,
+          1,
+          8,
+          4,
+          1
+        ],
+        [
+          2,
+          3,
+          59,
+          7,
+          1,
+          7,
+          19,
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          14,
+          71,
+          0,
+          1,
+          5,
+          4,
+          4,
+          1
+        ],
+        [
+          1,
+          10,
+          0,
+          0,
+          73,
+          5,
+          3,
+          5,
+          2,
+          4
+        ],
+        [
+          2,
+          16,
+          2,
+          2,
+          3,
+          63,
+          1,
+          4,
+          6,
+          3
+        ],
+        [
+          3,
+          0,
+          10,
+          2,
+          1,
+          4,
+          78,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          15,
+          5,
+          3,
+          4,
+          4,
+          4,
+          61,
+          5,
+          2
+        ],
+        [
+          4,
+          2,
+          1,
+          3,
+          1,
+          3,
+          3,
+          4,
+          71,
+          11
+        ],
+        [
+          9,
+          3,
+          0,
+          1,
+          2,
+          2,
+          1,
+          4,
+          8,
+          72
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Offline prompted-trial LDA classification; no CNN adaptation, MCU test, or real-time App accuracy claim.",
+    "Global StandardScaler and LDA are refitted on source trials plus repeated calibration trials. No per-subject normalization.",
+    "Repetition changes training influence and shrinkage estimation; it does not create new independent trials.",
+    "The two methods have different calibration budgets and test memberships and are not a controlled head-to-head comparison.",
+    "Fixed50 is recording-disjoint but not proven independent wearing; S012 includes test recordings earlier than calibration.",
+    "Pooled K3 uses calibration from every target recording including later recordings, and shares recordings with evaluation.",
+    "In K3, three recordings fail the all-calibration-before-all-test chronological prefix check.",
+    "Repeat factors and other variants were explored after viewing test results; this is not an independently validated optimum."
+  ]
+}

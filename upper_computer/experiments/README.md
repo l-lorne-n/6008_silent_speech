@@ -1,4 +1,11 @@
-# 小型CNN离线实验
+# 模型离线实验
+
+## 2026-10-29 LDA 离线标签校准
+
+新增 [run_lda_calibration_comparison.py](run_lda_calibration_comparison.py)，可复现固定每人50条×40加其他四人（915/2246，40.74%）和每录制每词K=3按人汇总×10加其他四人（686/1026，66.86%）。二者校准预算和测试集不同，不能直接比较。默认两种都跑，`--method` 可单独选方法，`--reextract` 从仓库原始数据重提特征验证。无需板子，不修改CNN或App。
+
+参见 [冻结数据与产物说明](calibration_data_20261029/README.md) 和 [本轮交接](../history/2026-10-29_LDA校准实验汇总与两方案报告交接.md)。输出至新的 models/lda_calibration_release_...，以 completed.json 的 passed=true 为复现成功依据。
+
 
 ## goodone_plus 五人混合与 H7 小网络
 

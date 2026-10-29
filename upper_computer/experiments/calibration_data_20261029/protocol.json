@@ -1,0 +1,347 @@
+{
+  "subjects": [
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015"
+  ],
+  "fixed50_classes": [
+    "open",
+    "close",
+    "next",
+    "music",
+    "louder",
+    "photo",
+    "previous",
+    "quieter",
+    "start",
+    "stop"
+  ],
+  "variant": "notch50_bp500",
+  "feature_config": {
+    "segments": 6,
+    "metrics": [
+      "log_mean_abs_diff",
+      "log_mav",
+      "zc_count_zero",
+      "ssc_count_zero"
+    ]
+  },
+  "channels": [
+    0,
+    1
+  ],
+  "limitations": [
+    "Offline prompted-trial LDA classification; no CNN adaptation, MCU test, or real-time App accuracy claim.",
+    "Global StandardScaler and LDA are refitted on source trials plus repeated calibration trials. No per-subject normalization.",
+    "Repetition changes training influence and shrinkage estimation; it does not create new independent trials.",
+    "The two methods have different calibration budgets and test memberships and are not a controlled head-to-head comparison.",
+    "Fixed50 is recording-disjoint but not proven independent wearing; S012 includes test recordings earlier than calibration.",
+    "Pooled K3 uses calibration from every target recording including later recordings, and shares recordings with evaluation.",
+    "In K3, three recordings fail the all-calibration-before-all-test chronological prefix check.",
+    "Repeat factors and other variants were explored after viewing test results; this is not an independently validated optimum."
+  ],
+  "historical_runs": {
+    "frozen_features": "lda_calibration_norm_20261029_151807_cacc36",
+    "fixed50_x40": "lda_fixed50_x40_20261029_161317_19b5a3",
+    "pooled_k3_x10": "lda_teammate_style_20261029_154855_ee8dbd"
+  },
+  "source_code_sha256": "156a91bccccd3855bc158bf72c2cf987d28b28ca67c34cfb32b1b41b89952464",
+  "k3_chronology": [
+    {
+      "subject": "S011",
+      "recording": "20261016_141037_1a2008",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_141659_545171",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_142621_63600c",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_143329_6fe231",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_143902_0936cf",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_144617_936f68",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_145222_0ae809",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_145822_b174e0",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_150329_d1103a",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S011",
+      "recording": "20261016_150956_4ad099",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_121313_fc61f8",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_122817_308599",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_123622_b8544c",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_124402_4af8e0",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_125307_95f391",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_130026_6858a4",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_131006_244e39",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_131813_6c316a",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S012",
+      "recording": "20261016_132501_36a86f",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_113115_0e6744",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_120602_a406ff",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_121126_eccfae",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_121659_d39074",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_122219_b87df5",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261021_122734_e96a8c",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261027_205409_a33129",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261027_205949_dfbdb0",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261027_210831_dede40",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S013",
+      "recording": "20261027_211351_d66e33",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_102911_254e58",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_103503_4214c6",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_104014_5a1c4b",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_104550_35822d",
+      "k": 3,
+      "all_calibration_before_all_test": false
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_105118_9c7129",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_105644_665ccd",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_110200_864601",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_110710_f5b5dc",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_111231_483131",
+      "k": 3,
+      "all_calibration_before_all_test": false
+    },
+    {
+      "subject": "S014",
+      "recording": "20261021_111741_bd64b5",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_152136_fdaf4e",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_152802_39bd54",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_153311_daf2aa",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_153836_ac515e",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_154341_9d4a16",
+      "k": 3,
+      "all_calibration_before_all_test": false
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_160115_016e42",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261016_162532_011152",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261021_123952_ec5361",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261021_124516_592382",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    },
+    {
+      "subject": "S015",
+      "recording": "20261021_125027_f1c8e8",
+      "k": 3,
+      "all_calibration_before_all_test": true
+    }
+  ]
+}

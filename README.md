@@ -16,6 +16,7 @@
 
 ## 2026-10-29 更新
 
+- 新增两种离线 LDA 标签校准方案、固定划分和可复现入口，见下方“LDA 校准实验”。
 - App 顶部静息状态框：黄色等待，绿色可开始下一个命令；照片全屏同步可见。
 - App 场景过滤开关：照片页过滤 start/stop/quieter/louder，音乐页过滤 open/close；默认开启并记住选择，全屏也可切换。
 - 发布 `upper_computer/recordings/goodone_plus` 全部 49 组，以及 `upper_computer/recordings/S013/session_001` 全部 10 组，共 354 个原始文件，约 2.41 GiB。
@@ -154,3 +155,33 @@ cmake --build --preset Debug
 - [ ] 识别算法部分。
 
 <!-- TODO: 补上团队成员分工与联系方式 -->
+
+## LDA 校准实验
+
+本次补充的两种方法均在电脑上离线运行，不需要 STM32。五人分别作为目标人，其他四人数据参与训练；重新拟合全局 StandardScaler 和 LDA(lsqr, shrinkage=auto)。没有修改 App、BT24 或已发布的两版 CNN。
+
+| 方法 | 每人真实校准量 | 校准复制次数 | 总正确数/测试数 | 准确率 |
+| --- | ---: | ---: | ---: | ---: |
+| 固定50条×40＋其他四人 | 50条，每词5条 | 40 | 915/2246 | 40.74% |
+| K=3按录制取样后按人汇总×10＋其他四人 | 270或300条 | 10 | 686/1026 | 66.86% |
+
+固定50方案保持之前的校准集和450/446条测试集不变；K=3在每份录制每个词取最早3条有效动作，汇总目标人的校准，再测试剩余动作。**两种方法的校准预算与测试集不同，不能直接比较分数高低。** 后者还共享录制，属于回顾性适应。重复样本不增加独立动作数量；两者都没有额外启用按人归一化，也不是CNN微调。
+
+安装依赖后，在仓库根目录运行：
+
+```powershell
+# 默认运行两种方法；检查源文件哈希、精确划分及所有历史预测
+.\upper_computer\.runtime\Scripts\python.exe -X utf8 .\upper_computer\experiments\run_lda_calibration_comparison.py
+# 可选：先从49份原始录制重新提取并核对特征，再运行
+.\upper_computer\.runtime\Scripts\python.exe -X utf8 .\upper_computer\experiments\run_lda_calibration_comparison.py --reextract
+# 单独运行时追加 --method fixed50_x40 或 --method pooled_k3_x10
+```
+
+每次输出到新的 `upper_computer/models/lda_calibration_release_...`；成功标记为 `completed.json` 的 `passed: true`。发布前已从该发布目录中的原始录制重新提取2496×48特征、训练10个模型，两种方法的每一条测试预测均与原结果一致。环境为 Python 3.12、NumPy 2.5.3、SciPy 1.18.1、scikit-learn 1.9.1。
+
+- [可移植运行代码](upper_computer/experiments/run_lda_calibration_comparison.py)
+- [冻结划分 特征与参考结果](upper_computer/experiments/calibration_data_20261029/README.md)
+- [本轮完整交接和解释](upper_computer/history/2026-10-29_LDA校准实验汇总与两方案报告交接.md)
+- [发布复现核验](upper_computer/history/calibration_publish_20261029/validation.json)
+
+当前数据零校准五折LOSO为446/2496（17.87%）。上述40.74%和66.86%使用了目标人标签，均为离线提示动作分类，不能作为未见人零校准、独立新佩戴或实时App控制成功率。重复倍数在查看前序结果后继续探索，尚未进行独立参数验证。

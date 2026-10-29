@@ -1,0 +1,25 @@
+{
+  "schema": "semg_calibration_frozen_bundle_v1",
+  "files": {
+    "features.npy": "a8d8d16b49d143aea90bb50f497d96c4439cedd1492b1c3feb6f726c70898e9b",
+    "fixed50_splits.json": "2b8bd911c0b939e9ad5d6672b79f8f4d768db7f89d27741882301f1d7cf4a2c6",
+    "fixed50_x40_predictions.csv": "fddd74cdc27b98149fd8c151c09e10f24382d8133ccbc0f07555d8a33acce696",
+    "fixed50_x40_reference.json": "d57cf793bfd3f54d2838acea1e6e01ebba7a66adaf8686411059e4b4e0ad3ff8",
+    "pooled_k3_splits.json": "7c80cde92132539880d02ad782734242a3a409e8d47f4774b7f209e941b61454",
+    "pooled_k3_x10_predictions.csv": "df25e9a4e05b2ec785400e1ac285ef98595e308d36629170ea5f6bf11f11dc5c",
+    "pooled_k3_x10_reference.json": "ecb96c4a5a1860dd7d6235d4bb6fad76e585b64c049cfc8d674449d348d223d2",
+    "protocol.json": "94584d12894172a9c79191b6532a8c03b3594670b0b9e2b844fb2e2e8b0d99d3",
+    "sources.json": "2911177998a3d82e1866832d582b6e25cfa94b5ae8167950de430fc399166ebf",
+    "trials.json": "c5d3815c9000d40d61d6ead879d1dd5ccb00107c8882e70e5bc1af22e447e1f2"
+  },
+  "expected": {
+    "fixed50_x40": {
+      "correct": 915,
+      "total": 2246
+    },
+    "pooled_k3_x10": {
+      "correct": 686,
+      "total": 1026
+    }
+  }
+}
