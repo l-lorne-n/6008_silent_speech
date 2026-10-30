@@ -1,0 +1,225 @@
+{
+  "identical_196_raw_file_hashes": true,
+  "identical_2496_trial_fingerprints": true,
+  "lda_directory": "L:\\ntu_class\\6008\\upper_computer\\models\\lda_loso_5p_20261029_151112_48f697",
+  "lda_pooled_metrics": {
+    "total": 2496,
+    "correct": 446,
+    "accuracy": 0.17868589743589744,
+    "macro_f1": 0.17518245916905223,
+    "confusion_matrix": [
+      [
+        55,
+        21,
+        3,
+        18,
+        33,
+        27,
+        34,
+        21,
+        16,
+        22
+      ],
+      [
+        13,
+        8,
+        28,
+        39,
+        46,
+        48,
+        15,
+        8,
+        24,
+        21
+      ],
+      [
+        4,
+        10,
+        66,
+        25,
+        46,
+        13,
+        40,
+        7,
+        29,
+        10
+      ],
+      [
+        6,
+        8,
+        28,
+        52,
+        42,
+        12,
+        60,
+        20,
+        15,
+        7
+      ],
+      [
+        13,
+        19,
+        8,
+        41,
+        42,
+        27,
+        41,
+        10,
+        25,
+        22
+      ],
+      [
+        15,
+        33,
+        5,
+        50,
+        44,
+        4,
+        66,
+        1,
+        13,
+        18
+      ],
+      [
+        4,
+        2,
+        30,
+        41,
+        44,
+        8,
+        82,
+        23,
+        9,
+        7
+      ],
+      [
+        12,
+        10,
+        21,
+        32,
+        46,
+        3,
+        71,
+        27,
+        21,
+        7
+      ],
+      [
+        23,
+        14,
+        33,
+        29,
+        31,
+        28,
+        17,
+        8,
+        59,
+        8
+      ],
+      [
+        46,
+        14,
+        15,
+        35,
+        10,
+        45,
+        16,
+        4,
+        13,
+        51
+      ]
+    ],
+    "row_labels": [
+      "open",
+      "close",
+      "next",
+      "music",
+      "louder",
+      "photo",
+      "previous",
+      "quieter",
+      "start",
+      "stop"
+    ],
+    "column_labels": [
+      "open",
+      "close",
+      "next",
+      "music",
+      "louder",
+      "photo",
+      "previous",
+      "quieter",
+      "start",
+      "stop"
+    ],
+    "known_total": 2496,
+    "known_accuracy": 0.17868589743589744,
+    "unknown_total": 0,
+    "unknown_words": [],
+    "missing_model_classes": [],
+    "per_word": {
+      "open": {
+        "count": 250,
+        "correct": 55,
+        "recall": 0.22,
+        "supported": true
+      },
+      "close": {
+        "count": 250,
+        "correct": 8,
+        "recall": 0.032,
+        "supported": true
+      },
+      "next": {
+        "count": 250,
+        "correct": 66,
+        "recall": 0.264,
+        "supported": true
+      },
+      "music": {
+        "count": 250,
+        "correct": 52,
+        "recall": 0.208,
+        "supported": true
+      },
+      "louder": {
+        "count": 248,
+        "correct": 42,
+        "recall": 0.1693548387096774,
+        "supported": true
+      },
+      "photo": {
+        "count": 249,
+        "correct": 4,
+        "recall": 0.01606425702811245,
+        "supported": true
+      },
+      "previous": {
+        "count": 250,
+        "correct": 82,
+        "recall": 0.328,
+        "supported": true
+      },
+      "quieter": {
+        "count": 250,
+        "correct": 27,
+        "recall": 0.108,
+        "supported": true
+      },
+      "start": {
+        "count": 250,
+        "correct": 59,
+        "recall": 0.236,
+        "supported": true
+      },
+      "stop": {
+        "count": 249,
+        "correct": 51,
+        "recall": 0.20481927710843373,
+        "supported": true
+      }
+    }
+  },
+  "note": "Same participants and trials; CNN input representation and temporal aggregation differ from LDA features."
+}

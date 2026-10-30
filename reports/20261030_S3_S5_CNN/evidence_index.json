@@ -1,0 +1,677 @@
+[
+  {
+    "id": "R01",
+    "path": "EE6008_sEMG_Silent_Speech.docx",
+    "uses": 7
+  },
+  {
+    "id": "R02",
+    "path": "upper_computer/history/2026-10-26_技术总交接_训练架构对照与板端实时应用.md",
+    "uses": 10
+  },
+  {
+    "id": "R03",
+    "path": "upper_computer/history/2026-10-28_完整交接_BT24双波特率_双模型与GitHub发布.md",
+    "uses": 9
+  },
+  {
+    "id": "R04",
+    "path": "upper_computer/history/2026-10-28_新数据CNN训练结果与上位机APP接入_待烧录交接.md",
+    "uses": 2
+  },
+  {
+    "id": "R05",
+    "path": "github_publish/6008_silent_speech/upper_computer/recordings/MODEL_DATASETS.json",
+    "uses": 2
+  },
+  {
+    "id": "R06",
+    "path": "upper_computer/models/lda_fixed50_x40_20261029_161317_19b5a3/report.json",
+    "uses": 2
+  },
+  {
+    "id": "R07",
+    "path": "upper_computer/models/lda_teammate_style_20261029_154855_ee8dbd/report.json",
+    "uses": 2
+  },
+  {
+    "id": "R08",
+    "path": "upper_computer/models/cnn_current_loso_20261030/comparison.json",
+    "uses": 3
+  },
+  {
+    "id": "R09",
+    "path": "upper_computer/models/cnn_individual_80_20_20261030/comparison.json",
+    "uses": 3
+  },
+  {
+    "id": "R10",
+    "path": "upper_computer/history/2026-09-24_项目接手说明.md",
+    "uses": 4
+  },
+  {
+    "id": "R11",
+    "path": "upper_computer/semg/lda.py",
+    "uses": 6
+  },
+  {
+    "id": "R12",
+    "path": "upper_computer/history/2026-10-10_v0.5.0双通道交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R13",
+    "path": "upper_computer/semg/channels.py",
+    "uses": 1
+  },
+  {
+    "id": "R14",
+    "path": "upper_computer/history/2026-10-16_2kHz采集与20-500Hz升级.txt",
+    "uses": 2
+  },
+  {
+    "id": "R15",
+    "path": "upper_computer/semg/filtering.py",
+    "uses": 2
+  },
+  {
+    "id": "R16",
+    "path": "upper_computer/history/2026-10-10_v0.5.1包络显示与身份更正.md",
+    "uses": 2
+  },
+  {
+    "id": "R17",
+    "path": "upper_computer/board/realtime.inc",
+    "uses": 6
+  },
+  {
+    "id": "R18",
+    "path": "upper_computer/history/2026-10-10_采集质量诊断与新问题交接.md",
+    "uses": 2
+  },
+  {
+    "id": "R19",
+    "path": "upper_computer/history/2026-10-10_LDA可配置特征交接.md",
+    "uses": 2
+  },
+  {
+    "id": "R20",
+    "path": "upper_computer/history/2026-10-10_ZC_SSC与多人混合评估交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R21",
+    "path": "upper_computer/history/2026-10-14_goodone四人LDA_20-450Hz对照.txt",
+    "uses": 2
+  },
+  {
+    "id": "R22",
+    "path": "upper_computer/history/2026-10-14_goodone四人LDA_RMS_MAV_ZCR_WL对照.txt",
+    "uses": 2
+  },
+  {
+    "id": "R23",
+    "path": "upper_computer/history/2026-10-27_goodone_plus_S013四组替换.txt",
+    "uses": 2
+  },
+  {
+    "id": "R24",
+    "path": "upper_computer/semg/activity.py",
+    "uses": 1
+  },
+  {
+    "id": "R25",
+    "path": "upper_computer/semg/activity_cnn.py",
+    "uses": 1
+  },
+  {
+    "id": "R26",
+    "path": "upper_computer/history/2026-10-10_活动检测实验版交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R27",
+    "path": "upper_computer/history/2026-10-21_方法二活动检测CNN连续回放验证.txt",
+    "uses": 1
+  },
+  {
+    "id": "R28",
+    "path": "upper_computer/experiments/replay_activity_cnn.py",
+    "uses": 1
+  },
+  {
+    "id": "R29",
+    "path": "upper_computer/experiments/sliding_speech.py",
+    "uses": 4
+  },
+  {
+    "id": "R30",
+    "path": "upper_computer/experiments/run_sliding_rest.py",
+    "uses": 3
+  },
+  {
+    "id": "R31",
+    "path": "upper_computer/experiments/train_small_cnn.py",
+    "uses": 1
+  },
+  {
+    "id": "R32",
+    "path": "upper_computer/board/export_model.py",
+    "uses": 2
+  },
+  {
+    "id": "R33",
+    "path": "upper_computer/semg/rhythm.py",
+    "uses": 1
+  },
+  {
+    "id": "R34",
+    "path": "upper_computer/experiments/run_cnn_goodone_plus_current.py",
+    "uses": 2
+  },
+  {
+    "id": "R35",
+    "path": "upper_computer/experiments/run_sliding_architecture_sweep.py",
+    "uses": 2
+  },
+  {
+    "id": "R36",
+    "path": "upper_computer/models/cnn_goodone_current_20261027_214651_552433/dataset_summary.json",
+    "uses": 1
+  },
+  {
+    "id": "R37",
+    "path": "upper_computer/history/2026-10-10_小型CNN首次基线实验.md",
+    "uses": 1
+  },
+  {
+    "id": "R38",
+    "path": "upper_computer/history/2026-10-10_S05_session014小型CNN.md",
+    "uses": 1
+  },
+  {
+    "id": "R39",
+    "path": "upper_computer/history/2026-10-13_S04S05双人混合CNN.md",
+    "uses": 1
+  },
+  {
+    "id": "R40",
+    "path": "upper_computer/history/2026-10-13_S04S05双人混合LSTM.md",
+    "uses": 1
+  },
+  {
+    "id": "R41",
+    "path": "upper_computer/history/2026-10-14_四人混合CNN_80比20.txt",
+    "uses": 1
+  },
+  {
+    "id": "R42",
+    "path": "upper_computer/history/2026-10-14_五人混合CNN_80比20.txt",
+    "uses": 1
+  },
+  {
+    "id": "R43",
+    "path": "upper_computer/history/2026-10-14_goodone四人LDA跨人评估.md",
+    "uses": 1
+  },
+  {
+    "id": "R44",
+    "path": "upper_computer/history/2026-10-14_goodone四人小型CNN跨人评估.txt",
+    "uses": 1
+  },
+  {
+    "id": "R45",
+    "path": "upper_computer/models/lda_loso_5p_20261026_184410_e28810/report.json",
+    "uses": 1
+  },
+  {
+    "id": "R46",
+    "path": "upper_computer/history/2026-10-21_goodone_plus五人混合CNN与H7量化.md",
+    "uses": 1
+  },
+  {
+    "id": "R47",
+    "path": "upper_computer/history/2026-10-21_goodone_plus_CNN加宽32_64_128结果.md",
+    "uses": 1
+  },
+  {
+    "id": "R48",
+    "path": "upper_computer/history/2026-10-21_自动分段CNN重训与连续回放对比.txt",
+    "uses": 1
+  },
+  {
+    "id": "R49",
+    "path": "upper_computer/history/2026-10-21_SpeechNet自运行结果复核.txt",
+    "uses": 1
+  },
+  {
+    "id": "R50",
+    "path": "upper_computer/experiments/speechnet_two_channel.py",
+    "uses": 1
+  },
+  {
+    "id": "R51",
+    "path": "upper_computer/models/sliding_rest_20261022_103406/comparison.json",
+    "uses": 1
+  },
+  {
+    "id": "R52",
+    "path": "upper_computer/history/2026-10-22_滑动窗口静息类脚本交接.txt",
+    "uses": 1
+  },
+  {
+    "id": "R53",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/protocol.json",
+    "uses": 1
+  },
+  {
+    "id": "R54",
+    "path": "upper_computer/models/cnn_goodone_current_20261027_214651_552433/mid64_temporal3/export/input_contract.json",
+    "uses": 1
+  },
+  {
+    "id": "R55",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/architecture_plan.csv",
+    "uses": 1
+  },
+  {
+    "id": "R56",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/comparison.csv",
+    "uses": 1
+  },
+  {
+    "id": "R57",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/validation_selection.json",
+    "uses": 1
+  },
+  {
+    "id": "R58",
+    "path": "upper_computer/experiments/calibrate_h7_cnn.py",
+    "uses": 1
+  },
+  {
+    "id": "R59",
+    "path": "upper_computer/experiments/export_h7_cnn.py",
+    "uses": 1
+  },
+  {
+    "id": "R60",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/mid64_temporal3/quantization_selection.json",
+    "uses": 1
+  },
+  {
+    "id": "R61",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/mid64_temporal3/export/resource_estimate.json",
+    "uses": 1
+  },
+  {
+    "id": "R62",
+    "path": "upper_computer/models/personal_sliding_20261022_121427_504367/results.txt",
+    "uses": 1
+  },
+  {
+    "id": "R63",
+    "path": "upper_computer/models/personal_head_20261022_122442_600468/results.txt",
+    "uses": 1
+  },
+  {
+    "id": "R64",
+    "path": "upper_computer/models/personal_head5_20261022_123241_998410/results.txt",
+    "uses": 1
+  },
+  {
+    "id": "R65",
+    "path": "upper_computer/experiments/run_personal_head_finetune.py",
+    "uses": 1
+  },
+  {
+    "id": "R66",
+    "path": "upper_computer/experiments/run_personal_head_five_shot.py",
+    "uses": 1
+  },
+  {
+    "id": "R67",
+    "path": "upper_computer/history/2026-10-27_S013十四组独立LDA与最低四组.txt",
+    "uses": 1
+  },
+  {
+    "id": "R68",
+    "path": "upper_computer/models/cnn_goodone_current_20261027_214651_552433/results.txt",
+    "uses": 1
+  },
+  {
+    "id": "R69",
+    "path": "upper_computer/models/cnn_goodone_current_20261027_214651_552433/mid64_temporal3/seed_selection.json",
+    "uses": 1
+  },
+  {
+    "id": "R70",
+    "path": "upper_computer/history/2026-10-27_S013_LDA与CNN差异及提前误触发诊断.txt",
+    "uses": 1
+  },
+  {
+    "id": "R71",
+    "path": "upper_computer/board/nn_runtime.h",
+    "uses": 2
+  },
+  {
+    "id": "R72",
+    "path": "upper_computer/board/logs/20261022_175742_check/report.json",
+    "uses": 1
+  },
+  {
+    "id": "R73",
+    "path": "upper_computer/history/ble_bt24_20261028/new_model_live.json",
+    "uses": 2
+  },
+  {
+    "id": "R74",
+    "path": "upper_computer/models/lda_loso_5p_20261029_151112_48f697/report.json",
+    "uses": 1
+  },
+  {
+    "id": "R75",
+    "path": "upper_computer/models/lda_calibration_norm_20261029_151807_cacc36/report.json",
+    "uses": 1
+  },
+  {
+    "id": "R76",
+    "path": "upper_computer/models/lda_combined_calibration_20261029_152158_35a1e1/report.json",
+    "uses": 1
+  },
+  {
+    "id": "R77",
+    "path": "upper_computer/models/lda_fixed50_x40_20261029_161317_19b5a3/comparison_x10.json",
+    "uses": 1
+  },
+  {
+    "id": "R78",
+    "path": "upper_computer/models/lda_fixed50_x40_20261029_161317_19b5a3/saved_results_audit.json",
+    "uses": 1
+  },
+  {
+    "id": "R79",
+    "path": "upper_computer/models/lda_calibration_norm_20261029_151807_cacc36/splits.json",
+    "uses": 1
+  },
+  {
+    "id": "R80",
+    "path": "upper_computer/models/lda_teammate_style_20261029_154855_ee8dbd/protocol.json",
+    "uses": 1
+  },
+  {
+    "id": "R81",
+    "path": "upper_computer/models/lda_teammate_style_20261029_154855_ee8dbd/saved_results_audit.json",
+    "uses": 1
+  },
+  {
+    "id": "R82",
+    "path": "upper_computer/experiments/run_lda_calibration_comparison.py",
+    "uses": 1
+  },
+  {
+    "id": "R83",
+    "path": "upper_computer/experiments/calibration_data_20261029/manifest.json",
+    "uses": 1
+  },
+  {
+    "id": "R84",
+    "path": "upper_computer/history/2026-10-29_LDA校准实验汇总与两方案报告交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R85",
+    "path": "upper_computer/models/cnn_current_loso_20261030/protocol.json",
+    "uses": 1
+  },
+  {
+    "id": "R86",
+    "path": "upper_computer/models/cnn_current_loso_20261030/lda_dataset_comparison_audit.json",
+    "uses": 1
+  },
+  {
+    "id": "R87",
+    "path": "upper_computer/models/cnn_individual_80_20_20261030/protocol.json",
+    "uses": 1
+  },
+  {
+    "id": "R88",
+    "path": "upper_computer/experiments/run_cnn_individual_80_20.py",
+    "uses": 2
+  },
+  {
+    "id": "R89",
+    "path": "upper_computer/experiments/score_cnn_loso_trials.py",
+    "uses": 1
+  },
+  {
+    "id": "R90",
+    "path": "upper_computer/experiments/continue_cnn_current_loso.py",
+    "uses": 1
+  },
+  {
+    "id": "R91",
+    "path": "upper_computer/models/cnn_current_loso_20261030/ten_word_comparison.json",
+    "uses": 1
+  },
+  {
+    "id": "R92",
+    "path": "upper_computer/models/cnn_current_loso_20261030/completed.json",
+    "uses": 1
+  },
+  {
+    "id": "R93",
+    "path": "upper_computer/models/cnn_current_loso_20261030/user_continuation_policy.json",
+    "uses": 1
+  },
+  {
+    "id": "R94",
+    "path": "upper_computer/models/cnn_individual_80_20_20261030/dataset_summary.json",
+    "uses": 1
+  },
+  {
+    "id": "R95",
+    "path": "upper_computer/models/cnn_individual_80_20_20261030/completed.json",
+    "uses": 1
+  },
+  {
+    "id": "R96",
+    "path": "upper_computer/models/cnn_individual_80_20_20261030/S014/mid64_temporal3/quantization_selection.json",
+    "uses": 1
+  },
+  {
+    "id": "R97",
+    "path": "upper_computer/experiments/run_cnn_current_loso.py",
+    "uses": 1
+  },
+  {
+    "id": "R98",
+    "path": "upper_computer/history/2026-10-30_当前CNN跨人测试_两折完成与续跑交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R99",
+    "path": "upper_computer/history/2026-10-30_五个个人CNN_80比20脚本交接.md",
+    "uses": 1
+  },
+  {
+    "id": "R100",
+    "path": "upper_computer/experiments/README.md",
+    "uses": 1
+  },
+  {
+    "id": "R101",
+    "path": "upper_computer/models/sliding_arch_sweep_20261022_125638_517426/completed.json",
+    "uses": 1
+  },
+  {
+    "id": "R102",
+    "path": "upper_computer/models/cnn_goodone_current_20261027_214651_552433/completed.json",
+    "uses": 1
+  },
+  {
+    "id": "R103",
+    "path": "upper_computer/history/2026-10-29_GitHub新分支_App双模型与原始数据交接.md",
+    "uses": 2
+  },
+  {
+    "id": "R104",
+    "path": "upper_computer/history/2026-10-22_正式媒体app实时监测接入.txt",
+    "uses": 2
+  },
+  {
+    "id": "R105",
+    "path": "upper_computer/history/2026-10-29_App场景命令过滤开关.md",
+    "uses": 2
+  },
+  {
+    "id": "R106",
+    "path": "upper_computer/board/PROTOCOL.txt",
+    "uses": 3
+  },
+  {
+    "id": "R107",
+    "path": "upper_computer/history/2026-10-22_板端实时监测部署与实测交接.txt",
+    "uses": 4
+  },
+  {
+    "id": "R108",
+    "path": "upper_computer/semg/board_protocol.py",
+    "uses": 2
+  },
+  {
+    "id": "R109",
+    "path": "app/board_bridge.py",
+    "uses": 1
+  },
+  {
+    "id": "R110",
+    "path": "app/app.js",
+    "uses": 3
+  },
+  {
+    "id": "R111",
+    "path": "app/server.py",
+    "uses": 2
+  },
+  {
+    "id": "R112",
+    "path": "upper_computer/semg/ble_transport.py",
+    "uses": 1
+  },
+  {
+    "id": "R113",
+    "path": "upper_computer/semg/serial_settings.py",
+    "uses": 1
+  },
+  {
+    "id": "R114",
+    "path": "app/index.html",
+    "uses": 1
+  },
+  {
+    "id": "R115",
+    "path": "app/使用说明.txt",
+    "uses": 1
+  },
+  {
+    "id": "R116",
+    "path": "app/monitor.js",
+    "uses": 1
+  },
+  {
+    "id": "R117",
+    "path": "upper_computer/history/2026-10-29_App顶部静息状态与全屏反馈.md",
+    "uses": 1
+  },
+  {
+    "id": "R118",
+    "path": "upper_computer/history/ble_bt24_20261028/monitor_smoke.json",
+    "uses": 1
+  },
+  {
+    "id": "R119",
+    "path": "upper_computer/recordings_live/20261022_174655_369616/test_174842_305340.json",
+    "uses": 1
+  },
+  {
+    "id": "R120",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_180843_576720.json",
+    "uses": 1
+  },
+  {
+    "id": "R121",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_180956_443253.json",
+    "uses": 1
+  },
+  {
+    "id": "R122",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_181104_627126.json",
+    "uses": 1
+  },
+  {
+    "id": "R123",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_181700_669635.json",
+    "uses": 1
+  },
+  {
+    "id": "R124",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_182527_087850.json",
+    "uses": 1
+  },
+  {
+    "id": "R125",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_184653_903277.json",
+    "uses": 1
+  },
+  {
+    "id": "R126",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_184756_422623.json",
+    "uses": 1
+  },
+  {
+    "id": "R127",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_184934_976988.json",
+    "uses": 1
+  },
+  {
+    "id": "R128",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_185037_829335.json",
+    "uses": 1
+  },
+  {
+    "id": "R129",
+    "path": "upper_computer/recordings_live/20261022_180646_377073/test_185141_498586.json",
+    "uses": 1
+  },
+  {
+    "id": "R130",
+    "path": "upper_computer/semg/board_ui.py",
+    "uses": 1
+  },
+  {
+    "id": "R131",
+    "path": "app/test_server.py",
+    "uses": 1
+  },
+  {
+    "id": "R132",
+    "path": "upper_computer/history/publish_20261029/validation.json",
+    "uses": 3
+  },
+  {
+    "id": "R133",
+    "path": "upper_computer/history/publish_20261029/github_receipt.json",
+    "uses": 1
+  },
+  {
+    "id": "R134",
+    "path": "github_publish/6008_silent_speech/upper_computer/recordings/README.md",
+    "uses": 1
+  },
+  {
+    "id": "R135",
+    "path": "upper_computer/history/2026-10-26_goodone_plus五人LDA四训一测.txt",
+    "uses": 1
+  }
+]

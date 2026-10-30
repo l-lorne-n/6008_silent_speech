@@ -1,0 +1,102 @@
+{
+  "classes": [
+    "open",
+    "close",
+    "next",
+    "music",
+    "louder",
+    "photo",
+    "previous",
+    "quieter",
+    "start",
+    "stop",
+    "rest"
+  ],
+  "normalization": {
+    "mean": [
+      0.003408298855253367,
+      0.0005403896146969793
+    ],
+    "scale": [
+      549.5529720013438,
+      410.99249403135786
+    ],
+    "samples": 22420820,
+    "fit_splits": [
+      "train",
+      "validation"
+    ]
+  },
+  "fs": 2000,
+  "step_samples": 200,
+  "input_shape": [
+    1,
+    2,
+    1,
+    2800
+  ],
+  "filter_sos": [
+    [
+      0.08267262046299347,
+      0.16534524092598693,
+      0.08267262046299347,
+      1.0,
+      -0.057999923587662386,
+      0.045788646389228145
+    ],
+    [
+      1.0,
+      2.0,
+      1.0,
+      1.0,
+      -0.012218271846745787,
+      0.4682466270951508
+    ],
+    [
+      1.0,
+      -2.0,
+      1.0,
+      1.0,
+      -1.881480436981259,
+      0.8856377875156705
+    ],
+    [
+      1.0,
+      -2.0,
+      1.0,
+      1.0,
+      -1.9512428934304133,
+      0.9551656513606563
+    ],
+    [
+      0.9973888361673892,
+      -1.9702186490445686,
+      0.9973888361673889,
+      1.0,
+      -1.9702186490445688,
+      0.9947776723347783
+    ]
+  ],
+  "architecture": {
+    "name": "mid64_temporal3",
+    "widths": [
+      8,
+      24,
+      32,
+      64,
+      64
+    ],
+    "tail_kernel": 3,
+    "pool_bins": 1,
+    "description": "中后层加宽+末层时间卷积"
+  },
+  "decoder": {
+    "probability": 0.5,
+    "confirm": 2,
+    "rest_frames": 2,
+    "margin": 0.0
+  },
+  "preprocessing": "continuous causal filter; ring buffer; no padding; no activity gate; standardize using saved training statistics",
+  "initial_state": "disarmed; requires predicted rest before command",
+  "note": "FP32 I/O around internal INT8. Newly trained model has not been deployed or board-validated."
+}

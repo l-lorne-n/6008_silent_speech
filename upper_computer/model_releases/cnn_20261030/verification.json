@@ -1,0 +1,87 @@
+{
+  "files_verified": 338,
+  "final_models": 10,
+  "raw_files_verified": 196,
+  "model_checks": [
+    {
+      "experiment": "cross_subject",
+      "subject": "S011",
+      "fp32_max_absolute_error": 9.5367431640625e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "cross_subject",
+      "subject": "S012",
+      "fp32_max_absolute_error": 5.9604644775390625e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "cross_subject",
+      "subject": "S013",
+      "fp32_max_absolute_error": 2.7418136596679688e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "cross_subject",
+      "subject": "S014",
+      "fp32_max_absolute_error": 3.337860107421875e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "cross_subject",
+      "subject": "S015",
+      "fp32_max_absolute_error": 3.039836883544922e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "individual_80_20",
+      "subject": "S011",
+      "fp32_max_absolute_error": 2.86102294921875e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "individual_80_20",
+      "subject": "S012",
+      "fp32_max_absolute_error": 4.76837158203125e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "individual_80_20",
+      "subject": "S013",
+      "fp32_max_absolute_error": 3.5762786865234375e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "individual_80_20",
+      "subject": "S014",
+      "fp32_max_absolute_error": 7.62939453125e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    },
+    {
+      "experiment": "individual_80_20",
+      "subject": "S015",
+      "fp32_max_absolute_error": 8.58306884765625e-06,
+      "training_partition_verified": true,
+      "trace_rescoring": true,
+      "ten_word_predictions_recomputed": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "selected": {
+    "name": "minmax",
+    "percentile": null,
+    "validation_macro_loss": 0.2765340507030487,
+    "validation_macro_accuracy": 0.9046129158370381
+  },
+  "candidates": [
+    {
+      "name": "minmax",
+      "percentile": null,
+      "validation_macro_loss": 0.2765340507030487,
+      "validation_macro_accuracy": 0.9046129158370381
+    },
+    {
+      "name": "percentile_99.99",
+      "percentile": 99.99,
+      "validation_macro_loss": 0.30257734656333923,
+      "validation_macro_accuracy": 0.8979171968145866
+    },
+    {
+      "name": "percentile_99.9",
+      "percentile": 99.9,
+      "validation_macro_loss": 0.30625420808792114,
+      "validation_macro_accuracy": 0.8998504360925602
+    },
+    {
+      "name": "percentile_99.5",
+      "percentile": 99.5,
+      "validation_macro_loss": 0.43075454235076904,
+      "validation_macro_accuracy": 0.8640207692097879
+    }
+  ],
+  "test_used": false
+}

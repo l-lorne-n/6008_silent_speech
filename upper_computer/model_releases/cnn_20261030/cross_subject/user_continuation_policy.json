@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-30T11:16:58.872768+08:00",
+  "request": "Finish current S011/S012 group; provide scripts for user to execute remaining folds.",
+  "original_protocol_unchanged": true,
+  "partial_subjects": [
+    "S011",
+    "S012"
+  ],
+  "remaining_subjects": [
+    "S013",
+    "S014",
+    "S015"
+  ],
+  "override": "S011/S012 are scored before remaining three folds finish training, at explicit user request.",
+  "all_five_models_frozen_before_first_test": false,
+  "controls": "Architecture, splits, seeds, normalization, optimizer, PTQ, decoder and diagnostic rule stay fixed.",
+  "scope": "No target calibration or new tuning after partial results; incomplete fold scores are not five-fold results."
+}

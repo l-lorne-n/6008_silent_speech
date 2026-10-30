@@ -1,0 +1,272 @@
+{
+  "parameters": 54667,
+  "macs_per_window": 14029760,
+  "macs_per_second_at_10hz": 140297600,
+  "window_ms": 1400,
+  "int8_weights_int32_bias_bytes": 54892,
+  "int8_tensor_inventory_bytes": 159899,
+  "planning_reserve_bytes": 262144,
+  "int8_inventory_plus_reserve_bytes": 422043,
+  "layers": [
+    {
+      "type": "Conv2d",
+      "elements": 44816,
+      "shape": [
+        1,
+        8,
+        2,
+        2801
+      ],
+      "adjacent_bytes": 50416
+    },
+    {
+      "type": "Identity",
+      "elements": 44816,
+      "shape": [
+        1,
+        8,
+        2,
+        2801
+      ],
+      "adjacent_bytes": 89632
+    },
+    {
+      "type": "ReLU",
+      "elements": 44816,
+      "shape": [
+        1,
+        8,
+        2,
+        2801
+      ],
+      "adjacent_bytes": 89632
+    },
+    {
+      "type": "MaxPool2d",
+      "elements": 5600,
+      "shape": [
+        1,
+        8,
+        2,
+        350
+      ],
+      "adjacent_bytes": 50416
+    },
+    {
+      "type": "Conv2d",
+      "elements": 16848,
+      "shape": [
+        1,
+        24,
+        2,
+        351
+      ],
+      "adjacent_bytes": 22448
+    },
+    {
+      "type": "Identity",
+      "elements": 16848,
+      "shape": [
+        1,
+        24,
+        2,
+        351
+      ],
+      "adjacent_bytes": 33696
+    },
+    {
+      "type": "ReLU",
+      "elements": 16848,
+      "shape": [
+        1,
+        24,
+        2,
+        351
+      ],
+      "adjacent_bytes": 33696
+    },
+    {
+      "type": "MaxPool2d",
+      "elements": 4176,
+      "shape": [
+        1,
+        24,
+        2,
+        87
+      ],
+      "adjacent_bytes": 21024
+    },
+    {
+      "type": "Conv2d",
+      "elements": 5632,
+      "shape": [
+        1,
+        32,
+        2,
+        88
+      ],
+      "adjacent_bytes": 9808
+    },
+    {
+      "type": "Identity",
+      "elements": 5632,
+      "shape": [
+        1,
+        32,
+        2,
+        88
+      ],
+      "adjacent_bytes": 11264
+    },
+    {
+      "type": "ReLU",
+      "elements": 5632,
+      "shape": [
+        1,
+        32,
+        2,
+        88
+      ],
+      "adjacent_bytes": 11264
+    },
+    {
+      "type": "MaxPool2d",
+      "elements": 1408,
+      "shape": [
+        1,
+        32,
+        2,
+        22
+      ],
+      "adjacent_bytes": 7040
+    },
+    {
+      "type": "Conv2d",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "Identity",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "ReLU",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "MaxPool2d",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "Conv2d",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "Identity",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "ReLU",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "MaxPool2d",
+      "elements": 1408,
+      "shape": [
+        1,
+        64,
+        1,
+        22
+      ],
+      "adjacent_bytes": 2816
+    },
+    {
+      "type": "AvgPool2d",
+      "elements": 64,
+      "shape": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "adjacent_bytes": 1472
+    },
+    {
+      "type": "Flatten",
+      "elements": 64,
+      "shape": [
+        1,
+        64
+      ],
+      "adjacent_bytes": 128
+    },
+    {
+      "type": "Dropout",
+      "elements": 64,
+      "shape": [
+        1,
+        64
+      ],
+      "adjacent_bytes": 128
+    },
+    {
+      "type": "Linear",
+      "elements": 11,
+      "shape": [
+        1,
+        11
+      ],
+      "adjacent_bytes": 75
+    }
+  ],
+  "st_compiler_verified": false,
+  "board_latency_verified": false
+}

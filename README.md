@@ -1,4 +1,4 @@
-# 6008 Silent Speech — App、双模型与训练数据
+# 6008 Silent Speech — App、部署模型、CNN研究与训练数据
 
 独立交付分支 **`integration-app-data-20261029`**，承接 2026-10-28 的 `integration-bt24-models-20261028`（`95cce21`）。包含当前上位机、媒体 App、训练代码、两版 CNN、四份预构建 HEX，以及指定的完整训练录制。保留原 `firmware/` 和 `tools/bt24_receiver/`；本次没有更新 `main`。
 
@@ -13,6 +13,25 @@
 | [模型资产](upper_computer/models/README.md) | `mid64_temporal3`、`mid64_temporal3_20261027`及哈希 |
 | [固件归档](upper_computer/board/prebuilt/README.md) | 115200/230400 HEX及原构建证据 |
 | [发布检查](upper_computer/history/publish_20261028/validation.json) | 软件测试结果与范围 |
+
+## 2026-10-30 CNN 跨人与单人模型
+
+新增当前 `mid64_temporal3` 架构的两组训练代码、**10 个最终研究模型**（每个均有 PyTorch、FP32 ONNX、INT8 ONNX）、精确划分、训练历史、逐试次结果与连续概率轨迹。原有两版正式部署模型、固件及 BT24 接入保持不变；这十个新权重没有烧录或替换 App 模型。
+
+| 实验 | FP32 十词分类 | FP32 连续正确命令率 | FP32 严格成功率 |
+| --- | ---: | ---: | ---: |
+| 四人训练一人测试，五折跨人，无个人校准 | 1006/2496，40.30% | 37.94% | 37.06% |
+| 五个独立个人模型，各自整轮 80/20 | 464/500，92.80% | 80.80% | 78.80% |
+
+十词分类利用动作提示边界汇总概率，不等于实时触发成功率。两组训练人员、训练量和测试集合不同；个人同录制整轮留出仍可能存在同次佩戴相关性，不能将分数差异当作纯架构改进或新佩戴保证。
+
+- [十个模型、结果与复现说明](upper_computer/model_releases/cnn_20261030/README.md)
+- [跨人完整训练入口](upper_computer/experiments/run_cnn_current_loso.py) / [Windows 启动](upper_computer/run_cnn_cross_subject.cmd)
+- [个人训练入口](upper_computer/experiments/run_cnn_individual_80_20.py) / [Windows 启动](upper_computer/run_cnn_individual_80_20.cmd)
+- [更新后的中文技术报告](reports/20261030_S3_S5_CNN/EE6008_S3-S5_完整技术报告_中文审阅版_CNN跨人与单人补充版.docx) / [Markdown 阅读版](reports/20261030_S3_S5_CNN/report.md)
+- [发布校验记录](upper_computer/model_releases/cnn_20261030/verification.json) / [完成交接](upper_computer/history/2026-10-30_CNN跨人与单人模型_GitHub及报告交接.md)
+
+从仓库根目录运行 `python upper_computer/model_releases/cnn_20261030/verify.py --data` 可校验发布文件及 196 个核心原始文件；安装训练依赖后加 `--models` 可检查模型数值、训练分区并复算保存的测试结果。新实验输出写入本机 `models/`，发布的最终资产独立放在 `model_releases/`，不把精简发布包作为历史训练缓存续跑。
 
 ## 2026-10-29 更新
 

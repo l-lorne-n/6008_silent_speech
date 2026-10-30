@@ -1,0 +1,24 @@
+{
+  "subject": "S013",
+  "valid": 500,
+  "development": {
+    "validation": 100,
+    "train": 300,
+    "test": 100
+  },
+  "final_train": 400,
+  "test": 100,
+  "test_fraction": 0.2,
+  "windows": 6281,
+  "indices_counts": {
+    "train": 3770,
+    "validation": 1200,
+    "test": 1259,
+    "fit": 5022,
+    "dev_calibration": 550,
+    "final_calibration": 550
+  },
+  "window_exclusions": {
+    "ambiguous_transition": 14853
+  }
+}

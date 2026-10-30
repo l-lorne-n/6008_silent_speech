@@ -1,0 +1,82 @@
+[
+  {
+    "experiment": "cross_subject",
+    "subject": "S011",
+    "model": "cross_subject/S011/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 37,
+    "role": "held-out person; trained on the other four"
+  },
+  {
+    "experiment": "cross_subject",
+    "subject": "S012",
+    "model": "cross_subject/S012/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 36,
+    "role": "held-out person; trained on the other four"
+  },
+  {
+    "experiment": "cross_subject",
+    "subject": "S013",
+    "model": "cross_subject/S013/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 34,
+    "role": "held-out person; trained on the other four"
+  },
+  {
+    "experiment": "cross_subject",
+    "subject": "S014",
+    "model": "cross_subject/S014/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 37,
+    "role": "held-out person; trained on the other four"
+  },
+  {
+    "experiment": "cross_subject",
+    "subject": "S015",
+    "model": "cross_subject/S015/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 48,
+    "role": "held-out person; trained on the other four"
+  },
+  {
+    "experiment": "individual_80_20",
+    "subject": "S011",
+    "model": "individual_80_20/S011/mid64_temporal3/model.pt",
+    "selected_seed": 20261011,
+    "selected_epoch": 10,
+    "role": "own person only; grouped 80/20"
+  },
+  {
+    "experiment": "individual_80_20",
+    "subject": "S012",
+    "model": "individual_80_20/S012/mid64_temporal3/model.pt",
+    "selected_seed": 20261012,
+    "selected_epoch": 15,
+    "role": "own person only; grouped 80/20"
+  },
+  {
+    "experiment": "individual_80_20",
+    "subject": "S013",
+    "model": "individual_80_20/S013/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 17,
+    "role": "own person only; grouped 80/20"
+  },
+  {
+    "experiment": "individual_80_20",
+    "subject": "S014",
+    "model": "individual_80_20/S014/mid64_temporal3/model.pt",
+    "selected_seed": 20261011,
+    "selected_epoch": 16,
+    "role": "own person only; grouped 80/20"
+  },
+  {
+    "experiment": "individual_80_20",
+    "subject": "S015",
+    "model": "individual_80_20/S015/mid64_temporal3/model.pt",
+    "selected_seed": 20261010,
+    "selected_epoch": 15,
+    "role": "own person only; grouped 80/20"
+  }
+]

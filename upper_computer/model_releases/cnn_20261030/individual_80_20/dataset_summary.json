@@ -1,0 +1,123 @@
+{
+  "S011": {
+    "subject": "S011",
+    "valid": 500,
+    "development": {
+      "test": 100,
+      "validation": 100,
+      "train": 300
+    },
+    "final_train": 400,
+    "test": 100,
+    "test_fraction": 0.2,
+    "windows": 6295,
+    "indices_counts": {
+      "train": 3787,
+      "validation": 1198,
+      "test": 1261,
+      "fit": 5034,
+      "dev_calibration": 550,
+      "final_calibration": 550
+    },
+    "window_exclusions": {
+      "ambiguous_transition": 14856
+    }
+  },
+  "S012": {
+    "subject": "S012",
+    "valid": 500,
+    "development": {
+      "train": 310,
+      "validation": 90,
+      "test": 100
+    },
+    "final_train": 400,
+    "test": 100,
+    "test_fraction": 0.2,
+    "windows": 6291,
+    "indices_counts": {
+      "train": 3904,
+      "validation": 1106,
+      "test": 1259,
+      "fit": 5032,
+      "dev_calibration": 550,
+      "final_calibration": 550
+    },
+    "window_exclusions": {
+      "ambiguous_transition": 14856,
+      "clipping": 2
+    }
+  },
+  "S013": {
+    "subject": "S013",
+    "valid": 500,
+    "development": {
+      "validation": 100,
+      "train": 300,
+      "test": 100
+    },
+    "final_train": 400,
+    "test": 100,
+    "test_fraction": 0.2,
+    "windows": 6281,
+    "indices_counts": {
+      "train": 3770,
+      "validation": 1200,
+      "test": 1259,
+      "fit": 5022,
+      "dev_calibration": 550,
+      "final_calibration": 550
+    },
+    "window_exclusions": {
+      "ambiguous_transition": 14853
+    }
+  },
+  "S014": {
+    "subject": "S014",
+    "valid": 496,
+    "development": {
+      "validation": 97,
+      "test": 100,
+      "train": 299
+    },
+    "final_train": 396,
+    "test": 100,
+    "test_fraction": 0.20161290322580644,
+    "windows": 6206,
+    "indices_counts": {
+      "train": 3737,
+      "validation": 1174,
+      "test": 1254,
+      "fit": 4952,
+      "dev_calibration": 550,
+      "final_calibration": 550
+    },
+    "window_exclusions": {
+      "ambiguous_transition": 14747
+    }
+  },
+  "S015": {
+    "subject": "S015",
+    "valid": 500,
+    "development": {
+      "validation": 100,
+      "train": 300,
+      "test": 100
+    },
+    "final_train": 400,
+    "test": 100,
+    "test_fraction": 0.2,
+    "windows": 6246,
+    "indices_counts": {
+      "train": 3765,
+      "validation": 1198,
+      "test": 1243,
+      "fit": 5003,
+      "dev_calibration": 550,
+      "final_calibration": 550
+    },
+    "window_exclusions": {
+      "ambiguous_transition": 14840
+    }
+  }
+}

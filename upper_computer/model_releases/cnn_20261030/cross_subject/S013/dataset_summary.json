@@ -1,0 +1,41 @@
+{
+  "counts": {
+    "train": 1606,
+    "validation": 390,
+    "test": 500
+  },
+  "by_subject": {
+    "S011": {
+      "train": 400,
+      "validation": 100
+    },
+    "S012": {
+      "train": 410,
+      "validation": 90
+    },
+    "S013": {
+      "test": 500
+    },
+    "S014": {
+      "train": 396,
+      "validation": 100
+    },
+    "S015": {
+      "train": 400,
+      "validation": 100
+    }
+  },
+  "windows": 31319,
+  "indices_counts": {
+    "train": 20161,
+    "validation": 2200,
+    "test": 6281,
+    "fit": 25038,
+    "dev_calibration": 550,
+    "final_calibration": 550
+  },
+  "window_exclusions": {
+    "ambiguous_transition": 74152,
+    "clipping": 2
+  }
+}

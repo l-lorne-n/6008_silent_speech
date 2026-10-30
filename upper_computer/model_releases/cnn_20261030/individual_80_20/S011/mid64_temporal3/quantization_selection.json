@@ -1,0 +1,35 @@
+{
+  "selected": {
+    "name": "percentile_99.9",
+    "percentile": 99.9,
+    "validation_macro_loss": 0.34305718541145325,
+    "validation_macro_accuracy": 0.8982892004686662
+  },
+  "candidates": [
+    {
+      "name": "minmax",
+      "percentile": null,
+      "validation_macro_loss": 0.37977561354637146,
+      "validation_macro_accuracy": 0.8818052459507655
+    },
+    {
+      "name": "percentile_99.99",
+      "percentile": 99.99,
+      "validation_macro_loss": 0.366308331489563,
+      "validation_macro_accuracy": 0.8781407774631003
+    },
+    {
+      "name": "percentile_99.9",
+      "percentile": 99.9,
+      "validation_macro_loss": 0.34305718541145325,
+      "validation_macro_accuracy": 0.8982892004686662
+    },
+    {
+      "name": "percentile_99.5",
+      "percentile": 99.5,
+      "validation_macro_loss": 0.40680134296417236,
+      "validation_macro_accuracy": 0.879797964299322
+    }
+  ],
+  "test_used": false
+}
